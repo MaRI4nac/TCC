@@ -1,0 +1,95 @@
+import styled from 'styled-components'
+
+const PrincipalPart = styled.div`
+
+
+    display: flex;
+    flex-direction: column;
+    width: 100% 100%;
+    background-color: #2F4F4F;
+    color: white;
+
+
+.first-band {
+    background-image: url("/assets/images/Rectangle 24.svg");
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.transparent-band {
+    background-color: rgba(176, 196, 222, 0.3);
+
+    width: 55em;
+}
+
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2em;
+
+    margin-top: 1em;
+}
+
+.graphics {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    margin-bottom: 1em;
+
+}
+
+.second-band {
+    padding: 3em;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.events-users-tickets {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin-top: 3em;
+}
+
+.mini-box, .mini-box1 {
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.mini-box1 {
+    margin-left: 3em;
+    margin-right: 2em;
+}
+
+.mini-image {
+    margin-bottom: 1em;
+}
+
+.mini-title {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+
+`
+
+export {  PrincipalPart  }

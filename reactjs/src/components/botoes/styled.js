@@ -9,8 +9,11 @@ const Botao = styled.button `
     color: black;
     font-family: Roboto;
     font-weight: 900;
+    text-transform: uppercase;
 
     cursor: pointer;
+
+    margin-bottom: 1em;
 
 `
 
