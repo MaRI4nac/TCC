@@ -12,6 +12,8 @@ import Ingressos from './pages/usuario/ingressos/index.js';
 import BuscaDirecionada from './pages/usuario/busca-direcionada/index.js';
 import TelaInicial from './pages/usuario/principal'
 import ADMPrincipal from './pages/administrativo/adm-principal/index.js';
+import ADMRelatorios from './pages/administrativo/relatorio/index.js';
+
 
 export default function Routes() {
     return (
@@ -30,6 +32,7 @@ export default function Routes() {
                 <Route path="/ingressos" component={Ingressos} />
                 <Route path="/inicial" component={TelaInicial} />
                 <Route path="/admprincipal" component={ADMPrincipal} />
+                <Route path="/relatorios" component={ADMRelatorios} />
             </Switch>
         </BrowserRouter>
     )
