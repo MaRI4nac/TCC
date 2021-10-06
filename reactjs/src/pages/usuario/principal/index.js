@@ -4,8 +4,8 @@ import { Container } from './styled'
 export default function Principal() {
     return (
         <Container>
+         <Cabecalho />
            <div className="header"> 
-                <Cabecalho />
                 <div className="bg-white"> 
                     <img src="/assets/images/logo TCC com escrita.svg" alt="" />
                 </div>

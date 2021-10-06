@@ -3,17 +3,20 @@ import styled from 'styled-components'
 const Container = styled.div`
 
     .header {
-        background-image: url('/assets/images/bgTelaPrincipal.svg');
+        background-image: url('https://i.pinimg.com/564x/68/49/e1/6849e1d9c30b32dc20035a70945762e9.jpg');
         display: flex;
         flex-direction: column;
         align-items: center;
 
         background-position: center;
         background-size: 100% auto;
+        background-attachment: fixed; 
+        background-repeat: no-repeat; 
+        height: 90vh;
     }
 
     .bg-white {
-        background: rgba(240, 240, 240, 0.5);
+        background: #2F4F4F;
         width: 50vh;
         height: 50vh;
         border-radius: 50%;
@@ -23,7 +26,7 @@ const Container = styled.div`
         justify-content: center;
         z-index: 2;
 
-        margin: 5rem 0px;
+        margin: 12rem 0px;
     }
 
     .bg-white img {
@@ -33,7 +36,7 @@ const Container = styled.div`
     }
 
     .body {
-        background: linear-gradient(180deg, rgba(47, 79, 79, 0.92) 0%, rgba(47, 79, 79, 0.899224) 21.02%, rgba(47, 79, 79, 0.874) 43.42%, rgba(26, 73, 73, 0.5244) 70.5%, rgba(26, 73, 73, 0.0736) 100%);
+        background: linear-gradient(180deg, rgba(23, 61, 64, 0.92) 0%, rgba(23, 61, 64, 0.899224) 18%, rgba(47, 79, 79, 0.874) 43.42%, rgba(47, 79, 79, 0.874) 43.42%);
         min-height:100vh;
     }
     
@@ -47,6 +50,8 @@ const Container = styled.div`
     .box {
         width: 11%;
         text-align: center;
+        width: 18em;
+
     }
 
     .box img {

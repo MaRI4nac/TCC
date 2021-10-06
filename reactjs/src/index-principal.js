@@ -17,6 +17,8 @@ export default function SiteCompleto () {
             <Botao className="idai"> <Link to="/buscadirecionada"> Busca Directionada </Link> </Botao>
             <Botao className="idai"> <Link to="/ingressos"> Ingressos </Link> </Botao>
             <Botao className="idai"> <Link to ="/inicial"> Tela Inicial </Link></Botao>
+            <Botao className="idai"> <Link to ="/admprincipal"> Tela Inicial ADM </Link></Botao>
+            <Botao className="idai"> <Link to ="/relatorios"> Relatórios ADM </Link></Botao>
         </div>
     )
 }
