@@ -5,20 +5,24 @@ const ADMLog = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     background-image: url("/assets/images/Rectangle 178.svg");
     background-size: 100%;
     height: 100vh;
 
-    padding: 16em 5em;
+    padding: 2em 2em;
     color:#ADD8E6;
 
 .tela-login {
     display: flex;
     flex-direction: column;
-    padding: 3em 10em;
+    padding: 3em 8em;
     background: rgba(47, 79, 79, 0.8);
     border: 0.4em solid #ADD8E6;
     justify-content: center; 
+
+    width: 50em;
+    height: 30em;
 }
 
 .log-titulo {

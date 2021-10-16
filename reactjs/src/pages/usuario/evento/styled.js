@@ -5,7 +5,9 @@ const EventTypeStyle = styled.div`
 
     display: flex;
     flex-direction: column;
-    background-color: black;
+    background-color: rgba(18, 61, 61);
+    min-height: 100vh;
+    width: 100%;
 
 
 .ct-color {

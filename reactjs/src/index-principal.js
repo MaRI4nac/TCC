@@ -20,6 +20,8 @@ export default function SiteCompleto () {
             <Botao className="idai"> <Link to ="/admprincipal"> Tela Inicial ADM </Link></Botao>
             <Botao className="idai"> <Link to ="/relatorios"> Relatórios ADM </Link></Botao>
             <Botao className="idai"> <Link to ="/eventos"> Tela Evento </Link></Botao>
+            <Botao className="idai"> <Link to ="/crud"> Tela Crud </Link></Botao>
+            <Botao className="idai"> <Link to ="/usuario"> Tela Gestão Usuários </Link></Botao>
         </div>
     )
 }

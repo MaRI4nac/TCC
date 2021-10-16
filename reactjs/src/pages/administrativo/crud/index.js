@@ -21,7 +21,6 @@ export default function Crud() {
                     campo1="peter pan, o viado,
                     peter pan, o viado,
                     peter pan, o viado,
-                    peter pan, o viado,
                     "
                     campo2="ação/aventura"
                     usuario = {false}

@@ -18,10 +18,11 @@ const Container = styled.div`
         flex-direction: column;
         align-self: flex-start;
         margin-bottom: 2rem;
+        margin-top: 2rem;
     }
 
     .search div {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 
     .box {
@@ -31,6 +32,10 @@ const Container = styled.div`
         margin-bottom: 4rem;
 
         max-width: 1080px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
     }
 
     .box:last-child {
@@ -48,7 +53,7 @@ const Container = styled.div`
     }
 
     .box-text p {
-        font-size: 1.15em;
+        font-size: 1.10em;
     }
 
     .box-text h1 {

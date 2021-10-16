@@ -32,6 +32,10 @@ const Container = styled.div`
         width: 50%;
     }
 
+    h1 {
+        font-size: 1.6rem;
+    }
+
     .box {
         display: flex;
         flex-direction: row;
@@ -58,7 +62,7 @@ const Container = styled.div`
     }
 
     .box-text p {
-        font-size: 1.15em;
+        font-size: 1.10em;
     }
 
     .box-text h1 {

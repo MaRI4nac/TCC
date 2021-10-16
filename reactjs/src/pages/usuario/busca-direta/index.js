@@ -12,7 +12,7 @@ export default function BuscaDireta() {
                     <div> Encontramos isso: </div>
                 </div>
                 <div className="box"> 
-                    <img src="/assets/images/principal-box.png" alt="" />
+                    <img src="/assets/images/principal-box.png" alt="" width="300px" height="300px" />
                     <div className="box-text"> 
                         <h1> Cada Um Tem o Anjo Que Merece </h1>
                         <div> Comédia, 80 minutos, 12 anos. </div>
@@ -23,7 +23,7 @@ export default function BuscaDireta() {
                     </div>
                 </div>
                 <div className="box"> 
-                    <img src="/assets/images/principal-box.png" alt="" />
+                    <img src="/assets/images/principal-box.png" alt="" width="300px" height="300px" />
                     <div className="box-text"> 
                         <h1> Cada Um Tem o Anjo Que Merece </h1>
                         <div> Comédia, 80 minutos, 12 anos. </div>
