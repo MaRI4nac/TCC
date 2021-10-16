@@ -13,6 +13,7 @@ import BuscaDirecionada from './pages/usuario/busca-direcionada/index.js';
 import TelaInicial from './pages/usuario/principal'
 import ADMPrincipal from './pages/administrativo/adm-principal/index.js';
 import ADMRelatorios from './pages/administrativo/relatorio/index.js';
+import TelaEvento from './pages/usuario/evento/index.js';
 
 
 export default function Routes() {
@@ -33,6 +34,7 @@ export default function Routes() {
                 <Route path="/inicial" component={TelaInicial} />
                 <Route path="/admprincipal" component={ADMPrincipal} />
                 <Route path="/relatorios" component={ADMRelatorios} />
+                <Route path="/eventos" component={TelaEvento} />
             </Switch>
         </BrowserRouter>
     )

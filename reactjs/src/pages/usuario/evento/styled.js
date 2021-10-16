@@ -1,62 +1,84 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-const Container = styled.div`
-    height: auto;
+
+const EventTypeStyle = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+
+
+.ct-color {
+    background-color: rgba(18, 61, 61);
     color: white;
-    background: linear-gradient(180deg, rgba(47, 79, 79, 0.81) 15.81%, rgba(47, 79, 79, 0.60592) 37.69%, rgba(78, 166, 166, 0.1701) 66.86%, rgba(59, 170, 170, 0.3564) 100%);
+    font-size: 1.1em;
+}
+
+.first-band {
+    background-image: url("/assets/images/eventTypeWallpaper.jpg");
+    background-opacity: 10%;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    display: column;
+}
+
+.principal-image-title {
+    position: absolute;
+    top: 9em;
+    left: 15em;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.princ-texts {
+    margin-left: 0.8em;
+    margin-top: 5em;
+}
+
+.p-title {
+    margin-bottom: 1em;
+    font-size: 2em;
+    width: 500px;
+
+    text-align: center;
+    font-weight: 800;
+}
+
+
+.second-band {
+    margin-top: 20vh;
     
-    .teste {
-        height: 40vh;
-        background-image: url('/assets/images/event-bgimg.png');
-        background-repeat: no-repeat;
-        background-size: 100% auto;
-    }
+    padding: 3em 3em;
+}
 
-    .secondary-container {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        position: relative;
-    }
+.informations-about {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
 
-    .box {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+.line-information {
+    display: flex;
+    flex-direction: row;
+}
 
-        position: absolute;
-        top: -25%;
-        left: 25%;
-        max-width: 800px;
-    }
+.icon-information {
 
-    .box img {
-        width: 20rem;
-        height: 30rem;
-    }
+}
 
-    .box-test h1 {
+.desc-information {
+    margin-left: 1em;
+}
 
-    }
 
-    .box-test {
 
-    }
-
-    .li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .ball {
-        height: 40px;
-        width: 40px;
-        background-color: #F0F8FF;
-        border-radius: 25px;
-    }
-
+.third-band {
+    padding: 1em 1em;
+    display: flex;
+    justify-content: center;
+}
 `
 
-export { Container }
+export { EventTypeStyle }
