@@ -16,6 +16,7 @@ import ADMRelatorios from './pages/administrativo/relatorio/index.js';
 import TelaEvento from './pages/usuario/evento/index.js';
 import TelaCrud from './pages/administrativo/crud'
 import GestaoUsuario from './pages/administrativo/gestao-usuarios'
+import UserProfile from './pages/usuario/perfil/index.js';
 
 export default function Routes() {
     return (
@@ -38,6 +39,7 @@ export default function Routes() {
                 <Route path="/eventos" component={TelaEvento} />
                 <Route path="/crud" component={TelaCrud} />
                 <Route path="/usuario" component={GestaoUsuario} />
+                <Route path="/profile" component={UserProfile} />
             </Switch>
         </BrowserRouter>
     )
