@@ -73,6 +73,11 @@ const Container = styled.div`
 
     }
 
+    .Blink {
+        text-decoration: none;
+        color: black;
+    }
+
 `
 
 const Button = styled.button`

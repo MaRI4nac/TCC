@@ -1,5 +1,6 @@
 import { Container } from './styled'
 import Cabecalho from '../../../components/cabecalho'
+import { Link } from 'react-router-dom'
 
 
 export default function BuscaDirecionada () {
@@ -19,7 +20,7 @@ export default function BuscaDirecionada () {
                         <p> <b> Sinopse: </b> 
                             Nesta comédia, o casal, Osvaldo e Quitéria, vive às turras, brigando e se desentendendo a todo momento, por qualquer motivo. Os dois estão nos seus limites e prestes a se separarem quando algo surpreendente acontece. Lá no céu os Deuses decidem que eles merecem uma atenção especial para ajudar a refazer esse amor tão desgastado pelo tempo. Dirigida por Wesley Leal.
                         </p>
-                        <button> SAIBA MAIS </button>
+                        <Link to="/eventos" className="Blink"> <button> SAIBA MAIS </button> </Link>
                     </div>
                 </div>
                 <div className="box"> 
@@ -30,7 +31,7 @@ export default function BuscaDirecionada () {
                         <p> <b> Sinopse: </b> 
                             Nesta comédia, o casal, Osvaldo e Quitéria, vive às turras, brigando e se desentendendo a todo momento, por qualquer motivo. Os dois estão nos seus limites e prestes a se separarem quando algo surpreendente acontece. Lá no céu os Deuses decidem que eles merecem uma atenção especial para ajudar a refazer esse amor tão desgastado pelo tempo. Dirigida por Wesley Leal.
                         </p>
-                        <button> SAIBA MAIS </button>
+                        <Link to="/eventos" className="Blink"> <button> SAIBA MAIS </button> </Link>
                     </div>
                 </div>
             </div>

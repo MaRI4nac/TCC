@@ -1,5 +1,6 @@
 import { Botao } from "../../../../components/botoes/styled"
 import { CriarConta } from "./styled"
+import { Link } from "react-router-dom"
 
 export default function NWSCriarConta () {
     return (
@@ -17,7 +18,7 @@ export default function NWSCriarConta () {
                     <input type="date" name="" id=""/>
                 </div>
                 <div class="cadast-bt">
-                    <Botao> Criar conta </Botao>
+                   <Link to="/logar" className="Blink"> <Botao> Criar conta </Botao> </Link>
                 </div>
             </div>
         </div>

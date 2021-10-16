@@ -1,5 +1,6 @@
 import Cabecalho from '../../../components/cabecalho'
 import { Container } from './styled'
+import { Link } from 'react-router-dom'
 
 export default function Principal() {
     return (
@@ -15,17 +16,17 @@ export default function Principal() {
                     <div className="box"> 
                         <img src="/assets/images/pecasEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
-                        <button> peças </button>
+                        <Link to="/buscadirecionada" className="Blink"> <button> peças </button> </Link>
                     </div>
                     <div className="box"> 
                         <img src="/assets/images/showsEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
-                        <button> shows </button>
+                        <Link to="/buscadirecionada" className="Blink" > <button> shows </button> </Link>
                     </div>
                     <div className="box"> 
                         <img src="/assets/images/museusEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
-                        <button> museus </button>
+                        <Link to="/buscadirecionada" className="Blink" > <button> museus </button> </Link>
                     </div>
                 </div>
                 <div className="principal"> 
@@ -38,7 +39,7 @@ export default function Principal() {
                             <p> <b> Sinopse: </b> 
                                 Nesta comédia, o casal, Osvaldo e Quitéria, vive às turras, brigando e se desentendendo a todo momento, por qualquer motivo. Os dois estão nos seus limites e prestes a se separarem quando algo surpreendente acontece. Lá no céu os Deuses decidem que eles merecem uma atenção especial para ajudar a refazer esse amor tão desgastado pelo tempo. Dirigida por Wesley Leal.
                             </p>
-                            <button> SAIBA MAIS </button>
+                            <Link to="/eventos" className="Blink" > <button> SAIBA MAIS </button> </Link>
                         </div>
                     </div>
                     <div className="box-principal"> 
@@ -48,7 +49,7 @@ export default function Principal() {
                             <p> <b> Sinopse: </b> 
                                 Nesta comédia, o casal, Osvaldo e Quitéria, vive às turras, brigando e se desentendendo a todo momento, por qualquer motivo. Os dois estão nos seus limites e prestes a se separarem quando algo surpreendente acontece. Lá no céu os Deuses decidem que eles merecem uma atenção especial para ajudar a refazer esse amor tão desgastado pelo tempo. Dirigida por Wesley Leal.
                             </p>
-                            <button> SAIBA MAIS </button>
+                            <Link to="/eventos" className="Blink" > <button> SAIBA MAIS </button> </Link>
                         </div>
                         <img src="/assets/images/principal-box.png" alt="" />
                     </div>

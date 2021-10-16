@@ -40,9 +40,6 @@ const Log = styled.div `
     margin-bottom: 1em;
 }
 
-.log-digit {
-}
-
 .log-inputs {
     display: flex;
     flex-direction: column;
@@ -77,6 +74,11 @@ input:focus {
     font-size: 0.8em;
 }
 
+.Glink {
+    color: #ADD8E6;
+    text-decoration: none;
+}
+
 .log-botoes {
     display: flex;
     flex-direction: column;
@@ -91,6 +93,11 @@ input:focus {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.Wlink {
+    text-decoration: none;
+    color: black;
 }
 
 `

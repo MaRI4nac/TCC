@@ -70,6 +70,11 @@ const Container = styled.div`
         padding-left: 1em;
     }
 
+    .Blink {
+        text-decoration: none;
+        color: black;
+    }
+
 `
 
 export {Container }

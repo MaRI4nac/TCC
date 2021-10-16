@@ -153,6 +153,11 @@ const Container = styled.div`
         height: 7.5vh;
         width: auto;
     }
+
+    .Blink {
+        text-decoration: none;
+        color: black;
+    }
 `
 
 export { Container }

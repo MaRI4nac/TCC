@@ -1,4 +1,5 @@
 import { Container, Button } from './styled.js'
+import { Link } from 'react-router-dom'
 
 export default function NewPassoword () {
     return (
@@ -13,7 +14,7 @@ export default function NewPassoword () {
                     <input type = "checkbox"/>
                     <label> Mantenha-me conectado nos dispositivos logados </label> 
                 </div> 
-                 <Button> Alterar Senha </Button> 
+                 <Link to="/logar"> <Button> Alterar Senha </Button> </Link>
             </div> 
         </Container>
 

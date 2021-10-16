@@ -1,5 +1,6 @@
 import { ADMLog } from "./styled"
 import { Botao } from "../../../components/botoes/styled"
+import { Link } from "react-router-dom"
 
 export default function ADMLogin () {
     return (
@@ -13,7 +14,7 @@ export default function ADMLogin () {
                 </div>
             </div>
                 <div class="log-bot-bot">
-                    <Botao class="log-criar-conta"> Entrar </Botao>
+                    <Link to="/admprincipal" className="Blink"> <Botao class="log-criar-conta"> Entrar </Botao> </Link>
                 </div>
         </div>
     </ADMLog>

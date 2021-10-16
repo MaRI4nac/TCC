@@ -1,6 +1,7 @@
 
 import { Botao } from '../../../../components/botoes/styled';
 import {Container } from './styled';
+import { Link } from 'react-router-dom';
 
 export default function ForgotPassword () {
     return (
@@ -16,7 +17,7 @@ export default function ForgotPassword () {
                 </div>
 
                 <div className = "Button">
-                    <Botao>  Criar Conta </Botao>
+                <Link to="/novasenha" className="Blink"> <Botao>  Gerar Link </Botao> </Link>
                 </div> 
             </div>
         </Container>

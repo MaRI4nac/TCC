@@ -62,6 +62,11 @@ input::placeholder {
     justify-content: center;
 }
 
+.Blink {
+    text-decoration: none;
+    color: black;
+}
+
 `
 
 export { ADMLog }

@@ -1,6 +1,7 @@
 import { EventTypeStyle } from './styled'
 import Cabecalho from '../../../components/cabecalho'
 import { Botao } from '../../../components/botoes/styled'
+import { Link } from 'react-router-dom'
 
 
 
@@ -52,7 +53,7 @@ export default function TelaEvento() {
                 </div>
                 <div class="third-band">
                     <div class="button">
-                        <Botao> Adquirir Ingresso </Botao>
+                        <Link to="/ingressos"> <Botao> Adquirir Ingresso </Botao> </Link>
                     </div>
                 </div>
             </div>

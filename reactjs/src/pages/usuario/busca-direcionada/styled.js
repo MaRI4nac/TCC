@@ -85,6 +85,11 @@ const Container = styled.div`
     .box-text div {
         text-align: center;
     }
+
+    .Blink {
+        text-decoration: none;
+        color: black;
+    }
 `
 
 export { Container }
