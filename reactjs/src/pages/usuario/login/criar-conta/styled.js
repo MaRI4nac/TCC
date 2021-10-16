@@ -5,7 +5,9 @@ const CriarConta = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
-    background: rgba(47, 79, 79, 0.8);
+    background-image: url('https://i.pinimg.com/564x/fe/71/77/fe7177975e95d743d58ce9752a5e7dd7.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
     height: 100vh;
     font-family: Roboto;
     justify-content: center;
@@ -17,7 +19,9 @@ const CriarConta = styled.div`
 }
 
 .tela-cadastrese {
-    border: 0.25em solid #ADD8E6;
+    background: rgba(47,79,79,0.7);
+    border-radius: 20% 0;
+    box-shadow: 1px 2px 5px rgba(47,79,79,0.7), 2px 4px 25px rgba(47,79,79,0.7);
     padding: 2em 7em;
 }
 
@@ -25,7 +29,7 @@ const CriarConta = styled.div`
     font-size: 2em;
     text-transform: uppercase;
     font-weight: 900;
-    color: #ADD8E6;
+    color: white;
     margin-bottom: 1em;
 }
 
@@ -38,30 +42,31 @@ const CriarConta = styled.div`
 
 input {
     border: none;
-    border-radius: 0.5em;
-    background: rgba(112, 128, 144, 0.4);
+    background: transparent;
+    outline: none; 
+    border-bottom: 4px solid #2F4F4F; 
     width: 40em;
     padding: 1em 1em;
     margin-bottom: 1em;
     font-family: Roboto;
+    color: white;
 }
 
 input::placeholder {
-    color: #ADD8E6;
-    font-weight: 700;
+    color: white;
+    opacity: 0.5; 
+    font-weight: 450;
+    font-size: 1.1em;
+    padding-left: 1em;
 }
 
-input:focus {
-    color: #ADD8E6;
-    font-weight: 500;
-}
 
 input[type="date"] {
     text-transform: uppercase;
-    color: #ADD8E6;
+    color: white;
+    
     font-weight: 700;
 }
-
 
 .cadast-bt {
     margin-top: 1em;
