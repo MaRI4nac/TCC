@@ -67,29 +67,16 @@ const PrincipalPart = styled.div`
     margin-top: 3em;
 }
 
-.mini-box, .mini-box1 {
-
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
+.Elink {
+    text-decoration: none;
+    color: black;
 }
 
-.mini-box1 {
-    margin-left: 3em;
-    margin-right: 2em;
-}
-
-.mini-image {
-    margin-bottom: 1em;
-}
-
-.mini-title {
-    font-size: 1.5em;
-    font-weight: 700;
+.Wlink {
+    text-decoration: none;
+    color: white;
 }
 
 
 `
-
-export {  PrincipalPart  }
+export {  PrincipalPart }

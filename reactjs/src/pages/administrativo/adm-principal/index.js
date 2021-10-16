@@ -1,5 +1,7 @@
 import { Botao } from '../../../components/botoes/styled'
 import { PrincipalPart } from './styled'
+import { Link } from 'react-router-dom'
+import ADMiniBox from './mini-boxes'
 
 export default function ADMPrincipal () {
     return (
@@ -13,34 +15,16 @@ export default function ADMPrincipal () {
 
                 <div class="buttons">
                     <Botao class="but-bit"> Ver em detalhes </Botao>
-                    <Botao class="but-bit"> Ver mais relatórios </Botao>
+                    <Botao class="but-bit"> <Link to="/relatorios" className="Elink"> Ver mais relatórios </Link> </Botao>
                 </div>
             </div>
         </div>
         <div class="second-band">
             <div class="title"> Gerenciamento Geral </div>
             <div class="events-users-tickets">
-                <div class="mini-box1">
-                    <div class="mini-image">
-                        <img src="/assets/images/events.svg" alt="" width="150px" height="150px" />
-                    </div>
-                    <div class="mini-title"> Eventos </div>
-                    <div class="mini-description"> 30 eventos registrados. </div>
-                </div>
-                <div class="mini-box">
-                    <div class="mini-image">
-                        <img src="/assets/images/tickets.svg" alt="" width="150px" height="150px" />
-                    </div>
-                    <div class="mini-title"> Usuários </div>
-                    <div class="mini-description"> 30 usuários registrados. </div>
-                </div>
-                <div class="mini-box">
-                    <div class="mini-image">
-                        <img src="/assets/images/users.svg" alt=""width="150px" height="150px" />
-                    </div>
-                    <div class="mini-title"> Ingressos </div>
-                    <div class="mini-description">20 ingressos aguardando confirmação <br /> 10 ingressos aprovados</div>
-                </div>
+                <Link to="/crud" className="Wlink"> <ADMiniBox image="/assets/images/events.svg" title="Eventos" descript="30 eventos registrados"/> </Link>
+                <Link to ="usuario" className="Wlink"> <ADMiniBox image="/assets/images/tickets.svg" title="Usuários" descript="30 usuários registrados" /> </Link>
+                <Link to="/compra" className="Wlink"> <ADMiniBox image="/assets/images/users.svg" title= "Ingressos" descript="20 ingressos aguardando confirmação" /> </Link>
             </div>
         </div>
     </PrincipalPart>
