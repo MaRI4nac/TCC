@@ -172,9 +172,8 @@ const Container = styled.div`
         background-size: 100% auto;
         background-attachment: fixed; 
         background-repeat: no-repeat; 
-        height: 30vh;
+        height: 35vh;
         width: 100%;
-
     }
 
 `

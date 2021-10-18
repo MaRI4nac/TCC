@@ -30,7 +30,9 @@ export default function Principal() {
                     </div>
                 </div>
                 <div className="principal"> 
-                    <h1> EVENTOS EM DESTAQUE </h1>
+                    <div className = "Eventos"> 
+                        <h1> EVENTOS EM DESTAQUE </h1>
+                    </div>
                     <div className="box-principal"> 
                         <img src="/assets/images/principal-box.png" alt="" />
                         <div className="box-text"> 
