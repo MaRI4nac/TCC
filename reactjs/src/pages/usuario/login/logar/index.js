@@ -5,7 +5,8 @@ import { Link } from "react-router-dom"
 export default function NWSLogar () {
     return (
         <Log>
-        <div class="tela-login">
+           <div className="Logo"> 
+             <div class="tela-login">
                 <div class="log-titulo"> Faça seu Login! </div>
                 <div class="log-digit">
                     <div class="log-inputs">
@@ -21,7 +22,8 @@ export default function NWSLogar () {
                         <Link to="/inicial" className="Wlink"> <Botao> Entrar </Botao> </Link>
                     </div>  
                 </div>
-        </div>
+             </div>
+         </div>
     </Log>
     )
 }

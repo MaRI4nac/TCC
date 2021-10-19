@@ -25,8 +25,7 @@ const Container = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 2;
-
+        
         margin: 12rem 0px;
     }
 
@@ -172,7 +171,7 @@ const Container = styled.div`
         background-size: 100% auto;
         background-attachment: fixed; 
         background-repeat: no-repeat; 
-        height: 35vh;
+        height: 28vh;
         width: 100%;
     }
 

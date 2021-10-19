@@ -9,7 +9,7 @@ const Log = styled.div `
     background-size: 100%;
     height: 100vh;
 
-    padding: 13em 5em;
+    padding: 12em 5em;
     color:#ADD8E6;
 
 .Logo {
@@ -26,7 +26,7 @@ const Log = styled.div `
     background: rgba(47,79,79,0.7);
     border-radius: 20% 0;
     box-shadow: 1px 2px 5px rgba(47,79,79,0.7), 2px 4px 25px rgba(47,79,79,0.7);
-    padding: 2em 7em;
+    padding: 6em 7em;
 }
 
 .acess-buttons {

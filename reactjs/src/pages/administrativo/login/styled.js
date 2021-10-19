@@ -25,7 +25,7 @@ const ADMLog = styled.div`
     background: rgba(47,79,79,0.7);
     border-radius: 20% 0;
     box-shadow: 1px 2px 5px rgba(47,79,79,0.7), 2px 4px 25px rgba(47,79,79,0.7);
-    padding: 2em 7em;
+    padding: 5em 7em;
 }
 
 .log-titulo {
