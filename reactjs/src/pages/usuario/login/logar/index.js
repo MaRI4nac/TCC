@@ -3,6 +3,8 @@ import { Botao } from "../../../../components/botoes/styled"
 import { Link, useHistory } from "react-router-dom"
 import Api from '../../../../service/api'
 import { useState } from "react";
+import Cookies from 'js-cookie'
+
 const api = new Api();
 
 export default function NWSLogar () {
@@ -10,13 +12,18 @@ export default function NWSLogar () {
     const [senha, setSenha] = useState();
     const navigation = useHistory();
 
+    // if(Cookies.get('usuario-logado') != null) {
+    //     navigation.push('/inicial')
+    // }
+
     const logarUsuario = async() => {
         let r = await api.usuarioLogin(username, senha);
         console.log(r)
         if(!validarResposta(r))
             return;
 
-        navigation.push('/')
+        Cookies.set('usuario-logado', JSON.stringify(r));
+        navigation.push('/inicial')
     }
 
     const validarResposta = (resp) => {
