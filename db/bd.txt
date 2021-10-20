@@ -1,8 +1,7 @@
 CREATE TABLE infoc_nws_tb_categoria (
   id_categoria            int     primary key    auto_increment,
   ds_tema                varchar(255)
-  
- );
+ )ENGINE=INNODB;
  
  CREATE TABLE infoc_nws_tb_usuario (
    id_usuario            int        primary key    auto_increment,
@@ -15,7 +14,7 @@ CREATE TABLE infoc_nws_tb_categoria (
    ds_codigo            int,
    bt_adm                bool,
    img_perfil            varchar(255)
- );
+ )ENGINE=INNODB;
  
   CREATE TABLE infoc_nws_tb_evento (
    id_evento            int        primary key    auto_increment,
@@ -32,9 +31,8 @@ CREATE TABLE infoc_nws_tb_categoria (
    img_capa                varchar(255),
    img_fundo            varchar(255),
    img_sec                varchar(255),
-   FOREIGN KEY (id_categoria) REFERENCES infoc_nws_tb_categoria (id_categoria)
-    
- );
+   FOREIGN KEY (id_categoria) REFERENCES infoc_nws_tb_categoria (id_categoria) 
+ )ENGINE=INNODB;
  
  
  CREATE TABLE infoc_nws_tb_calendario (
@@ -43,7 +41,7 @@ CREATE TABLE infoc_nws_tb_categoria (
    dt_evento            datetime,
    FOREIGN KEY (id_evento) REFERENCES infoc_nws_tb_evento (id_evento)
    
- );
+ )ENGINE=INNODB;
  
  
  CREATE TABLE infoc_nws_tb_venda (
@@ -53,7 +51,7 @@ CREATE TABLE infoc_nws_tb_categoria (
    tp_pagamento            varchar(255),
    FOREIGN KEY (id_usuario) REFERENCES infoc_nws_tb_usuario (id_usuario)
    
- );
+ )ENGINE=INNODB;
  
  
  CREATE TABLE infoc_nws_tb_cartao (
@@ -65,7 +63,7 @@ CREATE TABLE infoc_nws_tb_categoria (
    dt_vencimento        date,
    ds_cpf                varchar(255),
    FOREIGN KEY (id_venda) REFERENCES infoc_nws_tb_venda (id_venda)
-);
+)ENGINE=INNODB;
    
  CREATE TABLE infoc_nws_tb_pix (
    id_pix                int        primary key auto_increment,
@@ -73,7 +71,7 @@ CREATE TABLE infoc_nws_tb_categoria (
    nr_pix                int,
    FOREIGN KEY (id_venda) REFERENCES infoc_nws_tb_venda (id_venda)
    
- );
+ )ENGINE=INNODB;
  
  
  CREATE TABLE infoc_nws_tb_venda_item (
@@ -84,4 +82,4 @@ CREATE TABLE infoc_nws_tb_categoria (
    FOREIGN KEY (id_venda) REFERENCES infoc_nws_tb_venda (id_venda),
    FOREIGN KEY (id_evento) REFERENCES infoc_nws_tb_evento (id_evento)
    
-);
+)ENGINE=INNODB;
