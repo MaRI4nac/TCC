@@ -1,8 +1,31 @@
 import { Log } from "./styled"
 import { Botao } from "../../../../components/botoes/styled"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
+import Api from '../../../../service/api'
+import { useState } from "react";
+const api = new Api();
 
 export default function NWSLogar () {
+    const [username, setUsername] = useState();
+    const [senha, setSenha] = useState();
+    const navigation = useHistory();
+
+    const logarUsuario = async() => {
+        let r = await api.usuarioLogin(username, senha);
+        console.log(r)
+        if(!validarResposta(r))
+            return;
+
+        navigation.push('/')
+    }
+
+    const validarResposta = (resp) => {
+        if (!resp.erro)
+            return true
+        alert(resp.erro)
+        return false
+    }
+
     return (
         <Log>
            <div className="Logo"> 
@@ -10,8 +33,8 @@ export default function NWSLogar () {
                 <div class="log-titulo"> Faça seu Login! </div>
                 <div class="log-digit">
                     <div class="log-inputs">
-                        <input type="text" placeholder="Username" />
-                        <input type="text" placeholder="Senha" />
+                        <input type="text" placeholder="Username" onChange={e => setUsername(e.target.value)}/>
+                        <input type="text" placeholder="Senha" onChange={e => setSenha(e.target.value)}/>
                     </div>
                     <Link to="/esqueceusenha" className="Glink" > <div class="log-esqueci-senha"> Esqueci minha senha </div> </Link>
                 </div>
@@ -19,7 +42,7 @@ export default function NWSLogar () {
                     <div class="log-nao-tem-conta">Não tem uma conta? Crie aqui!</div>
                     <div class="log-bot-bot">
                         <Link to="/criarconta" className="Wlink"> <Botao> Criar Conta </Botao> </Link>
-                        <Link to="/inicial" className="Wlink"> <Botao> Entrar </Botao> </Link>
+                        <div className="Wlink" onClick={() => logarUsuario()}> <Botao> Entrar </Botao> </div>
                     </div>  
                 </div>
              </div>
