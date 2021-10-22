@@ -15,4 +15,14 @@ export default class Api {
         return r.data;
     }
 
+    async userForgotPassword(email) {
+        let r = await api.post(`/user/forgotpassword`, {email})
+        return r.data
+    }
+
+    async userChangePassword(codigo, email, senha) {
+        let r = await api.post(`/user/changepassword`, {codigo, email, senha})
+        return r.data;
+    }
+
 }
