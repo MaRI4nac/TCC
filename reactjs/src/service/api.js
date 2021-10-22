@@ -5,13 +5,14 @@ const api = axios.create({
 })
 
 export default class Api {  
-    async usuarioLogin(username, senha) {
+    async userLogin(username, senha) {
         let r = await api.get(`/user/login/?username=${username}&senha=${senha}`)
         return r.data;
     }
 
-    async usuarioCreate(nmUsu, cpf, email, username, senha, nascimento) {
+    async userCreate(nmUsu, cpf, email, username, senha, nascimento) {
         let r = await api.post(`/user/create`, {nmUsu, cpf, email, username, senha, nascimento})
         return r.data;
     }
+
 }

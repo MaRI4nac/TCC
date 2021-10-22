@@ -7,6 +7,7 @@ export default function NewPassoword () {
             <div className = "Box-password"> 
                 <div className = "Title"> Nova Senha </div>
                 <div className = "Inputs"> 
+                    <input type="password" placeholder="Código"/>
                     <input type="password" placeholder="Senha"/>
                     <input type="password" placeholder="Senha (confirmação)"/>
                 </div>

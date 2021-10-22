@@ -25,7 +25,7 @@ export default function NWSCriarConta () {
             alert();
             return;
         }
-        let r = await api.usuarioCreate(nmUsu, cpf, email, username, senha, nascimento);
+        let r = await api.userCreate(nmUsu, cpf, email, username, senha, nascimento);
         if (!validarResposta(r)) 
             return;
         
@@ -38,10 +38,6 @@ export default function NWSCriarConta () {
         alert(resp.erro)
         return false
     }
-
-    useEffect(() => {
-        console.log(nascimento)
-    }, [nascimento])
 
     return (
         <CriarConta>

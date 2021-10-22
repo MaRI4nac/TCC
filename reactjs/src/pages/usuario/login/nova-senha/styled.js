@@ -50,6 +50,8 @@ const Container = styled.div`
         width: 40em;
         padding: 1em 1em;
         margin: 0.3em;
+        outline: none;
+        border: 1px solid transparent;
     }
     
      input::placeholder {

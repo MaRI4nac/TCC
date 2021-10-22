@@ -17,7 +17,7 @@ export default function NWSLogar () {
     // }
 
     const logarUsuario = async() => {
-        let r = await api.usuarioLogin(username, senha);
+        let r = await api.userLogin(username, senha);
         console.log(r)
         if(!validarResposta(r))
             return;
