@@ -8,7 +8,7 @@ import Cookies from 'js-cookie'
 const api = new Api();
 
 export default function NWSLogar () {
-    const [username, setUsername] = useState();
+    const [username, setMail] = useState();
     const [senha, setSenha] = useState();
     const navigation = useHistory();
 
@@ -40,7 +40,7 @@ export default function NWSLogar () {
                 <div class="log-titulo"> Faça seu Login! </div>
                 <div class="log-digit">
                     <div class="log-inputs">
-                        <input type="text" placeholder="Username" onChange={e => setUsername(e.target.value)}/>
+                        <input type="text" placeholder="Email" onChange={e => setMail(e.target.value)}/>
                         <input type="text" placeholder="Senha" onChange={e => setSenha(e.target.value)}/>
                     </div>
                     <Link to="/esqueceusenha" className="Glink" > <div class="log-esqueci-senha"> Esqueci minha senha </div> </Link>
