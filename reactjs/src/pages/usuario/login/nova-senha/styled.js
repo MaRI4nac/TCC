@@ -30,16 +30,25 @@ const Container = styled.div`
         font-size: 2em; 
 
         text-transform: uppercase;
-        padding: 65px 0px 50px 0px;
+        padding: 65px 0px 20px 0px;
 
         text-align: center;   
         font-weight: bold;
     }
 
+
     .Inputs {
         display: flex; 
         flex-direction: column; 
         align-items: center; 
+
+        div {
+            color: #ADD8E6;
+            
+            :nth-child(2) {
+                margin-bottom: 15px;
+            }
+        }
     }
 
 
@@ -50,6 +59,8 @@ const Container = styled.div`
         width: 40em;
         padding: 1em 1em;
         margin: 0.3em;
+        outline: none;
+        border: 1px solid transparent;
     }
     
      input::placeholder {

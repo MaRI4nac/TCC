@@ -1,6 +1,6 @@
 import { BrowserRouter,Switch, Route } from 'react-router-dom';
 import ConfirmacaoCompra from './pages/administrativo/confirmacao-compra/index.js'
-import NovaSenha from './pages/usuario/nova-senha/index.js'
+import NovaSenha from './pages/usuario/login/nova-senha/index.js'
 import EsqueceuSenha from './pages/usuario/login/esqueceu-senha/index.js'
 import SiteCompleto from "./index-principal.js";
 import ADMLogin from "./pages/administrativo/login/index.js";
