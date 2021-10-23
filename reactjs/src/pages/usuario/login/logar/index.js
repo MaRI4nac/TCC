@@ -13,7 +13,7 @@ export default function NWSLogar () {
     const navigation = useHistory();
 
     // if(Cookies.get('usuario-logado') != null) {
-    //     navigation.push('/inicial')
+    //      navigation.push('/inicial')
     // }
 
     const logarUsuario = async() => {

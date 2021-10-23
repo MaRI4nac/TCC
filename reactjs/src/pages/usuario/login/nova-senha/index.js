@@ -1,5 +1,4 @@
 import { Container, Button } from './styled.js'
-import { Link } from 'react-router-dom'
 
 import Api from '../../../../service/api.js'
 import { useState } from 'react';
@@ -16,6 +15,9 @@ export default function NewPassoword (props) {
     const [senha2, setSenha2] = useState();
 
     const nav = useHistory();
+
+    if(!props.location.state)
+        nav.push('/esqueceusenha')
 
     const updatePassword = async() => {
         console.log( props.location.state.mail)
