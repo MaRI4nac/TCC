@@ -24,14 +24,14 @@ const FaixaUm = styled.div `
     display: flex;
     align-self: center;
     position: absolute;
-    top: 12vh;
+    top: 15vh;
 
 }
 
 .the-qtd {
     display: flex;
     flex-direction: column;
-    margin-top: 3em;
+    margin-top: 5em;
     margin-bottom: 2vh;
 
     align-items: center;
