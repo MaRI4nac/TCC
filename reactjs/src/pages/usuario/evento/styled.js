@@ -27,7 +27,7 @@ const EventTypeStyle = styled.div`
 
 .principal-image-title {
     position: absolute;
-    top: 9em;
+    top: 23vh;
     left: 15em;
     display: flex;
     flex-direction: row;
