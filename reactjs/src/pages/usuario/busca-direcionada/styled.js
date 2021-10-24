@@ -25,6 +25,7 @@ const Container = styled.div`
         align-items: center;
         justify-content: center;
         margin-bottom: 5%;
+        margin-top: 3%;
     }
 
     .background-sphere img {
