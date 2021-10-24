@@ -53,7 +53,7 @@ export default function TelaEvento() {
                 </div>
                 <div class="third-band">
                     <div class="button">
-                        <Link to="/ingressos"> <Botao> Adquirir Ingresso </Botao> </Link>
+                        <Link to="/ingresso-compra"> <Botao> Adquirir Ingresso </Botao> </Link>
                     </div>
                 </div>
             </div>
