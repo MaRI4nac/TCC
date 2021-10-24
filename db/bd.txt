@@ -42,6 +42,13 @@ CREATE TABLE infoc_nws_tb_categoria (
    FOREIGN KEY (id_evento) REFERENCES infoc_nws_tb_evento (id_evento)
    
  )ENGINE=INNODB;
+
+ CREATE TABLE infoc_nws_tb_calendario_item (
+   id_calendario_item   int       primary key auto_increment,
+   id_calendario        int,
+   hr_evento            time,
+   FOREIGN KEY (id_calendario) REFERENCES infoc_nws_tb_calendario(id_calendario)                   
+ ) ENGINE=INNODB;
  
  
  CREATE TABLE infoc_nws_tb_venda (

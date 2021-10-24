@@ -12,6 +12,7 @@ const Container = styled.div`
     background-size: 100%;
     background-repeat: no-repeat;
 
+
     .Box-forgotPass {
         display: flex; 
         flex-direction: column; 
