@@ -16,7 +16,9 @@ export default function Principal() {
                     <div className="box"> 
                         <img src="/assets/images/pecasEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
-                        <Link to="/buscadirecionada" className="Blink"> <button> peças </button> </Link>
+                        <Link to="/buscadirecionada?categoria=3" className="Blink"> 
+                            <button> peças </button> 
+                        </Link>
                     </div>
                     <div className="box"> 
                         <img src="/assets/images/showsEvento.svg" alt=""/> 

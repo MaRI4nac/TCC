@@ -81,6 +81,55 @@ const EventTypeStyle = styled.div`
     display: flex;
     justify-content: center;
 }
+
+    @media (max-width:2560px) {
+
+        .principal-image-title {
+            position: absolute;
+            top: 37vh;
+            left: 25vw;
+            display: flex;
+            flex-direction: row;
+        }
+ 
+    }
+
+    @media (max-width:3840px) {
+
+        .principal-image-title {
+            position: absolute;
+            top: 41vh;
+            left: 25vw;
+            display: flex;
+            flex-direction: row;
+        }
+ 
+    }
+
+    @media (max-width:1920px) {
+
+        .principal-image-title {
+            position: absolute;
+            top: 32vh;
+            left: 25vw;
+            display: flex;
+            flex-direction: row;
+        }
+ 
+    }
+
+    @media (max-width:1280px) {
+
+        .principal-image-title {
+            position: absolute;
+            top: 28vh;
+            left: 25vw;
+            display: flex;
+            flex-direction: row;
+        }
+ 
+    }
+
 `
 
 export { EventTypeStyle }

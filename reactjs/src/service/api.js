@@ -25,4 +25,9 @@ export default class Api {
         return r.data;
     }
 
+    async BuscaDirecionada(id) {
+        let r = await api.get(`/buscaDirecionada?id=${id}`)
+        return r.data;
+    }
+
 }
