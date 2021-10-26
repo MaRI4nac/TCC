@@ -1,6 +1,5 @@
 import { Container } from './styled'
 import Cabecalho from '../../../components/cabecalho'
-import { useHistory } from 'react-router-dom'
 import { useEffect } from 'react';
 
 import Api from '../../../service/api'
