@@ -25,6 +25,10 @@ export default class Api {
         return r.data;
     }
 
+    async crudGetAllEvents() {
+        
+    }
+
     async BuscaDirecionada(id) {
         let r = await api.get(`/buscaDirecionada?id=${id}`)
         return r.data;
