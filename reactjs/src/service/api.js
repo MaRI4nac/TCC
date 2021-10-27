@@ -25,8 +25,21 @@ export default class Api {
         return r.data;
     }
 
-    async crudGetAllEvents() {
-        
+    async crudGetEvents(nome, categoria) {
+        let r = await api.get(`/crud/events/?nome=${nome}&&categoria=${categoria}`)
+        return r.data;
+    }
+
+    async crudCreateEvents(nmEvento, categoria, duracao, classificacao, valorIngresso, local, dtMin, dtMax, elenco, descEvento, imgCapa, imgFundo, imgSec) {
+        let r = await api.post(`/crud/events`, )
+    }
+
+    async crudUpdateEvents() {
+
+    }
+
+    async crudDeleteEvents() {
+
     }
 
     async BuscaDirecionada(id) {
