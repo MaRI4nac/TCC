@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 export default function TelaEvento() {
     return (
         <EventTypeStyle>
+            <div className="try-container">
             <div class="ct-color">
                 <div class="first-band">
                     <Cabecalho />
@@ -56,6 +57,7 @@ export default function TelaEvento() {
                         <Link to="/ingresso-compra"> <Botao> Adquirir Ingresso </Botao> </Link>
                     </div>
                 </div>
+            </div>
             </div>
         </EventTypeStyle>
     )

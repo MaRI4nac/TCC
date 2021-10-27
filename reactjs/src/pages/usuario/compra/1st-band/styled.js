@@ -5,7 +5,6 @@ const FaixaUm = styled.div `
 
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 
 
 .the-event {
@@ -15,7 +14,7 @@ const FaixaUm = styled.div `
     background-image: url("/assets/images/wallpaper.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    height: 50vh;
+    height: 30em;
 
     margin-bottom: 2vh;
 }
@@ -24,14 +23,14 @@ const FaixaUm = styled.div `
     display: flex;
     align-self: center;
     position: absolute;
-    top: 15vh;
+    top: 15em;
 
 }
 
 .the-qtd {
     display: flex;
     flex-direction: column;
-    margin-top: 5em;
+    margin-top: 6em;
     margin-bottom: 2vh;
 
     align-items: center;

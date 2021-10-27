@@ -9,6 +9,12 @@ const EventTypeStyle = styled.div`
     min-height: 100vh;
     width: 100%;
 
+    .try-container {
+        min-width: 100%;
+        min-height: 100%;
+        
+    }
+
 
 .ct-color {
     background-color: rgba(18, 61, 61);
@@ -18,8 +24,10 @@ const EventTypeStyle = styled.div`
 
 .first-band {
     background-image: url("/assets/images/eventTypeWallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     background-opacity: 10%;
-    height: 50vh;
+    height: 21em;
     position: relative;
     display: flex;
     display: column;
@@ -27,8 +35,8 @@ const EventTypeStyle = styled.div`
 
 .principal-image-title {
     position: absolute;
-    top: 23vh;
-    left: 20vw;
+    top: 10em;
+    left: 20em;
     display: flex;
     flex-direction: row;
 
@@ -50,7 +58,7 @@ const EventTypeStyle = styled.div`
 
 
 .second-band {
-    margin-top: 20vh;
+    margin-top: 6em;
     
     padding: 3em 3em;
 }
@@ -81,54 +89,6 @@ const EventTypeStyle = styled.div`
     display: flex;
     justify-content: center;
 }
-
-    @media (max-width:2560px) {
-
-        .principal-image-title {
-            position: absolute;
-            top: 37vh;
-            left: 25vw;
-            display: flex;
-            flex-direction: row;
-        }
- 
-    }
-
-    @media (max-width:3840px) {
-
-        .principal-image-title {
-            position: absolute;
-            top: 41vh;
-            left: 25vw;
-            display: flex;
-            flex-direction: row;
-        }
- 
-    }
-
-    @media (max-width:1920px) {
-
-        .principal-image-title {
-            position: absolute;
-            top: 32vh;
-            left: 25vw;
-            display: flex;
-            flex-direction: row;
-        }
- 
-    }
-
-    @media (max-width:1280px) {
-
-        .principal-image-title {
-            position: absolute;
-            top: 28vh;
-            left: 25vw;
-            display: flex;
-            flex-direction: row;
-        }
- 
-    }
 
 `
 
