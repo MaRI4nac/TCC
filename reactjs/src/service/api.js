@@ -47,4 +47,21 @@ export default class Api {
         return r.data;
     }
 
+    async OrderManagement(order) { 
+        let m = await api.get(`/user/management?orderacao=${order}`)
+        return r.data; 
+    }
+
+    async getConfirmTicket() { 
+        let m = await api.get(`/confirmTicket`)
+        return r.data; 
+    }
+
+    async putConfirmTicket(id) { 
+        let m = await api.put(`/confirmTicket/${id}`)
+    }
+
+    async TicketPerson(id) { 
+        let m = await api.get(`/TicketPerson?id=${id}`)
+    }
 }
