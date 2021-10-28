@@ -42,7 +42,7 @@ export default class Api {
 
     }
 
-    async BuscaDirecionada(id) {
+    async directedSearch(id) {
         let r = await api.get(`/buscaDirecionada?id=${id}`)
         return r.data;
     }
@@ -63,5 +63,10 @@ export default class Api {
 
     async TicketPerson(id) { 
         let m = await api.get(`/TicketPerson?id=${id}`)
+    }
+
+    async directSearch (search) {
+        let r = await api.get(`/buscadireta?search=${search}`)
+        return r.data;
     }
 }

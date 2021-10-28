@@ -15,7 +15,7 @@ export default function BuscaDirecionada (props) {
     async function listar() {
         let id = getQuery('categoria');
 
-        const resp = await api.BuscaDirecionada(id);
+        const resp = await api.directedSearch(id);
         console.log(resp);
     }
 
