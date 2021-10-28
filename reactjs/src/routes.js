@@ -18,6 +18,7 @@ import TelaCrud from './pages/administrativo/crud'
 import GestaoUsuario from './pages/administrativo/gestao-usuarios'
 import UserProfile from './pages/usuario/perfil/index.js';
 import AllBuy from './pages/usuario/compra/index.js';
+import AddEvent from './pages/administrativo/adicionar-evento/index.js';
 
 
 export default function Routes() {
@@ -43,6 +44,7 @@ export default function Routes() {
                 <Route path="/usuario" component={GestaoUsuario} />
                 <Route path="/profile" component={UserProfile} />
                 <Route path="/ingresso-compra" component={AllBuy} />
+                <Route path="/addevent" component={AddEvent} />
             </Switch>
         </BrowserRouter>
     )

@@ -15,8 +15,6 @@ const Container = styled.tr`
         text-align: center;
         background: rgba(255, 255, 255, 0.05);
         padding: 1.5rem 0px;
-
-        margin-left: 0.1em;
     }
 
     .flex-row {

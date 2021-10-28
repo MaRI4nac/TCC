@@ -16,17 +16,19 @@ export default function Principal() {
                     <div className="box"> 
                         <img src="/assets/images/pecasEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
-                        <Link to="/buscadirecionada" className="Blink"> <button> peças </button> </Link>
+                        <Link to="/buscadirecionada?categoria=3" className="Blink"> 
+                            <button> peças </button> 
+                        </Link>
                     </div>
                     <div className="box"> 
                         <img src="/assets/images/showsEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
-                        <Link to="/buscadirecionada" className="Blink" > <button> shows </button> </Link>
+                        <Link to="/buscadirecionada?categoria=4" className="Blink" > <button> shows </button> </Link>
                     </div>
                     <div className="box"> 
                         <img src="/assets/images/museusEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
-                        <Link to="/buscadirecionada" className="Blink" > <button> museus </button> </Link>
+                        <Link to="/buscadirecionada?categoria=5" className="Blink" > <button> museus </button> </Link>
                     </div>
                 </div>
                 <div className="principal"> 
