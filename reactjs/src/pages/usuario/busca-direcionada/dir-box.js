@@ -6,6 +6,7 @@ export default function DirBox (props) {
     const [event, setEvent] = useState(props.info);
 
     return (
+        
         <div className="box"> 
             <img src={event.imagemcapa} alt="" width="300px" height="300px" />
                 <div className="box-text"> 
