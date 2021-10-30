@@ -1,14 +1,21 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function DirBox (props) {
+
+    const [event, setEvent] = useState(props.info);
+
     return (
+        
         <div className="box"> 
-            <img src="/assets/images/principal-box.png" alt="" width="300px" height="300px" />
+            <img src={event.imagemcapa} alt="" width="300px" height="300px" />
                 <div className="box-text"> 
-                    <h1> Cada Um Tem o Anjo Que Merece </h1>
-                    <div> Comédia, 80 minutos, 12 anos. </div>
+                    <h1> {event.nomevento} </h1>
+                    <div> {`${event.gênero}, ${event.duracao}, ${event.classificacao} anos.`} </div>
                     <p> <b> Sinopse: </b> 
-                        Nesta comédia, o casal, Osvaldo e Quitéria, vive às turras, brigando e se desentendendo a todo momento, por qualquer motivo. Os dois estão nos seus limites e prestes a se separarem quando algo surpreendente acontece. Lá no céu os Deuses decidem que eles merecem uma atenção especial para ajudar a refazer esse amor tão desgastado pelo tempo. Dirigida por Wesley Leal.
+                        {event.sinopse.length > 590 
+                            ? event.sinopse.substr(0,590) + '...'
+                            : event.sinopse }
                     </p>
                     <Link to="/eventos" className="Blink"> <button> SAIBA MAIS </button> </Link>
                 </div>

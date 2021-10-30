@@ -36,7 +36,7 @@ export default function Principal() {
                         <h1> EVENTOS EM DESTAQUE </h1>
                     </div>
                     <div className="box-principal"> 
-                        <img src="/assets/images/principal-box.png" alt="" />
+                        <img src="/assets/images/principal-box.png" width="400px" height="400px" alt="" />
                         <div className="box-text"> 
                             <h1> Cada Um Tem o Anjo Que Merece </h1>
                             <div> Comédia, 80 minutos, 12 anos. </div>
@@ -55,7 +55,7 @@ export default function Principal() {
                             </p>
                             <Link to="/eventos" className="Blink" > <button> SAIBA MAIS </button> </Link>
                         </div>
-                        <img src="/assets/images/principal-box.png" alt="" />
+                        <img src="/assets/images/principal-box.png" width="400px" height="400px" alt="" />
                     </div>
                     <button className="marginbutton"> MAIS EVENTOS EM DESTAQUE </button> 
                 </div>
