@@ -17,7 +17,11 @@ export default function DirBox (props) {
                             ? event.sinopse.substr(0,590) + '...'
                             : event.sinopse }
                     </p>
-                    <Link to="/eventos" className="Blink"> <button> SAIBA MAIS </button> </Link>
+                    <Link to={{
+                        pathname: '/eventos',
+                        state: props.info}}> 
+                            <button> SAIBA MAIS </button> 
+                    </Link>
                 </div>
         </div>
     )
