@@ -5,7 +5,7 @@ const api = axios.create({
 })
 
 
-export default Api {
+export default class Api {
 
     async userLogin(mail, senha) {
         let r = await api.get(`/login/?mail=${mail}&senha=${senha}`)

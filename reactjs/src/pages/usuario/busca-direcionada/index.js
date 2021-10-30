@@ -2,7 +2,7 @@ import { Container } from './styled'
 import Cabecalho from '../../../components/cabecalho'
 import { useEffect } from 'react';
 
-import Api from '../../../service/api'
+import Api from '../../../service/apiEvent'
 import DirBox from './dir-box';
 const api = new Api();
 
