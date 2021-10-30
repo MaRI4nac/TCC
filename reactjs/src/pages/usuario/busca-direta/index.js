@@ -1,39 +1,51 @@
 import { Container } from './styled'
 import Cabecalho from '../../../components/cabecalho'
+import DirBox from '../busca-direcionada/dir-box'
 import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router'
+import { useEffect, useState } from 'react'
+
+import Api from '../../../service/apiEvent'
+const api = new Api ();
 
 
-export default function BuscaDireta() {
+
+export default function BuscaDireta(props) {
+
+    const[event, setEvent] = useState([]);
+    const navig = useHistory();
+
+    function getQuery(name) {
+        return new URLSearchParams(props.location.search).get(name);
+    }
+
+    let mySearch = getQuery('search');
+
+    async function listar() {
+        let mySearch = getQuery('search');
+
+        const resp = await api.directSearch(mySearch);
+        setEvent(resp);
+        console.log(resp);
+    }
+
+    useEffect(() => {
+        listar();
+    }, [])
+
     return (
         <Container>
             <Cabecalho />
             <div className="secondary-container"> 
                 <div className="search">
-                    <div> Você buscou por...  <b> “Wesley Leal” </b> </div>
+                    <div> Você buscou por...  <b> " {mySearch} " </b> </div>
                     <div> Encontramos isso: </div>
                 </div>
-                <div className="box"> 
-                    <img src="/assets/images/principal-box.png" alt="" width="300px" height="300px" />
-                    <div className="box-text"> 
-                        <h1> Cada Um Tem o Anjo Que Merece </h1>
-                        <div> Comédia, 80 minutos, 12 anos. </div>
-                        <p> <b> Sinopse: </b> 
-                            Nesta comédia, o casal, Osvaldo e Quitéria, vive às turras, brigando e se desentendendo a todo momento, por qualquer motivo. Os dois estão nos seus limites e prestes a se separarem quando algo surpreendente acontece. Lá no céu os Deuses decidem que eles merecem uma atenção especial para ajudar a refazer esse amor tão desgastado pelo tempo. Dirigida por Wesley Leal.
-                        </p>
-                        <Link to="/eventos" className="Blink"> <button> SAIBA MAIS </button> </Link>
-                    </div>
-                </div>
-                <div className="box"> 
-                    <img src="/assets/images/principal-box.png" alt="" width="300px" height="300px" />
-                    <div className="box-text"> 
-                        <h1> Cada Um Tem o Anjo Que Merece </h1>
-                        <div> Comédia, 80 minutos, 12 anos. </div>
-                        <p> <b> Sinopse: </b> 
-                            Nesta comédia, o casal, Osvaldo e Quitéria, vive às turras, brigando e se desentendendo a todo momento, por qualquer motivo. Os dois estão nos seus limites e prestes a se separarem quando algo surpreendente acontece. Lá no céu os Deuses decidem que eles merecem uma atenção especial para ajudar a refazer esse amor tão desgastado pelo tempo. Dirigida por Wesley Leal.
-                        </p>
-                        <Link to="/eventos" className="Blink"> <button> SAIBA MAIS </button> </Link>
-                    </div>
-                </div>
+                {event.map((item) =>
+                    < DirBox info={item} />
+                
+                )}
+        
             </div>
         </Container>
     )

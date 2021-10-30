@@ -1,12 +1,15 @@
 import { Container } from './styled'
 import Cabecalho from '../../../components/cabecalho'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import Api from '../../../service/apiEvent'
 import DirBox from './dir-box';
 const api = new Api();
 
 export default function BuscaDirecionada (props) {
+
+    const[events, setEvents] = useState([])
+
     function getQuery(name) {
         return new URLSearchParams(props.location.search).get(name);
     }
@@ -16,7 +19,7 @@ export default function BuscaDirecionada (props) {
         let id = getQuery('categoria');
 
         const resp = await api.directedSearch(id);
-        console.log(resp);
+        setEvents(resp);
     }
 
 
@@ -33,10 +36,9 @@ export default function BuscaDirecionada (props) {
                     <img src="peças.png" alt="" />
                     <div> PEÇAS </div>
                 </div>
-                <DirBox />
-                <DirBox />
-                <DirBox />
-                <DirBox />
+                { events.map((item) =>
+                    < DirBox info={item} />
+                )}
                 
             </div>
         </Container>
