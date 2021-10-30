@@ -1,7 +1,7 @@
 import { Log } from "./styled"
 import { Botao } from "../../../../components/botoes/styled"
 import { Link, useHistory } from "react-router-dom"
-import Api from '../../../../service/api'
+import Api from '../../../../service/apiUsers'
 import { useState } from "react";
 import Cookies from 'js-cookie'
 

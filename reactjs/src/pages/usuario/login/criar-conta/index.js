@@ -1,7 +1,7 @@
 import { Botao } from "../../../../components/botoes/styled"
 import { CriarConta } from "./styled"
 import { useHistory } from "react-router-dom"
-import Api from "../../../../service/api"
+import Api from '../../../../service/apiUsers'
 import { useEffect, useState } from "react";
 const api = new Api();
 

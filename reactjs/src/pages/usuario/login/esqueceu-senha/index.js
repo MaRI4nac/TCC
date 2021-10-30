@@ -2,7 +2,7 @@
 import { Botao } from '../../../../components/botoes/styled';
 import {Container } from './styled';
 import { Link, useHistory } from 'react-router-dom';
-import Api from '../../../../service/api';
+import Api from '../../../../service/apiUsers';
 import { useState } from 'react';
 import { Validador } from '../../../../components/commum';
 

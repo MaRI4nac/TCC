@@ -1,6 +1,6 @@
 import { Container, Button } from './styled.js'
 
-import Api from '../../../../service/api.js'
+import Api from '../../../../service/apiUsers'
 import { useState } from 'react';
 import { Validador } from '../../../../components/commum/index.js';
 import { useHistory } from 'react-router';

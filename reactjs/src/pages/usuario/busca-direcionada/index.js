@@ -2,7 +2,7 @@ import { Container } from './styled'
 import Cabecalho from '../../../components/cabecalho'
 import { useEffect } from 'react';
 
-import Api from '../../../service/api'
+import Api from '../../../service/apiEvent'
 import DirBox from './dir-box';
 const api = new Api();
 
@@ -15,7 +15,7 @@ export default function BuscaDirecionada (props) {
     async function listar() {
         let id = getQuery('categoria');
 
-        const resp = await api.BuscaDirecionada(id);
+        const resp = await api.directedSearch(id);
         console.log(resp);
     }
 
