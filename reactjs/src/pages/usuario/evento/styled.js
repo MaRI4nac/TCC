@@ -9,12 +9,6 @@ const EventTypeStyle = styled.div`
     min-height: 100vh;
     width: 100%;
 
-    .try-container {
-        min-width: 100%;
-        min-height: 100%;
-        
-    }
-
 
 .ct-color {
     background-color: rgba(18, 61, 61);
@@ -48,7 +42,7 @@ const EventTypeStyle = styled.div`
 }
 
 .p-title {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     font-size: 2em;
     width: 500px;
 
@@ -72,6 +66,7 @@ const EventTypeStyle = styled.div`
 .line-information {
     display: flex;
     flex-direction: row;
+    margin-bottom: 1em;
 }
 
 .icon-information {
