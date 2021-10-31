@@ -2,12 +2,63 @@ import { EventTypeStyle } from './styled'
 import Cabecalho from '../../../components/cabecalho'
 import { Botao } from '../../../components/botoes/styled'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 
 
 export default function TelaEvento(props) {
 
+    function monthFormat(number) {
+        let i = ""
+
+        if ( number === 1 ) 
+            i = "janeiro"
+        else if ( number === 2)
+            i = "fevereiro"
+        else if ( number === 3 ) 
+            i = "março"
+        else if ( number === 4 )
+            i = "abril"
+        else if ( number === 5 )    
+            i = "maio"
+        else if ( number === 6 )    
+            i = "junho"
+        else if ( number === 7 )
+            i = "julho"
+        else if ( number === 8 )
+            i = "agosto"
+        else if ( number === 9 )
+            i = "setembro"
+        else if ( number === 10 )
+            i = "outubro"
+        else if ( number === 11 )
+            i = "novembro"
+        else
+            i = "dezembro"
+
+        return i;
+    }
+
+    function dateFormat (date) {
+        let y = new Date(date);
+
+        let m = y.getMonth();
+        let month = monthFormat(m);
+
+        let b = (( y.getDate() )) + " de " + month + " de " + (( y.getFullYear() ));
+        return b;
+    }
+
+    function hourFormat(hour) {
+        let c = hour.substr(0,2);
+
+        let b = hour.substr(3,3).substr(0,2);
+
+        let d = parseInt(c) * 60 + parseInt(b);
+
+        return d;
+
+    }
 
     const[event, setEvent] = useState(props.location.state)
 
@@ -26,8 +77,8 @@ export default function TelaEvento(props) {
                             <div class="p-title"> {event.nomevento} </div>
                             <div class="p-description">
                                 <ul>
-                                    <li> <b> Categoria: </b> {event.categoria} </li>
-                                    <li> <b> Duração: </b> {event.duracao} </li>
+                                    <li> <b> Categoria: </b> {event.gênero} </li>
+                                    <li> <b> Duração: </b> {`${hourFormat(event.duracao)} minutos`} </li>
                                     <li> <b> Classificação etária: </b> {event.classificacao} </li>
                                     <li> <b> Preço: </b> {`R$ ${event.preco}`} </li>
                                 </ul>
@@ -54,7 +105,7 @@ export default function TelaEvento(props) {
                             <div class="icon-information">
                                 <img src="/assets/images/eventTypeBall.svg"  alt="" width="20px" height="20px" />
                             </div>
-                            <div class="desc-information"> <b> Data: </b>  {`de ${event.dataminima} até ${event.datamaxima}`} </div>
+                            <div class="desc-information"> <b> Data: </b>  {`de ${dateFormat(event.dataminima)} até ${dateFormat(event.datamaxima)}`} </div>
                         </div>
                     </div>
                 </div>
