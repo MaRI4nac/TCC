@@ -4,8 +4,6 @@ import { Botao } from '../../../components/botoes/styled'
 import { Link } from 'react-router-dom'
 import React, { useState } from 'react'
 
-
-
 export default function TelaEvento(props) {
 
     function monthFormat(number) {
