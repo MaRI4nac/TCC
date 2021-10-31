@@ -5,7 +5,10 @@ import { Link } from 'react-router-dom'
 
 
 
-export default function TelaEvento() {
+export default function TelaEvento(props) {
+
+    console.log(props)
+
     return (
         <EventTypeStyle>
             <div className="try-container">
