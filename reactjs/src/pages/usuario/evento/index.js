@@ -109,7 +109,9 @@ export default function TelaEvento(props) {
                 </div>
                 <div class="third-band">
                     <div class="button">
-                        <Link to="/ingresso-compra"> <Botao> Adquirir Ingresso </Botao> </Link>
+                        <Link to={{
+                            pathname: "/ingresso-compra",
+                            state: event }}> <Botao> Adquirir Ingresso </Botao> </Link>
                     </div>
                 </div>
             </div>

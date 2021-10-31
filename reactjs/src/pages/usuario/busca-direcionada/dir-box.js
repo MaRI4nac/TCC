@@ -19,7 +19,7 @@ export default function DirBox (props) {
                     </p>
                     <Link to={{
                         pathname: '/eventos',
-                        state: props.info}}> 
+                        state: props.info }}> 
                             <button> SAIBA MAIS </button> 
                     </Link>
                 </div>
