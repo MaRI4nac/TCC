@@ -6,6 +6,9 @@ import React, { useState } from 'react'
 
 export default function TelaEvento(props) {
 
+    const[event, setEvent] = useState(props.location.state)
+
+
     function monthFormat(number) {
         let i = ""
 
@@ -57,9 +60,6 @@ export default function TelaEvento(props) {
         return d;
 
     }
-
-    const[event, setEvent] = useState(props.location.state)
-
 
     return (
         <EventTypeStyle>
