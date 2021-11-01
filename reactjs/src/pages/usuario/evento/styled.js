@@ -16,7 +16,7 @@ const EventTypeStyle = styled.div`
 }
 
 .first-band {
-    background-image: url('');
+    background-image: url('/assets/images/eventTypeWallpaper.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-opacity: 10%;

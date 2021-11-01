@@ -61,6 +61,11 @@ export default function TelaEvento(props) {
 
     }
 
+    function yearFormat(old) {
+        var e = old.substr(0,2);
+        return e;
+    }
+
     return (
         <EventTypeStyle>
             <div className="try-container">
@@ -77,7 +82,7 @@ export default function TelaEvento(props) {
                                 <ul>
                                     <li> <b> Categoria: </b> {event.gênero} </li>
                                     <li> <b> Duração: </b> {`${hourFormat(event.duracao)} minutos`} </li>
-                                    <li> <b> Classificação etária: </b> {event.classificacao} </li>
+                                    <li> <b> Classificação etária: </b> {`${yearFormat(event.classificacao)} anos`} </li>
                                     <li> <b> Preço: </b> {`R$ ${event.preco}`} </li>
                                 </ul>
                             </div>
