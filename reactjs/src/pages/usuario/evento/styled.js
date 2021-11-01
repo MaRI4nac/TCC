@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const EventTypeStyle = styled.div`
 
     display: flex;
@@ -17,7 +16,7 @@ const EventTypeStyle = styled.div`
 }
 
 .first-band {
-    background-image: url("/assets/images/eventTypeWallpaper.jpg");
+    background-image: url('${props.imagemfundo}');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-opacity: 10%;
