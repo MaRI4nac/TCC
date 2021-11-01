@@ -1,4 +1,4 @@
-import styledType from './styled'
+import { EventTypeStyle } from './styled'
 import Cabecalho from '../../../components/cabecalho'
 import { Botao } from '../../../components/botoes/styled'
 import { Link } from 'react-router-dom'
