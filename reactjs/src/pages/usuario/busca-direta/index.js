@@ -44,7 +44,6 @@ export default function BuscaDireta(props) {
                 </div>
                 {event.map((item) =>
                     < DirBox info={item} />
-                
                 )}
         
             </div>
