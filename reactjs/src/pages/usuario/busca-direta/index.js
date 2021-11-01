@@ -3,7 +3,7 @@ import Cabecalho from '../../../components/cabecalho'
 import DirBox from '../busca-direcionada/dir-box'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 import Api from '../../../service/apiEvent'
 const api = new Api ();
@@ -14,20 +14,21 @@ export default function BuscaDireta(props) {
 
     const[event, setEvent] = useState([]);
     const navig = useHistory();
+    let mySearch = getQuery('search');
 
     function getQuery(name) {
         return new URLSearchParams(props.location.search).get(name);
     }
 
-    let mySearch = getQuery('search');
-
     async function listar() {
-        let mySearch = getQuery('search');
 
-        const resp = await api.directSearch(mySearch);
-        setEvent(resp);
-        console.log(resp);
+        let mySearch = getQuery('search');
+        if(mySearch !== null) {
+            const resp = await api.directSearch(mySearch);
+            setEvent(resp);
+        }
     }
+
 
     useEffect(() => {
         listar();

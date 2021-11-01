@@ -4,7 +4,7 @@ import { useHistory } from 'react-router'
 import { useState } from 'react';
 
 
-export default function Cabecalho() {
+export default function Cabecalho(props) {
 
     const [search, setSearch] = useState();
     const navig = useHistory();
@@ -24,3 +24,5 @@ export default function Cabecalho() {
         </Container>
     )
 }
+
+

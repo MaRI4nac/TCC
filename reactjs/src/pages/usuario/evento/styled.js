@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const EventTypeStyle = styled.div`
 
     display: flex;
@@ -8,12 +7,6 @@ const EventTypeStyle = styled.div`
     background-color: rgba(18, 61, 61);
     min-height: 100vh;
     width: 100%;
-
-    .try-container {
-        min-width: 100%;
-        min-height: 100%;
-        
-    }
 
 
 .ct-color {
@@ -23,7 +16,7 @@ const EventTypeStyle = styled.div`
 }
 
 .first-band {
-    background-image: url("/assets/images/eventTypeWallpaper.jpg");
+    background-image: url('${props.imagemfundo}');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-opacity: 10%;
@@ -48,7 +41,7 @@ const EventTypeStyle = styled.div`
 }
 
 .p-title {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     font-size: 2em;
     width: 500px;
 
@@ -72,6 +65,7 @@ const EventTypeStyle = styled.div`
 .line-information {
     display: flex;
     flex-direction: row;
+    margin-bottom: 1em;
 }
 
 .icon-information {
