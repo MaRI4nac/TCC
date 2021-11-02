@@ -12,7 +12,7 @@ const Container = styled.div`
         display: flex; 
         flex-direction: row; 
         color: white; 
-        justify-content flex-start;
+        justify-content: flex-start;
         align-items: center; 
     }
 
