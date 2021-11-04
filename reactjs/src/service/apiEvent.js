@@ -31,5 +31,10 @@ export default class Api {
         let r = await api.get(`/buscadireta?search=${search}`)
         return r.data;
     }
+
+    async highlightedEvents () {
+        let r = await api.get('/emdestaque')
+        return r.data;
+    }
 }
 
