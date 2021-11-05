@@ -1,6 +1,10 @@
 import Cabecalho from '../../../components/cabecalho'
 import { Container } from './styled'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+
+import Api from '../../../service/apiEvent.js'
+const api = new Api();
 
 let eventSimulation = {
 
@@ -37,6 +41,16 @@ let eventSimulation = {
 }
 
 export default function Principal() {
+
+    const [test, setTest] = useState([]);
+
+    async function listar () {
+        let r = await api.highlightedEvents();
+        setTest(r);
+    }
+    console.log(test);
+
+
     return (
         <Container>
          <Cabecalho />
@@ -109,7 +123,7 @@ export default function Principal() {
                 </div>
                 <div className="rodape"> 
                     <img src="/assets/images/redesSociais1.png" alt="" />
-                    <img src="/assets/images/LOGO TCC - de ladinho.svg" alt="" />
+                    <Link to='/admlogin'> <img src="/assets/images/LOGO TCC - de ladinho.svg" alt="" /> </Link> 
                     <img src="/assets/images/redesSociais2.png" alt="" />
                 </div>
            </div>
