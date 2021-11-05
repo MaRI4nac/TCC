@@ -1,7 +1,16 @@
+import Cookies from "js-cookie";
 import { Botao } from "../../../components/botoes/styled";
 import { ITsProfile } from "./styled";
+import { useHistory } from "react-router-dom"
 
 export default function UserProfile () {
+    const nav = useHistory();
+
+    const deslogar = () => {
+        Cookies.remove('usuario-logado');
+        nav.push('/inicial')
+    }
+
     return (
         <ITsProfile>
             <div class="header"></div>
@@ -23,6 +32,7 @@ export default function UserProfile () {
                     <div class="butbutbut">
                         <Botao> Alterar Informações </Botao>
                     </div>
+                    <div className="butbutbut"> <Botao onClick={() => deslogar()}> Log off </Botao></div>
                     
                 </div>
             </div>

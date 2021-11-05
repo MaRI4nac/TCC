@@ -25,7 +25,7 @@ export default function Routes() {
     return (
         <BrowserRouter>
             <Switch> 
-                <Route path="/" exact={true} component={SiteCompleto} /> 
+                <Route path="/" exact={true} component={TelaInicial} /> 
                 <Route path="/criarconta"  component={NWSCriarConta} />
                 <Route path="/cabecalho"  component={Cabecalho} />
                 <Route path="/logar"  component={NWSLogar} />

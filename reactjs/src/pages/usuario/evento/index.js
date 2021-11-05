@@ -2,11 +2,11 @@ import { EventTypeStyle } from './styled'
 import Cabecalho from '../../../components/cabecalho'
 import { Botao } from '../../../components/botoes/styled'
 import { Link } from 'react-router-dom'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function TelaEvento(props) {
 
-    const[event, setEvent] = useState(props.location.state)
+    const[event, setEvent] = useState(props.location.state.info)
 
 
     function monthFormat(number) {
@@ -74,16 +74,16 @@ export default function TelaEvento(props) {
                     <Cabecalho />
                     <div class="principal-image-title">
                         <div class="pric-image">
-                            <img src={event.imagemcapa} alt="" width="200px" height="300px" />
+                            <img src={event.imgCapa} alt="" width="200px" height="300px" />
                         </div>
                         <div class="princ-texts">
-                            <div class="p-title"> {event.nomevento} </div>
+                            <div class="p-title"> {event.nmEvento} </div>
                             <div class="p-description">
                                 <ul>
-                                    <li> <b> Categoria: </b> {event.gênero} </li>
+                                    <li> <b> Categoria: </b> {event.categoria} </li>
                                     <li> <b> Duração: </b> {`${hourFormat(event.duracao)} minutos`} </li>
-                                    <li> <b> Classificação etária: </b> {`${yearFormat(event.classificacao)} anos`} </li>
-                                    <li> <b> Preço: </b> {`R$ ${event.preco}`} </li>
+                                    <li> <b> Classificação etária: </b> {event.classificacao} anos </li>
+                                    <li> <b> Preço: </b> {`R$ ${event.valorIngresso}`} </li>
                                 </ul>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ export default function TelaEvento(props) {
                             <div class="icon-information">
                                 <img src="/assets/images/eventTypeBall.svg"  alt="" width="20px" height="20px" />
                             </div>
-                            <div class="desc-information"> <b> Data: </b>  {`de ${dateFormat(event.dataminima)} até ${dateFormat(event.datamaxima)}`} </div>
+                            <div class="desc-information"> <b> Data: </b>  {`de ${dateFormat(event.dtMin)} até ${dateFormat(event.dtMax)}`} </div>
                         </div>
                     </div>
                 </div>

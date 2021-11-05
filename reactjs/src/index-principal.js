@@ -8,8 +8,7 @@ export default function SiteCompleto () {
         <div className="organizacao-principal">
             <Botao className="idai"> <Link to="/logar"> Login (Usuário) </Link> </Botao>
             <Botao className="idai"> <Link to="/admlogin"> ADM Login </Link> </Botao>
-            <Botao className="idai"> <Link to="/buscadireta"> Busca Direta </Link> </Botao>
-            <Botao className="idai"> <Link to="/ingresso-compra"> Compra </Link> </Botao>
+            <Botao className="idai"> <Link to ="/inicial"> Tela inicial </Link></Botao> 
         </div>
     )
 }

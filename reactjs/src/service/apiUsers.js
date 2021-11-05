@@ -1,14 +1,14 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://tccinsf-newside.herokuapp.com/user'
+    baseURL: 'http://localhost:3030/user'
 })
 
 
 export default class Api {
 
     async userLogin(mail, senha) {
-        let r = await api.get(`/login/?mail=${mail}&senha=${senha}`)
+        let r = await api.get(`/login/?mail=${mail}&&senha=${senha}`)
         return r.data;
     }
 

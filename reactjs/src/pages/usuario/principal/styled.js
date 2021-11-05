@@ -2,6 +2,11 @@ import styled from 'styled-components'
 
 const Container = styled.div`
 
+    * {
+        text-decoration: none;
+        color: white;
+    }
+
     .header {
         padding-top: 20px; 
         background-image: url('https://i.pinimg.com/564x/bd/d4/da/bdd4dad6eb7c1051df036fe93c98441b.jpg');

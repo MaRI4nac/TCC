@@ -8,16 +8,16 @@ import Cookies from 'js-cookie'
 const api = new Api();
 
 export default function NWSLogar () {
-    const [username, setMail] = useState();
+    const [mail, setMail] = useState();
     const [senha, setSenha] = useState();
     const navigation = useHistory();
 
-    // if(Cookies.get('usuario-logado') != null) {
-    //      navigation.push('/inicial')
-    // }
+    if(Cookies.get('usuario-logado') != null) {
+         navigation.push('/inicial')
+    }
 
     const logarUsuario = async() => {
-        let r = await api.userLogin(username, senha);
+        let r = await api.userLogin(mail, senha);
         console.log(r)
         if(!validarResposta(r))
             return;
