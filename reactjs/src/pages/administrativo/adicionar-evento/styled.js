@@ -24,53 +24,12 @@ const Container = styled.div`
 
     .BoxInputs {
         background: rgba(255, 255, 255, 0.08); 
-        width: 80%; 
+        max-width: 1440px;
+        width: 90%;
         height: 70%; 
-        display: flex;
-        flex-direction: column; 
-        justify-content: center;
-        aling-items: center;  
-
         margin-bottom: 2.5%; 
     }
-
-    input { 
-        padding: 8px 20px; 
-        background-color: white; 
-        margin-right: 20px; 
-        border: none; 
-    }
-
-    .Inputs {
-        display: flex; 
-        flex-direction: row; 
-        color: white; 
-        font-size: 1.5em; 
-    }
-
-    .InputLabel {
-        display: flex; 
-        flex-direction: column; 
-    }
-
-    label {
-        padding-bottom: 1%; 
-        padding-top: 15%; 
-    }
-
-    .BoxInputs-Margin {
-        margin: 0% 5%; 
-    }
-
-    .InputBackground, .InputImageSecondary {
-        width: 20vh; 
-    }
-
-    textarea {
-        resize: none; 
-        width: 45vh;
-        height: 20vh; 
-    }
+    
 `
     
 
