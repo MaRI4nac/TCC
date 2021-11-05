@@ -32,7 +32,7 @@ export default function BuscaDireta(props) {
 
     useEffect(() => {
         listar();
-    }, [])
+    }, []);
 
     return (
         <Container>
