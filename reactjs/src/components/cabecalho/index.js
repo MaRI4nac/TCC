@@ -21,7 +21,10 @@ export default function Cabecalho(props) {
         <Container>
             <Link to="/inicial"> <img className="logo-image" src="/assets/images/LOGO1 TCC.png" alt="" /> </Link>
             <input type="text" placeholder="Buscar eventos..." value={search} onChange={ e => setSearch(e.target.value) } onKeyPress={keyPress} />
-            {!Cookies.get('usuario-logado') ? <Link to="/logar"> Entrar </Link> : <Link to="/profile"> <img className="perfil-image" src="/assets/images/Perfil-cabecalho.png" alt="" /> </Link>} 
+            {!Cookies.get('usuario-logado') 
+                ? <Link to="/logar" className="no-decoration"> <div> Entrar </div> </Link> 
+                : <Link to="/profile"> <img className="perfil-image" src="/assets/images/Perfil-cabecalho.png" alt="" /> </Link>
+            } 
         </Container>
     )
 }

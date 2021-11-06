@@ -100,6 +100,10 @@ input:focus {
     justify-content: space-between;
 }
 
+.Glink {
+    color: #ADD8E6;
+}
+
 `
 
 export { Log }

@@ -1,7 +1,8 @@
 import Cabecalho from '../../../components/cabecalho'
 import { Container } from './styled'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import DirBox from '../busca-direcionada/dir-box'
 
 import Api from '../../../service/apiEvent.js'
 const api = new Api();
@@ -48,7 +49,10 @@ export default function Principal() {
         let r = await api.highlightedEvents();
         setTest(r);
     }
-    console.log(test);
+    
+    useEffect(() => {
+        listar();
+    }, [])
 
 
     return (
@@ -61,19 +65,19 @@ export default function Principal() {
            </div>
            <div className="body"> 
                 <div className="themes"> 
-                    <div className="box"> 
+                    <div className="box-theme"> 
                         <img src="/assets/images/pecasEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
                         <Link to="/buscadirecionada?categoria=3" className="Blink"> 
                             <button> peças </button> 
                         </Link>
                     </div>
-                    <div className="box"> 
+                    <div className="box-theme"> 
                         <img src="/assets/images/showsEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
                         <Link to="/buscadirecionada?categoria=4" className="Blink" > <button> shows </button> </Link>
                     </div>
-                    <div className="box"> 
+                    <div className="box-theme"> 
                         <img src="/assets/images/museusEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
                         <Link to="/buscadirecionada?categoria=5" className="Blink" > <button> museus </button> </Link>
@@ -83,41 +87,10 @@ export default function Principal() {
                     <div className = "Eventos"> 
                         <h1> EVENTOS EM DESTAQUE </h1>
                     </div>
-                    <div className="box-principal"> 
-                        <img src="/assets/images/principal-box.png" width="400px" height="400px" alt="" />
-                        <div className="box-text"> 
-                            <h1> Cada Um Tem o Anjo Que Merece </h1>
-                            <div> Comédia, 80 minutos, 12 anos. </div>
-                            <p> <b> Sinopse: </b> 
-                                Nesta comédia, o casal, Osvaldo e Quitéria, vive às turras, brigando e se desentendendo a todo momento, por qualquer motivo. Os dois estão nos seus limites e prestes a se separarem quando algo surpreendente acontece. Lá no céu os Deuses decidem que eles merecem uma atenção especial para ajudar a refazer esse amor tão desgastado pelo tempo. Dirigida por Wesley Leal.
-                            </p>
-                            <Link to={
-                                {
-                                    pathname: '/eventos',
-                                    state: {
-                                        info: eventSimulation
-                                    }
-                                }
-                            } className="Blink" > <button> SAIBA MAIS </button> </Link>
-                        </div>
-                    </div>
-                    <div className="box-principal"> 
-                        <div className="box-text"> 
-                            <h1> Cada Um Tem o Anjo Que Merece </h1>
-                            <div> Comédia, 80 minutos, 12 anos. </div>
-                            <p> <b> Sinopse: </b> 
-                                Nesta comédia, o casal, Osvaldo e Quitéria, vive às turras, brigando e se desentendendo a todo momento, por qualquer motivo. Os dois estão nos seus limites e prestes a se separarem quando algo surpreendente acontece. Lá no céu os Deuses decidem que eles merecem uma atenção especial para ajudar a refazer esse amor tão desgastado pelo tempo. Dirigida por Wesley Leal.
-                            </p>
-                            <Link to={
-                                {
-                                    pathname: '/eventos',
-                                    state: {
-                                        info: eventSimulation
-                                    }
-                                }
-                            } className="Blink" > <button> SAIBA MAIS </button> </Link>
-                        </div>
-                        <img src="/assets/images/principal-box.png" width="400px" height="400px" alt="" />
+                    <div> 
+                        { test.map((item) => 
+                            <DirBox info={item} />
+                        )}
                     </div>
                     <button className="marginbutton"> MAIS EVENTOS EM DESTAQUE </button> 
                 </div>
