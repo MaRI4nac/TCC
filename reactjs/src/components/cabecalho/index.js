@@ -9,6 +9,10 @@ export default function Cabecalho(props) {
 
     const [search, setSearch] = useState();
     const navig = useHistory();
+    const [user, setUser] = useState(JSON.parse(Cookies.get('usuario-logado')));
+
+
+    
 
     function keyPress(event) {
 
@@ -23,7 +27,7 @@ export default function Cabecalho(props) {
             <input type="text" placeholder="Buscar eventos..." value={search} onChange={ e => setSearch(e.target.value) } onKeyPress={keyPress} />
             {!Cookies.get('usuario-logado') 
                 ? <Link to="/logar" className="no-decoration"> <div> Entrar </div> </Link> 
-                : <Link to="/profile"> <img className="perfil-image" src="/assets/images/Perfil-cabecalho.png" alt="" /> </Link>
+                : <Link to="/profile"> <img className="perfil-image" src={user.img_perfil} alt="" /> </Link>
             } 
         </Container>
     )

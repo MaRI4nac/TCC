@@ -16,7 +16,9 @@ const Container = styled.div`
     padding: 0px 20px;
     
     .perfil-image {
-        padding: 10px 0px;
+        border-radius: 50%;
+        width: 7vh;
+        height: 7vh;
     }
 
     img {
