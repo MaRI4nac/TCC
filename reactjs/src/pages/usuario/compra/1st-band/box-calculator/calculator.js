@@ -1,9 +1,9 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Cont } from "../styled";
 
-export default function Calculator () {
+export default function Calculator (props) {
 
-    const[qtd, SetQtd] = useState(0);
+    const[qtd, SetQtd] = useState(props.value);
 
     function somar () {
         
@@ -20,6 +20,10 @@ export default function Calculator () {
 
         SetQtd(qtd - 1)
     }
+
+    useEffect(() => {
+        props.onChange(qtd)
+    }, [qtd])
 
 
     return (

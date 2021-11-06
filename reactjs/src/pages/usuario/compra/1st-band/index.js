@@ -2,7 +2,12 @@ import BoxCalculator from "./box-calculator";
 import { FaixaUm } from "./styled";
 import { Botao } from '../../../../components/botoes/styled'
 
-export default function BuyFirstBand () {
+export default function BuyFirstBand (props) {
+
+    const alterarQtd = (qtd) => {
+        props.onUpdate(qtd);
+    }
+
     return (
         <FaixaUm>
             <div class="the-event">
@@ -11,7 +16,7 @@ export default function BuyFirstBand () {
                 </div>
             </div>
             <div class="the-qtd">
-                <BoxCalculator />
+                <BoxCalculator onChange={alterarQtd} value={props.value}/>
             </div>
             <div class="the-button">
                 <Botao> Prosseguir </Botao>

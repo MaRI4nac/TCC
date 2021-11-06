@@ -1,7 +1,11 @@
 import { TTT } from "../styled"
 import Calculator from "./calculator"
 
-export default function BoxCalculator () {
+export default function BoxCalculator (props) {
+    const onChange = (qtd) => {
+        props.onChange(qtd)
+    }
+
     return (
     <TTT>
         <div class="box-image-event">
@@ -17,7 +21,7 @@ export default function BoxCalculator () {
                 <div class="box-price"> R$ 50,00 </div>
             </div>
             <div class="box-ticket-title"> Quantidade de ingressos</div>
-            <Calculator />
+            <Calculator onChange={onChange} value={props.value}/>
         </div>
     </TTT>
     )

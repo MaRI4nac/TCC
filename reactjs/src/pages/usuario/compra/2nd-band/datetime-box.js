@@ -1,7 +1,10 @@
 import { StyledDateTime } from "./styled";
-
+import Api from "../../../../service/apiBuy";
+const api = new Api();
 
 export default function DateTimeBox () {
+    
+
     return (
         <StyledDateTime>
             <div class="box-image-event">

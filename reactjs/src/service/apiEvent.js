@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create ({
-    baseURL: 'https://tccinsf-newside.herokuapp.com/events'
+    baseURL: 'http://localhost:3030/events'
 })
 
 export default class Api {
@@ -25,6 +25,7 @@ export default class Api {
     async directedSearch(id) {
         let r = await api.get(`/buscaDirecionada?id=${id}`)
         return r.data;
+        
     }
 
     async directSearch (search) {

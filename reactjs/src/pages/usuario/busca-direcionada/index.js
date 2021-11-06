@@ -9,7 +9,7 @@ const api = new Api();
 export default function BuscaDirecionada (props) {
 
     const[events, setEvents] = useState([])
-    console.log(props);
+
     function getQuery(name) {
         return new URLSearchParams(props.location.search).get(name);
     }
@@ -17,9 +17,11 @@ export default function BuscaDirecionada (props) {
 
     async function listar() {
         let id = getQuery('categoria');
-
+        
         const resp = await api.directedSearch(id);
+        console.log(resp)
         setEvents(resp);
+        
     }
 
 

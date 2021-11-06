@@ -20,21 +20,24 @@ const FaixaDois = styled.div `
  }
  
  .first-box-scheme {
-     display: flex;
-     flex-direction: row;
-     align-items: center;
-     justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
  
-     border-radius: 0.8em;
-     background-color: rgba(0, 0, 0, 0.3);
- 
-     padding: 2em 0em;
-     margin-bottom: 2em;
+    border-radius: 0.8em;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    padding: 2em 0em;
+    margin-bottom: 2em;
  }
  
  .column {
-     display: flex;
-     flex-direction: column;
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;          
  }
  
  .scheme-input, .scheme-input1 {
@@ -45,16 +48,15 @@ const FaixaDois = styled.div `
  .scheme-title, .scheme-title1, .scheme-title2 {
      font-size: 1.2rem;
      margin-right: 1em;
-     margin-left: 2em;
  }
  
  .scheme-input1 {
      margin-bottom: 1em;
-     margin-left: 2em;
+ 
  }
  
  .scheme-title1 {
-     margin-left: 1em;
+   
  }
  
  .scheme-title2 {
@@ -62,10 +64,11 @@ const FaixaDois = styled.div `
  }
  
  input {
-     border: none;
-     width: 18em;
-     height: 2.5em;
-     border-radius: 0.5em;
+    border: none;
+    width: 18em;
+    height: 2.5em;
+    border-radius: 0.5em;
+    outline: none;
  }
  
  .second-box-scheme {
@@ -161,7 +164,17 @@ option {
     padding: 1em 1em;
     background-color: rgba(0, 0, 0, 0.5);
     color:#F0F8FF;
+    outline: none   ;
 } 
+
+input {
+    color: black;
+    font-size: 100px;
+}
+
+input:focus {
+    color: #ff0000;
+}
 
 `
 
