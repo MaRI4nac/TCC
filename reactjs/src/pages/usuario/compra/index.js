@@ -8,18 +8,14 @@ import BuyFourthBand from "./4th-band";
 import { Everything } from "./styled";
 
 
-function lerUsuarioLogado (navigation) {
-    let logado = Cookies.get('usuario-logado')
-    if (logado == null) {
-        navigation.push('/inicial')
-        return null;
-    }
-    let usuarioLogado = JSON.parse(logado);
-    return usuarioLogado; 
-}
-
 export default function AllBuy (props) {
     const navig = useHistory();
+
+    if(!Cookies.get('usuario-logado')){
+        alert('Você deve estar logado para efetuar a compra')
+        navig.push('/inicial')
+    }
+    
 
     const [event, setEvent] = useState(props.location.state);
     const [qtd, setQtd] = useState(0)
@@ -28,10 +24,9 @@ export default function AllBuy (props) {
     const [cvc, setCvc] = useState();
     const [validity, setValidity] = useState();
     const [cpf, setCpf] = useState();
-    const [userId, setUserId] = useState();
+    const [userId, setUserId] = useState(JSON.parse(Cookies.get('usuario-logado')).id_usuario);
     const [paymentMethod, setPaymentMethod] = useState();
     const [dates, setDates] = useState([]);
-    const [userLogged, setUserLogged] = useState(lerUsuarioLogado(navig));
 
     const alterarQtd = (qtd) => {
         setQtd(qtd);
@@ -47,13 +42,11 @@ export default function AllBuy (props) {
         qtd: qtd
     }
 
-    console.log(event)
-
     return (
         <Everything>
-            <BuyFirstBand onUpdate={alterarQtd} value={qtd}/>
-            <BuySecondBand info={infoReadOnly}/>
-            <BuyThirdBand />
+            <BuyFirstBand onUpdate={alterarQtd} value={qtd} />
+            <BuySecondBand info={infoReadOnly} />
+            <BuyThirdBand  />
             <BuyFourthBand />
         </Everything>
     )

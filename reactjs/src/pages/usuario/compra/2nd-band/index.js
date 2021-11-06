@@ -11,8 +11,6 @@ export default function BuySecondBand (props) {
         gambiarraPraMapear.push(i)
     }
 
-
-
     return (
         <FaixaDois>
             <div class="title"> Comprar Ingresso </div>

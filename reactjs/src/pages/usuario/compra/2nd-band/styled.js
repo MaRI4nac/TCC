@@ -164,7 +164,7 @@ option {
     padding: 1em 1em;
     background-color: rgba(0, 0, 0, 0.5);
     color:#F0F8FF;
-    outline: none   ;
+    outline: none;
 } 
 
 input {

@@ -3,7 +3,7 @@ import Api from "../../../../service/apiBuy";
 const api = new Api();
 
 export default function DateTimeBox () {
-    
+
 
     return (
         <StyledDateTime>
@@ -26,8 +26,8 @@ export default function DateTimeBox () {
                         <select name="" id="0">
                             <option value="0" class="op-dif"> Datas disponíveis... </option>
                             <option value="1"> 20/12/2021 </option>
-                            <option value="2">21/12/2021</option>
-                            <option value="3">22/12/2021</option>
+                            <option value="2"> 21/12/2021</option>
+                            <option value="3"> 22/12/2021</option>
                             <option value="4">23/12/2021</option>
                             <option value="5">24/12/2021</option>
                         </select>
