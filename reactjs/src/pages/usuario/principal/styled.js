@@ -52,19 +52,19 @@ const Container = styled.div`
         padding: 5rem 5rem;
     }
 
-    .box {
+    .box-theme {
         text-align: center;
         width: 18em;
         box-shadow: 1px 2px 5px rgba(47,79,79,0.7), 5px 10px 25px black;
         padding: 2.5em 2.5em; 
     }
 
-    .box > img {
+    .box-theme > img {
         height: 18vh;
         width: auto;
     }
 
-    .box p {
+    .box-theme p {
         color: white;
     }
 
@@ -94,7 +94,7 @@ const Container = styled.div`
         margin: 7rem 0px 4rem 0px;
     }
 
-    .box-principal {
+    .box {
         display: flex;
         flex-direction: row;
         align-self: center;
@@ -102,6 +102,7 @@ const Container = styled.div`
         max-width: 100%;
         background: #2F4F4F;
         border-radius: 10px;
+        padding: 2em;
 
         margin: 2.2% 9%;
         box-shadow: 1px 2px 5px rgb(47 79 79 / 70%), 5px 10px 25px black;

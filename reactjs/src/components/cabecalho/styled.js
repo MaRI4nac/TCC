@@ -49,6 +49,13 @@ const Container = styled.div`
         }
     }
 
+    .no-decoration {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        font-weight: bolder;
+    }
+
 `
 
 
