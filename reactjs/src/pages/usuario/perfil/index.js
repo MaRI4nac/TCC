@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import AgpInputs from "./components";
 import Api from "../../../service/apiUsers";
 import { Validador } from '../../../components/commum/index'
+import Cabecalho from "../../../components/cabecalho";
 
 const api = new Api()
 
@@ -90,6 +91,7 @@ export default function UserProfile () {
 
     return (
         <ITsProfile>
+            <Cabecalho />
             <div class="header"></div>
             <div class="the-band">
                 <div class="user-image"> <img src={usuario.img_perfil} alt="" width="250px" height="250px" /> </div>
