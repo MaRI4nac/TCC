@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL: 'https://tccinsf-newside.herokuapp.com/user'
+    baseURL: 'http://localhost:3030/user'
 })
 
 
@@ -12,8 +12,8 @@ export default class Api {
         return r.data;
     }
 
-    async userCreate(nmUsu, cpf, email, username, senha, nascimento) {
-        let r = await api.post(`/create`, {nmUsu, cpf, email, username, senha, nascimento})
+    async userCreate(nmUsu, cpf, email, username, senha, nascimento, imagem) {
+        let r = await api.post(`/create`, {nmUsu, cpf, email, username, senha, nascimento, imagem })
         return r.data;
     }
 

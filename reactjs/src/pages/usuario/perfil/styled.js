@@ -7,7 +7,7 @@ const ITsProfile = styled.div`
     width: 100%;
     height: 100vh;
     background-size: 100%;
-    background-image: url("/assets/images/wallpaper-profile..png");
+    background: linear-gradient(180deg, rgba(23, 61, 64, 0.92) 0%, rgba(23, 61, 64, 0.899330) 15%, rgba(47, 79, 79, 0.90) 38.42%, rgba(47, 79, 79, 0.90) 40.42%);   
     background-position: 10%;
     background-repeat: no-repeat;
     color: white;
@@ -24,6 +24,7 @@ const ITsProfile = styled.div`
 .the-band {
     display: flex;
     flex-direction: row;
+    background: linear-gradient(180deg, #184A4A 0%, rgba(25, 69, 69, 0.39) 99.97%, rgba(15, 48, 48, 0) 99.98%, rgba(16, 50, 50, 0.0833333) 99.99%);
 
     border: 2px solid white;
     padding: 4em 4em;

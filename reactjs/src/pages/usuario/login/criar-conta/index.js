@@ -12,6 +12,7 @@ export default function NWSCriarConta () {
     const [username, setUsername] = useState();
     const [senha, setSenha] = useState();
     const [nascimento, setNascimento] = useState();
+    const [imagem, setImagem] = useState();
 
     const [senha1, setSenha1] = useState();
     const [senha2, setSenha2] = useState();
@@ -25,7 +26,7 @@ export default function NWSCriarConta () {
             alert();
             return;
         }
-        let r = await api.userCreate(nmUsu, cpf, email, username, senha, nascimento);
+        let r = await api.userCreate(nmUsu, cpf, email, username, senha, nascimento, imagem);
         if (!validarResposta(r)) 
             return;
         
@@ -52,9 +53,10 @@ export default function NWSCriarConta () {
                         <input type="text" placeholder="Senha" onChange={e => setSenha1(e.target.value)} />
                         <input type="text" placeholder="Senha (confirmação)" onChange={e => setSenha2(e.target.value)} />
                         <input type="date" name="" id="" onChange={e => setNascimento(e.target.value)}/>
+                        <input type="text" placeholder="Imagem de perfil" onChange={e => setImagem(e.target.value)} />
                     </div>
                     <div class="cadast-bt">
-                    <div className="Blink" onClick={() => createUser()} > <Botao> Criar conta </Botao> </div>
+                        <div className="Blink" onClick={() => createUser()} > <Botao> Criar conta </Botao> </div>
                     </div>
                 </div>
             </div>
