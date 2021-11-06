@@ -7,7 +7,7 @@ const ITsProfile = styled.div`
     width: 100%;
     height: 100vh;
     background-size: 100%;
-    background: linear-gradient(180deg, rgba(23, 61, 64, 0.92) 0%, rgba(23, 61, 64, 0.899330) 15%, rgba(47, 79, 79, 0.90) 38.42%, rgba(47, 79, 79, 0.90) 40.42%);   
+    background: rgba(18, 61, 61, 0.8);   
     background-position: 10%;
     background-repeat: no-repeat;
     color: white;
@@ -28,16 +28,36 @@ const ITsProfile = styled.div`
 
     border: 2px solid white;
     padding: 4em 4em;
+    position: relative;
 }
 
 .user-image {
-    margin-right: 5em;
     display: flex;
     align-items: center;
+    position: absolute;
+    top: -20%;
+    right: 32.5%;
+}
+
+.user-image img {
+    width: 18vh;
+    height: 18vh;
+    border-radius: 50%;
+}
+
+.profile-user:first-child {
+    font-size: 2em;
+    color: white;
+    font-weight: 500;
+}
+
+.profile-user {
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .user-general-informations {
-    margin-left: 3em;
+    
 }
 
 .first-box {
@@ -57,18 +77,33 @@ const ITsProfile = styled.div`
 .second-box {
     margin-bottom: 2em;
     background-color: rgba(0, 0, 0, 0.3);
-    padding: 2em 2.5em;
+    padding: 3rem 5rem;
     border-radius: 0.3em;
+
 }
 
 .information {
     font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.information:first-child {
+    margin-bottom: 2rem;
+}
+
+.information > .agp-flexcolumn:first-child {
+    font-weight: 500;
+    margin-bottom: 5px;
 }
 
 .butbutbut {
     display: flex;
     justify-content: center;
 }
+
+
 
 `
 

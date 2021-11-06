@@ -17,6 +17,11 @@ export default class Api {
         return r.data;
     }
 
+    async userUpdate(nmUsu, cpf, email, username, senha, nascimento, imagem, id) {
+        let r = await api.put(`/update/${id}`, {nmUsu, cpf, email, username, senha, nascimento, imagem })
+        return r.data;
+    }
+
     async userForgotPassword(email) {
         let r = await api.post(`/forgotpassword`, {email})
         return r.data
