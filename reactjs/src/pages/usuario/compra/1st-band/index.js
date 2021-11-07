@@ -8,6 +8,10 @@ export default function BuyFirstBand (props) {
         props.onUpdate(qtd);
     }
 
+    const onTicketUpdate = (op) => {
+        props.onValueChange(op)
+    }
+
     return (
         <FaixaUm>
             <div class="the-event">
@@ -16,7 +20,7 @@ export default function BuyFirstBand (props) {
                 </div>
             </div>
             <div class="the-qtd">
-                <BoxCalculator onChange={alterarQtd} value={props.value}/>
+                <BoxCalculator onChange={alterarQtd} value={props.value} onTicketUpdate={onTicketUpdate} ticketValue={props.ticketValue}/>
             </div>
             <div class="the-button">
                 <Botao> Prosseguir </Botao>

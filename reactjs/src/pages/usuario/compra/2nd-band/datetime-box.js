@@ -6,16 +6,22 @@ const api = new Api();
 export default function DateTimeBox (props) {
 
     const [currentDate, setCurrentDate] = useState();
+    const [currentHour, setCurrentHour] = useState();
 
     // const getDates = async () => {
     //     let r = await api.getDates(props.idEvent)
     //     console.log(r);
     //     setData(r);
     // }
+
     useEffect(() => {
         props.onDateChange(currentDate, props.chave)
+        props.onHourChange(currentDate)    
     }, [currentDate])
 
+    useEffect(() => {
+        props.updateHourField(currentHour, props.chave)
+    }, [currentHour])
  
 
     const dateFormat = (data) => {
@@ -42,9 +48,10 @@ export default function DateTimeBox (props) {
                         <div class="st-box-title"> Datas disponíveis </div>
                     </div>
                     <div class="start-box-choose"> Selecione a data desejada </div>
-                        <select name="" id="0" onChange={(e) => setCurrentDate(e.target.value)}>
-                            {props.datas.map((item) => {
-                                 return <option> {dateFormat(item.dt_evento)} </option>
+                        <select name="" id="0" onChange={(e) => setCurrentDate(props.datas[e.target.value])}>
+                            <option defaultValue="selected"> Selecione uma data... </option>
+                            {props.datas.map((item, i) => {
+                                return <option key={i} value={i}> {dateFormat(item.dt_evento)} </option>
                             })}
                         </select>
                 </div>
@@ -56,13 +63,12 @@ export default function DateTimeBox (props) {
                         <div class="st-box-title"> Horários disponíveis </div>
                     </div>
                     <div class="start-box-choose"> Selecione o horário desejado </div>
-                        <select name="" id="0">
-                            <option value="0" class="op-dif"> Datas disponíveis... </option>
-                            <option value="1">  20/12/2021  </option>
-                            <option value="2">  21/12/2021  </option>
-                            <option value="3">  22/12/2021  </option>
-                            <option value="4">  23/12/2021  </option>
-                            <option value="5">  24/12/2021  </option>
+                        <select name="" id="0" defaultValue="selected" onChange={(e) => setCurrentHour(props.hours[e.target.value])}>
+                            <option selected="selected"> Selecione um horário... </option>
+                            {props.hours.map((item, i) => { 
+                                return <option key={i} value={i}> {item.hr_evento} </option>
+                            })}
+                        
                         </select>
                 </div>
             </div>

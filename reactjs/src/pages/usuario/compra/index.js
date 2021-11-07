@@ -15,10 +15,9 @@ export default function AllBuy (props) {
         alert('Você deve estar logado para efetuar a compra')
         navig.push('/inicial')
     }
-    
 
     const [event, setEvent] = useState(props.location.state);
-    const [qtd, setQtd] = useState(0)
+    const [qtd, setQtd] = useState(1)
     const [cardNumber, setCardNumber] = useState();
     const [cardOwner, CardOwner] = useState();
     const [cvc, setCvc] = useState();
@@ -27,14 +26,24 @@ export default function AllBuy (props) {
     const [userId, setUserId] = useState(JSON.parse(Cookies.get('usuario-logado')).id_usuario);
     const [paymentMethod, setPaymentMethod] = useState();
     const [dates, setDates] = useState([]);
+    const [ticketValue, setTicketValue] = useState(event.preco)
 
     const alterarQtd = (qtd) => {
         setQtd(qtd);
     }
-
-    const addDates = (dt) => {
-        setDates()
+ 
+    const updateTicketValue = (op) => {
+        if (op == "somar") {
+            setTicketValue(Number(ticketValue) + Number(event.preco));
+        }
+        else if (op == "sub") {
+            setTicketValue(Number(ticketValue) - Number(event.preco));
+        }
     }
+
+    // const addDates = (dt) => {
+    //     setDates()
+    // }
 
     const infoReadOnly = {
         evento: event.nomevento,
@@ -48,7 +57,7 @@ export default function AllBuy (props) {
 
     return (
         <Everything>
-            <BuyFirstBand onUpdate={alterarQtd} value={qtd} />
+            <BuyFirstBand onUpdate={alterarQtd} value={qtd} onValueChange={updateTicketValue} ticketValue={ticketValue}/>
             <BuySecondBand info={infoReadOnly} idEvent={event.id_evento}/>
             <BuyThirdBand  />
             <BuyFourthBand />

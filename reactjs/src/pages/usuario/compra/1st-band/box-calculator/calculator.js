@@ -5,11 +5,13 @@ export default function Calculator (props) {
 
     const[qtd, SetQtd] = useState(props.value);
 
+
     function somar () {
         
         if(qtd === 10)
         return;
 
+        props.onValueChange("somar")
         SetQtd(qtd + 1)
     }
 
@@ -18,6 +20,7 @@ export default function Calculator (props) {
         if(qtd <= 0 )
         return;
 
+        props.onValueChange("sub")
         SetQtd(qtd - 1)
     }
 

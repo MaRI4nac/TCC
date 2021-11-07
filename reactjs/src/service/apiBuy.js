@@ -34,7 +34,7 @@ export default class Api {
     }
 
     async getHours(id) {
-        let r = await api.get(`/eventhour/:${id}`)
+        let r = await api.get(`/eventhour/${id}`)
         return r.data;
     }
 }

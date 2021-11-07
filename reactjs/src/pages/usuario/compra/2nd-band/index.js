@@ -8,14 +8,33 @@ const api = new Api();
 export default function BuySecondBand (props) {
     const informations = props.info;
     const [data, setData] = useState([]);
+    const [hours, setHours] = useState([]);
     const [getSelectedDate, setGetSelectedDate] = useState([]);
+    const [getSelectedHour, setGetSelectedHour] = useState([]);
     
-    const updateField = (date, index) => {
-        let r = [...getSelectedDate]
-        r[index] = date
-
+    const updateFieldDate = (date, i) => {
+        if (!date) {
+            return;
+        }
+        var r = [...getSelectedDate]
+        r[i] = date.dt_evento
+      
         setGetSelectedDate(r)
+
         console.log(getSelectedDate)
+    }
+
+    const updateFieldHour = (hour, i) => {
+        if (!hour) {
+            return;
+        }
+        var r = [...getSelectedHour]
+        r[i] = hour.hr_evento
+     
+        
+        setGetSelectedHour(r)
+        
+        console.log(getSelectedHour)
     }
 
     let gambiarraPraMapear = []
@@ -28,13 +47,19 @@ export default function BuySecondBand (props) {
         setData(r);
     }
 
+    const getHours = async(date) => {
+        if (!date) {
+            return;
+        }
+
+        let r = await api.getHours(date.id_calendario)
+        setHours(r)
+    }
     
     useEffect(() => {
         getDates()
     }, [])
     
-
-
 
     return (
         <FaixaDois>
@@ -74,7 +99,7 @@ export default function BuySecondBand (props) {
             </div>
             <div class="second-box-scheme">
                 {gambiarraPraMapear.map((item, i) => {
-                   return <DateTimeBox key={item} datas={data} onDateChange={updateField} chave={i}/>
+                   return <DateTimeBox key={item} datas={data} onDateChange={updateFieldDate} chave={i} onHourChange={getHours} hours={hours} updateHourField={updateFieldHour}/>
                 })}
             </div>
             

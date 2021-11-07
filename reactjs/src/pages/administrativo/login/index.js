@@ -14,6 +14,14 @@ export default function ADMLogin () {
 
     const nav = useHistory();
 
+    if (Cookies.get('usuario-logado') != null && Cookies.get('usuario-logado') != undefined)     {
+        let user = JSON.parse(Cookies.get('usuario-logado'))
+        console.log(user)
+        if (user.bt_adm == true) {
+            nav.push('/admprincipal')
+        }
+    }
+
     const loginAdmin = async () => {
         let r = await api.loginAdm(username, password)
         if (!Validador(r))
