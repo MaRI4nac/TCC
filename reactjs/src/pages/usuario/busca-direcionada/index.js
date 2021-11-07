@@ -40,7 +40,7 @@ export default function BuscaDirecionada (props) {
                 </div>
                 {console.log(events)}
                 { events.map((item) =>
-                    < DirBox info={item} />
+                    < DirBox key={item.id_evento} info={item}/>
                 )}
                 
             </div>

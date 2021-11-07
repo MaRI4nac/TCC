@@ -23,12 +23,14 @@ export default function BuscaDireta(props) {
     async function listar() {
 
         let mySearch = getQuery('search');
+
         if(mySearch !== null) {
             const resp = await api.directSearch(mySearch);
+            console.log(resp)
             setEvent(resp);
         }
+        
     }
-
 
     useEffect(() => {
         listar();
@@ -43,7 +45,7 @@ export default function BuscaDireta(props) {
                     <div> Encontramos isso: </div>
                 </div>
                 {event.map((item) =>
-                    < DirBox info={item} />
+                    < DirBox key={item.id_evento} info={item} />
                 )}
         
             </div>
