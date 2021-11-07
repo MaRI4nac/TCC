@@ -34,7 +34,7 @@ export default class Api {
     }
 
     async highlightedEvents () {
-        let r = await api.get('/emdestaque')
+        let r = await api.get('/highlighted')
         return r.data;
     }
 }
