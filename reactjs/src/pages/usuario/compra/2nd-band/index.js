@@ -1,15 +1,31 @@
 
 import DateTimeBox from "./datetime-box";
 import { FaixaDois } from "./styled";
-
+import Api from "../../../../service/apiBuy";
+import { useEffect, useState } from "react";
+const api = new Api();
 
 export default function BuySecondBand (props) {
     const informations = props.info;
+    const [data, setData] = useState([]);
 
     let gambiarraPraMapear = []
     for (var i = 0; i < informations.qtd; i++) {
         gambiarraPraMapear.push(i)
     }
+
+    const getDates = async () => {
+        let r = await api.getDates(props.idEvent)
+        setData(r);
+    }
+
+    
+    useEffect(() => {
+        getDates()   
+    }, [])
+    
+
+
 
     return (
         <FaixaDois>
@@ -50,7 +66,7 @@ export default function BuySecondBand (props) {
             <div class="second-box-scheme">
                 {gambiarraPraMapear.map((item) => {
                       
-                   return <DateTimeBox key={item}/>
+                   return <DateTimeBox key={item} idEvent={props.idEvent} datas={data} />
                       
                 })}
             </div>

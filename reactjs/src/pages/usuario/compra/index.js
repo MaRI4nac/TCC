@@ -32,6 +32,10 @@ export default function AllBuy (props) {
         setQtd(qtd);
     }
 
+    const addDates = (dt) => {
+        setDates()
+    }
+
     const infoReadOnly = {
         evento: event.nomevento,
         valor: event.preco,
@@ -45,7 +49,7 @@ export default function AllBuy (props) {
     return (
         <Everything>
             <BuyFirstBand onUpdate={alterarQtd} value={qtd} />
-            <BuySecondBand info={infoReadOnly} />
+            <BuySecondBand info={infoReadOnly} idEvent={event.id_evento}/>
             <BuyThirdBand  />
             <BuyFourthBand />
         </Everything>

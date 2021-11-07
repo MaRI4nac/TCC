@@ -27,4 +27,14 @@ export default class Api {
         })
         return r.data
     }
+
+    async getDates(id) {
+        let r = await api.get(`/eventdate/${id}`)
+        return r.data;
+    }
+
+    async getHours(id) {
+        let r = await api.get(`/eventhour/:${id}`)
+        return r.data;
+    }
 }

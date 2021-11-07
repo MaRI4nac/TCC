@@ -1,9 +1,25 @@
 import { StyledDateTime } from "./styled";
 import Api from "../../../../service/apiBuy";
+import { useEffect, useState } from "react";
 const api = new Api();
 
-export default function DateTimeBox () {
+export default function DateTimeBox (props) {
 
+    // const getDates = async () => {
+    //     let r = await api.getDates(props.idEvent)
+    //     console.log(r);
+    //     setData(r);
+    // }
+
+    // useEffect(() => {
+    //     getDates()   
+    // }, [])
+
+    const dateFormat = (data) => {
+        let data1 = data.substr(0, 10)
+        data1 = data1.split('-')
+        return `${data1[2]}/${data1[1]}/${data1[0]}`
+    }
 
     return (
         <StyledDateTime>
@@ -25,11 +41,9 @@ export default function DateTimeBox () {
                     <div class="start-box-choose"> Selecione a data desejada </div>
                         <select name="" id="0">
                             <option value="0" class="op-dif"> Datas disponíveis... </option>
-                            <option value="1"> 20/12/2021 </option>
-                            <option value="2"> 21/12/2021</option>
-                            <option value="3"> 22/12/2021</option>
-                            <option value="4">23/12/2021</option>
-                            <option value="5">24/12/2021</option>
+                            {props.datas.map((item) => {
+                                 return <option> {dateFormat(item.dt_evento)} </option>
+                            })}
                         </select>
                 </div>
                 <div class="start-box">
@@ -42,11 +56,11 @@ export default function DateTimeBox () {
                     <div class="start-box-choose"> Selecione o horário desejado </div>
                         <select name="" id="0">
                             <option value="0" class="op-dif"> Datas disponíveis... </option>
-                            <option value="1"> 20/12/2021 </option>
-                            <option value="2">21/12/2021</option>
-                            <option value="3">22/12/2021</option>
-                            <option value="4">23/12/2021</option>
-                            <option value="5">24/12/2021</option>
+                            <option value="1">  20/12/2021  </option>
+                            <option value="2">  21/12/2021  </option>
+                            <option value="3">  22/12/2021  </option>
+                            <option value="4">  23/12/2021  </option>
+                            <option value="5">  24/12/2021  </option>
                         </select>
                 </div>
             </div>
