@@ -9,32 +9,13 @@ export default function BuySecondBand (props) {
     const informations = props.info;
     const [data, setData] = useState([]);
     const [hours, setHours] = useState([]);
-    const [getSelectedDate, setGetSelectedDate] = useState([]);
-    const [getSelectedHour, setGetSelectedHour] = useState([]);
     
     const updateFieldDate = (date, i) => {
-        if (!date) {
-            return;
-        }
-        var r = [...getSelectedDate]
-        r[i] = date.dt_evento
-      
-        setGetSelectedDate(r)
-
-        console.log(getSelectedDate)
+        props.updateFieldDate(date, i)
     }
 
     const updateFieldHour = (hour, i) => {
-        if (!hour) {
-            return;
-        }
-        var r = [...getSelectedHour]
-        r[i] = hour.hr_evento
-     
-        
-        setGetSelectedHour(r)
-        
-        console.log(getSelectedHour)
+        props.updateFieldHour(hour, i)
     }
 
     let gambiarraPraMapear = []

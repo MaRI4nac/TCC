@@ -91,7 +91,7 @@ const FaixaTres = styled.div `
 }
 
 .payment-inf-cc-box-title1 {
-    margin-left: 5.8em;
+    margin-left: 6.6em;
 }
 
 .payment-inf-cc-box-title2 {
@@ -118,6 +118,7 @@ input {
     width: 18em;
     height: 2.5em;
     border-radius: 0.5em;
+    outline: none;
 }
 
 
