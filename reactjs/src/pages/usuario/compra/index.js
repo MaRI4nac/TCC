@@ -15,7 +15,6 @@ export default function AllBuy (props) {
         alert('Você deve estar logado para efetuar a compra')
         navig.push('/inicial')
     }
-    
 
     const [event, setEvent] = useState(props.location.state);
     const [qtd, setQtd] = useState(1)
