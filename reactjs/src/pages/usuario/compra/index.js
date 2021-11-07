@@ -30,6 +30,7 @@ export default function AllBuy (props) {
 
     const alterarQtd = (qtd) => {
         setQtd(qtd);
+        console.log(teste);
     }
 
     const addDates = (dt) => {
