@@ -39,7 +39,7 @@ export default function AllBuy (props) {
     const infoReadOnly = {
         evento: event.nomevento,
         valor: event.preco,
-        categoria: event.id_categoria_infoc_nws_tb_categorium.ds_tema,
+        categoria: event.ds_tema,
         comprador: JSON.parse(Cookies.get('usuario-logado')).nm_usuario,
         email: JSON.parse(Cookies.get('usuario-logado')).ds_email,
         cpf: JSON.parse(Cookies.get('usuario-logado')).ds_cpf,

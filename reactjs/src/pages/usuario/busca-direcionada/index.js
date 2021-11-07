@@ -38,6 +38,7 @@ export default function BuscaDirecionada (props) {
                     <img src="peças.png" alt="" />
                     <div> PEÇAS </div>
                 </div>
+                {console.log(events)}
                 { events.map((item) =>
                     < DirBox info={item} />
                 )}

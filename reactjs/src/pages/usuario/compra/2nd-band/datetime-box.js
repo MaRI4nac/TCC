@@ -5,15 +5,18 @@ const api = new Api();
 
 export default function DateTimeBox (props) {
 
+    const [currentDate, setCurrentDate] = useState();
+
     // const getDates = async () => {
     //     let r = await api.getDates(props.idEvent)
     //     console.log(r);
     //     setData(r);
     // }
+    useEffect(() => {
+        props.onDateChange(currentDate, props.chave)
+    }, [currentDate])
 
-    // useEffect(() => {
-    //     getDates()   
-    // }, [])
+ 
 
     const dateFormat = (data) => {
         let data1 = data.substr(0, 10)
@@ -39,8 +42,7 @@ export default function DateTimeBox (props) {
                         <div class="st-box-title"> Datas disponíveis </div>
                     </div>
                     <div class="start-box-choose"> Selecione a data desejada </div>
-                        <select name="" id="0">
-                            <option value="0" class="op-dif"> Datas disponíveis... </option>
+                        <select name="" id="0" onChange={(e) => setCurrentDate(e.target.value)}>
                             {props.datas.map((item) => {
                                  return <option> {dateFormat(item.dt_evento)} </option>
                             })}

@@ -1,7 +1,7 @@
 import { Container } from './styled'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 
 
@@ -9,10 +9,11 @@ export default function Cabecalho(props) {
 
     const [search, setSearch] = useState();
     const navig = useHistory();
-    const [user, setUser] = useState(JSON.parse(Cookies.get('usuario-logado')));
+    const [user, setUser] = useState();
 
-
-    
+    useEffect(() => {
+        setUser(JSON.parse(Cookies.get('usuario-logado')))
+    }, [])
 
     function keyPress(event) {
 

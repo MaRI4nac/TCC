@@ -8,10 +8,19 @@ const api = new Api();
 export default function BuySecondBand (props) {
     const informations = props.info;
     const [data, setData] = useState([]);
+    const [getSelectedDate, setGetSelectedDate] = useState([]);
+    
+    const updateField = (date, index) => {
+        let r = [...getSelectedDate]
+        r[index] = date
+
+        setGetSelectedDate(r)
+        console.log(getSelectedDate)
+    }
 
     let gambiarraPraMapear = []
     for (var i = 0; i < informations.qtd; i++) {
-        gambiarraPraMapear.push(i)
+        gambiarraPraMapear.push(i);
     }
 
     const getDates = async () => {
@@ -21,7 +30,7 @@ export default function BuySecondBand (props) {
 
     
     useEffect(() => {
-        getDates()   
+        getDates()
     }, [])
     
 
@@ -64,10 +73,8 @@ export default function BuySecondBand (props) {
 
             </div>
             <div class="second-box-scheme">
-                {gambiarraPraMapear.map((item) => {
-                      
-                   return <DateTimeBox key={item} idEvent={props.idEvent} datas={data} />
-                      
+                {gambiarraPraMapear.map((item, i) => {
+                   return <DateTimeBox key={item} datas={data} onDateChange={updateField} chave={i}/>
                 })}
             </div>
             

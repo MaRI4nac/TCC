@@ -81,7 +81,7 @@ export default function TelaEvento(props) {
                             <div class="p-title"> {event.nomevento} </div>
                             <div class="p-description">
                                 <ul>
-                                    <li> <b> Categoria: </b> {event.gênero} </li>
+                                    <li> <b> Gênero: </b> {event.gênero} </li>
                                     <li> <b> Duração: </b> {`${hourFormat(event.duracao)} minutos`} </li>
                                     <li> <b> Classificação etária: </b> {yearFormat(event.classificacao)} anos </li>
                                     <li> <b> Preço: </b> {`R$ ${event.preco}`} </li>

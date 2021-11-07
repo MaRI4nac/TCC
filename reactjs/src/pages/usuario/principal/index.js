@@ -47,6 +47,7 @@ export default function Principal() {
 
     async function listar () {
         let r = await api.highlightedEvents();
+        console.log(r)
         setTest(r);
     }
     
@@ -88,9 +89,9 @@ export default function Principal() {
                         <h1> EVENTOS EM DESTAQUE </h1>
                     </div>
                     <div> 
-                        {/* { test.map((item) => 
+                        { test.map((item) => 
                             <DirBox info={item} />
-                        )} */}
+                        )}
                     </div>
                     <button className="marginbutton"> MAIS EVENTOS EM DESTAQUE </button> 
                 </div>
