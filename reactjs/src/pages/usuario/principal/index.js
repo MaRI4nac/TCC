@@ -7,40 +7,6 @@ import DirBox from '../busca-direcionada/dir-box'
 import Api from '../../../service/apiEvent.js'
 const api = new Api();
 
-let eventSimulation = {
-
-    "nmEvento": "Cada Um Tem o Anjo Que Merece",
-    "categoria": "Comédia",
-    "duracao": "00:01:20",
-    "classificacao": 12,
-    "valorIngresso": 70.00,
-    "local": "Rua bem te vi",
-    "dtMin": "2021-10-23",
-    "dtMax": "2021-11-23",
-    "elenco": "diretor: levy",
-    "descEvento": "Nesta comédia, o casal, Osvaldo e Quitéria, vive às turras, brigando e se desentendendo a todo momento, por qualquer motivo. Os dois estão nos seus limites e prestes a se separarem quando algo surpreendente acontece. Lá no céu os Deuses decidem que eles merecem uma atenção especial para ajudar a refazer esse amor tão desgastado pelo tempo. Dirigida por Wesley Leal.",
-    "imgCapa": "/assets/images/principal-box.png",
-    "imgFundo": "/assets/images/principal-box.png",
-    "imgSec": "/assets/images/principal-box.png",
-    "datas": [
-        {"data": "2020-10-10",
-            "horarios": [
-                "10:15", "15:30"
-            ]
-        },
-        {"data": "2020-10-15",
-            "horarios": [
-                "10:15", "15:30"
-            ]
-        },
-        {"data": "2020-10-05",
-            "horarios": [
-                "10:15", "15:30"
-            ]
-        }
-    ]
-}
-
 export default function Principal() {
 
     const [test, setTest] = useState([]);
@@ -89,9 +55,9 @@ export default function Principal() {
                         <h1> EVENTOS EM DESTAQUE </h1>
                     </div>
                     <div> 
-                        { test.map((item) => 
+                        {/* { test.map((item) => 
                             <DirBox info={item} />
-                        )}
+                        )} */}
                     </div>
                     <button className="marginbutton"> MAIS EVENTOS EM DESTAQUE </button> 
                 </div>
