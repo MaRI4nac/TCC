@@ -32,6 +32,7 @@ const Container = styled.div`
         justify-content: center;
         
         margin: 12rem 0px;
+
     }
 
     .bg-white img {
@@ -172,6 +173,7 @@ const Container = styled.div`
         background-image: url('https://i.pinimg.com/564x/fe/71/77/fe7177975e95d743d58ce9752a5e7dd7.jpg');
         display: flex;
         justify-content: center; 
+        align-items: center;
 
         background-position: center;
         background-size: 100% auto;
@@ -179,6 +181,12 @@ const Container = styled.div`
         background-repeat: no-repeat; 
         height: 28vh;
         width: 100%;
+    }
+
+    .y-event {
+        overflow-y: auto;
+        padding: 2em;
+        
     }
 
 `

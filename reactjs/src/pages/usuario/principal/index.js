@@ -54,12 +54,11 @@ export default function Principal() {
                     <div className = "Eventos"> 
                         <h1> EVENTOS EM DESTAQUE </h1>
                     </div>
-                    <div> 
-                        {/* { test.map((item) => 
+                    <div className="all-events"> 
+                        { test.map((item) => 
                             <DirBox info={item} />
-                        )} */}
+                        )}
                     </div>
-                    <button className="marginbutton"> MAIS EVENTOS EM DESTAQUE </button> 
                 </div>
                 <div className="rodape"> 
                     <img src="/assets/images/redesSociais1.png" alt="" />
