@@ -6,6 +6,10 @@ export default function BoxCalculator (props) {
         props.onChange(qtd)
     }
 
+    const onValueChange = (op) => {
+        props.onTicketUpdate(op)
+    }
+
     return (
     <TTT>
         <div class="box-image-event">
@@ -18,10 +22,10 @@ export default function BoxCalculator (props) {
         <div class="box-qtd-event">
             <div class="box-ticket-price">
                 <div class="box-title"> Ingressos </div>
-                <div class="box-price"> R$ 50,00 </div>
+                <div class="box-price"> R$ {props.ticketValue} </div>
             </div>
             <div class="box-ticket-title"> Quantidade de ingressos</div>
-            <Calculator onChange={onChange} value={props.value}/>
+            <Calculator onChange={onChange} value={props.value} onValueChange={onValueChange} />
         </div>
     </TTT>
     )

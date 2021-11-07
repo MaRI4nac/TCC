@@ -79,7 +79,6 @@ input:focus {
 .log-esqueci-senha {
     display: flex;
     justify-content: flex-end;
-    text-decoration: underline;
     margin-bottom: 1em;
     font-size: 0.8em;
 }

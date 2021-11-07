@@ -27,6 +27,8 @@ export default function UserProfile () {
 
     const [usuario, setUsuario] = useState(usuarioLogado);
 
+    const [teste, setTeste123] = useState(JSON.parse(Cookies.get('usuario-logado')))
+
     const [nmUsu, setNmUsu] = useState('');
     const [cpf, setCpf] = useState('');
     const [email, setEmail] = useState('');

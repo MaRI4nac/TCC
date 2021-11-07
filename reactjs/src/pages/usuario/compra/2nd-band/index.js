@@ -15,7 +15,6 @@ export default function BuySecondBand (props) {
         r[index] = date
 
         setGetSelectedDate(r)
-        console.log(getSelectedDate)
     }
 
     let gambiarraPraMapear = []
