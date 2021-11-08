@@ -5,7 +5,7 @@ const ITsProfile = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-size: 100%;
     background: rgba(18, 61, 61, 0.8);   
     background-position: 10%;
@@ -29,14 +29,16 @@ const ITsProfile = styled.div`
     border: 2px solid white;
     padding: 4em 4em;
     position: relative;
+    margin-top: 12em;
+    margin-bottom: 3em;
 }
 
 .user-image {
     display: flex;
     align-items: center;
     position: absolute;
-    top: -20%;
-    right: 32.5%;
+    top: -6em;
+    left: 10em;
 }
 
 .user-image img {

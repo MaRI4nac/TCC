@@ -18,7 +18,6 @@ export default function Cabecalho(props) {
     
     const navig = useHistory();
     const usuarioLogado = lerUsuarioLogado(navig);
-    
     const [user, setUser] = useState(usuarioLogado);
 
 

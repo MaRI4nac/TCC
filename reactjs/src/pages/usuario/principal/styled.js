@@ -32,6 +32,7 @@ const Container = styled.div`
         justify-content: center;
         
         margin: 12rem 0px;
+
     }
 
     .bg-white img {
@@ -94,6 +95,22 @@ const Container = styled.div`
         margin: 7rem 0px 4rem 0px;
     }
 
+    .event-top-scroll {
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 1em;
+        margin: 5em;
+        height: 28em;
+        overflow-y: auto;
+    }
+
+    .all-event {
+        background-color: rgba( 0,0,0, 0.5 );
+        overflow-y: auto;
+        padding: 2em;
+        height: 10vh;
+    }
+
+
     .box {
         display: flex;
         flex-direction: row;
@@ -105,6 +122,7 @@ const Container = styled.div`
         padding: 2em;
 
         margin: 2.2% 9%;
+        margin-bottom: 2em;
         box-shadow: 1px 2px 5px rgb(47 79 79 / 70%), 5px 10px 25px black;
     }
 
@@ -172,6 +190,7 @@ const Container = styled.div`
         background-image: url('https://i.pinimg.com/564x/fe/71/77/fe7177975e95d743d58ce9752a5e7dd7.jpg');
         display: flex;
         justify-content: center; 
+        align-items: center;
 
         background-position: center;
         background-size: 100% auto;
@@ -180,6 +199,8 @@ const Container = styled.div`
         height: 28vh;
         width: 100%;
     }
+
+
 
 `
 

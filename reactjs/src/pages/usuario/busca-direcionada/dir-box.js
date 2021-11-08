@@ -24,7 +24,7 @@ export default function DirBox (props) {
     return (
         
         <div className="box"> 
-            <img src={event.imagemcapa} alt="" width="300px" height="300px" />
+            <img src={event.imagemcapa} alt="" width="250px" height="300px" />
                 <div className="box-text"> 
                     <h1> {event.nomevento} </h1>
                     <div> {`${event.gênero}, ${hourFormat(event.duracao)} minutos, ${yearFormat(event.classificacao)} anos.`} </div>

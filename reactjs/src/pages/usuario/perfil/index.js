@@ -96,7 +96,7 @@ export default function UserProfile () {
             <Cabecalho />
             <div class="header"></div>
             <div class="the-band">
-                <div class="user-image"> <img src={usuario.img_perfil} alt="" width="250px" height="250px" /> </div>
+                <div class="user-image"> <img src={usuario.img_perfil} alt="" width="28em" height="28em" /> </div>
                 <div class="user-general-informations">
                     <div class="first-box">
                         <div class="profile-user"> {usuario.nm_usuario} </div>
