@@ -15,9 +15,7 @@ const api = new Api();
 export default function AllBuy (props) {
     const navig = useHistory();
 
-    if(!Cookies.get('usuario-logado')){
-        navig.push('/logar')
-    }
+ 
 
     const [event, setEvent] = useState(props.location.state);
     const [user, setUser] = useState(JSON.parse(Cookies.get('usuario-logado')));
@@ -32,6 +30,9 @@ export default function AllBuy (props) {
     const [dates, setDates] = useState([]);
     const [hours, setHours] = useState([]);
     const [ticketValue, setTicketValue] = useState(event.preco)
+
+    console.log(event)
+
 
     const alterarQtd = (qtd) => {
         setQtd(qtd);
@@ -87,6 +88,9 @@ export default function AllBuy (props) {
         qtd: qtd
     }
 
+    useState(() => {
+    })
+
     const createVendaItem = async () => {
         let r = await api.finishBuy(cardNumber, cardOwner, cvc, validity, cpf, user.id_usuario, paymentMethod, hours);
         console.log(cardNumber, cardOwner, cvc, validity, cpf, user.id_usuario, paymentMethod, hours)
@@ -101,8 +105,8 @@ export default function AllBuy (props) {
 
     return (
         <Everything>
-            <BuyFirstBand onUpdate={alterarQtd} value={qtd} onValueChange={updateTicketValue} ticketValue={ticketValue}/>
-            <BuySecondBand info={infoReadOnly} idEvent={event.id_evento} updateFieldDate={updateFieldDate} updateFieldHour={updateFieldHour}/>
+            <BuyFirstBand onUpdate={alterarQtd} value={qtd} onValueChange={updateTicketValue} ticketValue={ticketValue} imagemcapa={event.imagemcapa} imagemfundo={event.imagemfundo}/>
+            <BuySecondBand info={infoReadOnly} idEvent={event.id_evento} updateFieldDate={updateFieldDate} updateFieldHour={updateFieldHour} />
             <BuyThirdBand  cardInformation={getCreditCard}/>
             <BuyFourthBand onFinish={createVendaItem}/>
         </Everything>

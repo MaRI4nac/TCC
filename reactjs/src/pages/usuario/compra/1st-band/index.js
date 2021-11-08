@@ -11,12 +11,14 @@ export default function BuyFirstBand (props) {
     const onTicketUpdate = (op) => {
         props.onValueChange(op)
     }
+    
+    console.log(props.imagemfundo)
 
     return (
-        <FaixaUm>
+        <FaixaUm background={props.imagemfundo}>
             <div class="the-event">
                 <div class="image">
-                    <img src="/assets/images/event-block.png" alt="" width= "600em" height="320em" />
+                    <img src={props.imagemcapa} alt="" width= "600em" height="320em" />
                 </div>
             </div>
             <div class="the-qtd">

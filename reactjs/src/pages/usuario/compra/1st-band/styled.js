@@ -11,11 +11,12 @@ const FaixaUm = styled.div `
     display: flex;
     flex-direction: column;
     position: relative;
-    background-image: url("/assets/images/wallpaper.png");
+    background-image: url('${(props) => props.background}');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 30em;
 
+    opacity: 0.8;
     margin-bottom: 2vh;
 }
 
@@ -25,6 +26,10 @@ const FaixaUm = styled.div `
     position: absolute;
     top: 15em;
 
+}
+
+.image img {
+    border-radius: 25px;
 }
 
 .the-qtd {
