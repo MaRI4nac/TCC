@@ -34,19 +34,37 @@ export default function Principal() {
                     <div className="box-theme"> 
                         <img src="/assets/images/pecasEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
-                        <Link to="/buscadirecionada?categoria=3" className="Blink"> 
+                        <Link to={{
+                            pathname: "/buscadirecionada",
+                            search: "?categoria=3",
+                            state: {
+                                categoria: "Peças", img: "/assets/images/pecasEvento.svg"
+                            }
+                        }} className="Blink"> 
                             <button> peças </button> 
                         </Link>
                     </div>
                     <div className="box-theme"> 
                         <img src="/assets/images/showsEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
-                        <Link to="/buscadirecionada?categoria=4" className="Blink" > <button> shows </button> </Link>
+                        <Link to={{
+                            pathname: "/buscadirecionada",
+                            search: "?categoria=4",
+                            state: {
+                                categoria: "Shows", img: "/assets/images/showsEvento.svg"
+                            }
+                        }} className="Blink" > <button> shows </button> </Link>
                     </div>
                     <div className="box-theme"> 
                         <img src="/assets/images/museusEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
-                        <Link to="/buscadirecionada?categoria=5" className="Blink" > <button> museus </button> </Link>
+                        <Link to={{
+                            pathname: "/buscadirecionada",
+                            search: "?categoria=5",
+                            state: {
+                                categoria: "Museus", img: "/assets/images/museusEvento.svg"
+                            }
+                        }} className="Blink" > <button> museus </button> </Link>
                     </div>
                 </div>
                 <div className="principal"> 

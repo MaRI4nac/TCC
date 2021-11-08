@@ -36,32 +36,34 @@ export default function BuyThirdBand (props) {
                 <div className="pix"> Chave Pix: 222.222.222-22 </div>
             </div> :  
             
-            <div class="payment-informations-credit-card">
-                <div class="column">
-                    <div class="payment-inf-cc-box">
-                        <div class="payment-inf-cc-box-title2">Número do Cartão: </div>
-                         <input type="text" class="payment-inf-cc-box-text" onChange={(e) => setCardNumber(e.target.value)}/>
+            <form>
+                <div class="payment-informations-credit-card">
+                    <div class="column">
+                        <div class="payment-inf-cc-box">
+                            <div class="payment-inf-cc-box-title2">Número do Cartão: </div>
+                            <input type="text" class="payment-inf-cc-box-text" onChange={(e) => setCardNumber(e.target.value)}/>
+                        </div>
+                        <div class="payment-inf-cc-box">
+                            <div class="payment-inf-cc-box-title"> Portador do Cartão: </div>
+                            <input type="text" class="payment-inf-cc-box-text" onChange={(e) => setCardOwner(e.target.value)} />
+                        </div>
+                        <div class="payment-inf-cc-box">
+                            <div class="payment-inf-cc-box-title1"> CVC:    </div>
+                            <input type="text" class="payment-inf-cc-box-text" onChange={(e) => setCvc(e.target.value)} />
+                        </div>
                     </div>
-                    <div class="payment-inf-cc-box">
-                        <div class="payment-inf-cc-box-title"> Portador do Cartão: </div>
-                         <input type="text" class="payment-inf-cc-box-text" onChange={(e) => setCardOwner(e.target.value)} />
-                    </div>
-                    <div class="payment-inf-cc-box">
-                        <div class="payment-inf-cc-box-title1"> CVC:    </div>
-                         <input type="text" class="payment-inf-cc-box-text" onChange={(e) => setCvc(e.target.value)}/>
+                    <div class="column">
+                        <div class="payment-inf-cc-box">
+                            <div class="payment-inf-cc-box-title"> Vencimento: </div>
+                            <input type="month" class="payment-inf-cc-box-text" onChange={(e) => setValidity(e.target.value)}/>
+                        </div>
+                        <div class="payment-inf-cc-box">
+                            <div class="payment-inf-cc-box-title4"> CPF: </div>
+                            <input type="text" class="payment-inf-cc-box-text" onChange={(e) => setCpf(e.target.value)}/>
+                        </div>
                     </div>
                 </div>
-                <div class="column">
-                    <div class="payment-inf-cc-box">
-                        <div class="payment-inf-cc-box-title"> Vencimento: </div>
-                         <input type="text" class="payment-inf-cc-box-text" onChange={(e) => setValidity(e.target.value)}/>
-                    </div>
-                    <div class="payment-inf-cc-box">
-                        <div class="payment-inf-cc-box-title4"> CPF: </div>
-                         <input type="text" class="payment-inf-cc-box-text" onChange={(e) => setCpf(e.target.value)}/>
-                    </div>
-                </div>
-            </div>
+            </form>
             
 }
          
