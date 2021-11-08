@@ -42,5 +42,10 @@ export default class Api {
         return m.data; 
     }
 
+    async getUserTickets(id) {
+        let r = await api.get(`/userTickets/?id=${id}`)
+        return r.data;
+    }
+
 
 }

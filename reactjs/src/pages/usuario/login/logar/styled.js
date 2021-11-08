@@ -13,6 +13,10 @@ const Log = styled.div `
     padding: 12em 5em;
     color:#ADD8E6;
 
+    a {
+        text-decoration: none;
+    }
+
 .Logo {
     background-image: url('/assets/images/LOGO TCC - P3 NWS 3.svg');
     background-size: 100% 100%;
@@ -81,6 +85,7 @@ input:focus {
     justify-content: flex-end;
     margin-bottom: 1em;
     font-size: 0.8em;
+    text-decoration: none;
 }
 
 .log-botoes {

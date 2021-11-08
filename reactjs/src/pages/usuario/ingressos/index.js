@@ -1,48 +1,38 @@
 import { Container } from './styled'
 import Cabecalho from '../../../components/cabecalho'
+import Box from './box'
+import Api from '../../../service/apiUsers'
+import { useHistory } from 'react-router';
+import { useEffect, useState } from 'react';
+const api = new Api();
 
+export default function Ingressos(props) {
+    const nav = useHistory();
 
+    if (!props.location.state)
+        nav.push('/')
 
-export default function Ingressos() {
+    const [tickets, setTickets] = useState();
+
+    const userTicket = async() => {
+        let r = await api.getUserTickets(props.location.state)
+        console.log(r)
+        setTickets(r);
+    }
+
+    useEffect(() => {
+        userTicket();
+    }, [])
+
     return (
         <Container> 
-            <Cabecalho />
+        <Cabecalho />
             <div className="boxes">
-                <div className="box">
-                    <div className="bg"> </div>
-                    <img src="/assets/images/ingresso.png" alt="" />    
-                    <div className="box-textos"> 
-                        <h1> PETER PAN, O MUSICAL </h1>
-                        <div> <b> LOCAL: </b> R. Tagipuru, 795 - Barra Funda -SP </div>
-                        <div> <b> DIA: </b> SEGUNDA, 22/11/2021 </div>
-                        <div> <b> EVENTO: </b> teatro musical </div>
-                        <div> <b> SITUAÇÃO: </b> aguardando aprovação </div>
-                    </div>
-                </div>
-                <div className="box">
-                    <div className="bg"> </div>
-                    <img src="/assets/images/ingresso.png" alt="" />    
-                    <div className="box-textos"> 
-                        <h1> PETER PAN, O MUSICAL </h1>
-                        <div> <b> LOCAL: </b> R. Tagipuru, 795 - Barra Funda -SP </div>
-                        <div> <b> DIA: </b> SEGUNDA, 22/11/2021 </div>
-                        <div> <b> EVENTO: </b> teatro musical </div>
-                        <div> <b> SITUAÇÃO: </b> aguardando aprovação </div>
-                    </div>
-                </div>
-                <div className="box">
-                    <div className="bg"> </div>
-                    <img src="/assets/images/ingressoDourado.png" alt="" />    
-                    <div className="box-textos"> 
-                        <h1> PETER PAN, O MUSICAL </h1>
-                        <div> <b> LOCAL: </b> R. Tagipuru, 795 - Barra Funda -SP </div>
-                        <div> <b> DIA: </b> SEGUNDA, 22/11/2021 </div>
-                        <div> <b> EVENTO: </b> teatro musical </div>
-                        <div> <b> SITUAÇÃO: </b> aguardando aprovação </div>
-                    </div>
-                </div>       
+                {!tickets ? <div> </div>
+                    : tickets.map((item) => {
+                    return <Box titulo={item.nomevento} local={item.local} tema={item.ds_tema} situacao={item.situacao} imgFundo={item.imagemfundo}/> })
+                }       
             </div>
-            <button> <b> VER NA AGENDA </b> </button>
         </Container> 
     )
 }

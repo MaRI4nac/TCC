@@ -2,7 +2,6 @@ import { BrowserRouter,Switch, Route } from 'react-router-dom';
 import ConfirmacaoCompra from './pages/administrativo/confirmacao-compra/index.js'
 import NovaSenha from './pages/usuario/login/nova-senha/index.js'
 import EsqueceuSenha from './pages/usuario/login/esqueceu-senha/index.js'
-import SiteCompleto from "./index-principal.js";
 import ADMLogin from "./pages/administrativo/login/index.js";
 import NWSCriarConta from "./pages/usuario/login/criar-conta";
 import Cabecalho from "./components/cabecalho";
@@ -30,13 +29,13 @@ export default function Routes() {
                 <Route path="/cabecalho"  component={Cabecalho} />
                 <Route path="/logar"  component={NWSLogar} />
                 <Route path="/compra"  component={ConfirmacaoCompra} />
+                <Route path="/inicial" component={TelaInicial} />
                 <Route path="/novasenha"  component={NovaSenha} />
                 <Route path="/esqueceusenha"  component={EsqueceuSenha} />
                 <Route path="/admlogin" component={ADMLogin} />
                 <Route path="/buscadireta" component={BuscaDireta} />
                 <Route path="/buscadirecionada" component={BuscaDirecionada} />
                 <Route path="/ingressos" component={Ingressos} />
-                <Route path="/inicial" component={TelaInicial} />
                 <Route path="/admprincipal" component={ADMPrincipal} />
                 <Route path="/relatorios" component={ADMRelatorios} />
                 <Route path="/eventos" component={TelaEvento} />

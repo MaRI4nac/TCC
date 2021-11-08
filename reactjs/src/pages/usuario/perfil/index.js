@@ -7,6 +7,7 @@ import AgpInputs from "./components";
 import Api from "../../../service/apiUsers";
 import { Validador } from '../../../components/commum/index'
 import Cabecalho from "../../../components/cabecalho";
+import { Link } from "react-router-dom";
 
 const api = new Api()
 
@@ -40,7 +41,7 @@ export default function UserProfile () {
 
     const deslogar = () => {
         Cookies.remove('usuario-logado');
-        nav.push('/inicial')
+        nav.push('/')
     }
 
     const updateCookie = async () => {
@@ -96,7 +97,7 @@ export default function UserProfile () {
             <Cabecalho />
             <div class="header"></div>
             <div class="the-band">
-                <div class="user-image"> <img src={usuario.img_perfil} alt="" width="28em" height="28em" /> </div>
+                <div class="user-image"> <img src={usuario.img_perfil} alt=""/> </div>
                 <div class="user-general-informations">
                     <div class="first-box">
                         <div class="profile-user"> {usuario.nm_usuario} </div>
@@ -129,7 +130,12 @@ export default function UserProfile () {
                     
 
                     </div>
-
+                    
+                    <div class="butbutbut">
+                    <Link to={{
+                            pathname: "/Ingressos",
+                            state: usuario.id_usuario }}> <Botao> Meus ingressos </Botao> </Link>
+                    </div>
                     <div class="butbutbut">
                         <Botao onClick={() => updateUsu()}> {idAlterando == 0 ? "Alterar Informações" : "Confirmar Alterações"} </Botao>
                     </div>

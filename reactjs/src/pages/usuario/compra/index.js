@@ -16,8 +16,7 @@ export default function AllBuy (props) {
     const navig = useHistory();
 
     if(!Cookies.get('usuario-logado')){
-        alert('Você deve estar logado para efetuar a compra')
-        navig.push('/inicial')
+        navig.push('/logar')
     }
 
     const [event, setEvent] = useState(props.location.state);
@@ -94,9 +93,10 @@ export default function AllBuy (props) {
         if(!Validador(r))
             return;
 
-        navig.push('/inicial')
+        navig.push('/   ')
         return r;
     }
+
     
 
     return (

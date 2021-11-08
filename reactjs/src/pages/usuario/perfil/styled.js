@@ -30,18 +30,29 @@ const ITsProfile = styled.div`
     padding: 4em 4em;
     position: relative;
     margin-top: 12em;
-    margin-bottom: 3em;
+    margin-bottom: 3em;    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .user-image {
     display: flex;
     align-items: center;
     position: absolute;
-    top: -6em;
-    left: 10em;
+    
+    top: -13vh;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .user-image img {
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
     width: 18vh;
     height: 18vh;
     border-radius: 50%;

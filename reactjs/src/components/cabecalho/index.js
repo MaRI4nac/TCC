@@ -23,22 +23,20 @@ export default function Cabecalho(props) {
 
     const [search, setSearch] = useState();
 
-    useEffect(() => {
-        console.log(user)
-    }, [user])
-   
+    const doTheSeatch = () => {
+        navig.push(`/buscadireta?search=${search}`);
+    }
    
     function keyPress(event) {
-
         if(event.charCode === 13) {
-            navig.push(`/buscadireta?search=${search}`);
+            doTheSeatch();
         }
     }
 
     return (
 
         <Container>
-            <Link to="/inicial"> <img className="logo-image" src="/assets/images/LOGO1 TCC.png" alt="" /> </Link>
+            <Link to="/"> <img className="logo-image" src="/assets/images/LOGO1 TCC.png" alt="" /> </Link>
             <input type="text" placeholder="Buscar eventos..." value={search} onChange={(e) => setSearch(e.target.value) } onKeyPress={keyPress} />
             {user == false
                 ? <Link to="/logar" className="no-decoration"> <div> Entrar </div> </Link>
