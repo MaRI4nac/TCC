@@ -6,7 +6,7 @@ export default function AddEvent () {
     return (
         <Container>
             <div className="title">
-                <div className="the-polygon"> <img src="play-button.png" alt="" width="40em" hwight="40em" /> </div>
+                <div className="the-polygon"> <img src="/assets/images/play-button.png" alt="" width="40em" hwight="40em" /> </div>
                 <div className="the-title"> NOME EVENTO </div>
             </div>
             <div className="principal-box">

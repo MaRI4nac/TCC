@@ -97,7 +97,7 @@ input[type="date"]{
 .image {
     display: flex;
     background-color: #f0f8ff;
-    background-image: url('add-me.png');
+    background-image: url('/assets/images/add-me.png');
     background-repeat: no-repeat;
     background-size: 5em;
     background-position: center;
