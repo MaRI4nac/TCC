@@ -17,7 +17,7 @@ const Container = styled.div`
         background-position: center;
         background-size: 100% auto;
         background-attachment: fixed; 
-        background-repeat: no-repeat; 
+        background-repeat: cover; 
         height: 95vh;
     }
 
