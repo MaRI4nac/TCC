@@ -1,34 +1,144 @@
 import styled from 'styled-components'; 
 
 const Container = styled.div`
-    background-color: #2F4F4F; 
-    height: 100vh; 
-    display: flex; 
+
+
+    display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    background-color: #2F4F4F;
+    color: white;
+    min-height: 100vh;
 
-    .NewEvent{
-        display: flex; 
-        flex-direction: row; 
-        color: white; 
-        justify-content: flex-start;
-        align-items: center; 
-    }
 
-    .NewEvent > img {
-        width: 30px;
-        height: 30px;
-        margin: 0px 20px 0px 30px;   
-    }
+    padding: 3em;
 
-    .BoxInputs {
-        background: rgba(255, 255, 255, 0.08); 
-        max-width: 1440px;
-        width: 90%;
-        height: 70%; 
-        margin-bottom: 2.5%; 
-    }
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.the-polygon {
+    margin-right: 1em;
+}
+
+.the-title {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.principal-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+    background-color: #FFFFFF0D;
+    padding: 2em;
+
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.mini-box {
+    display: flex;
+    flex-direction: column;
+    padding: 0.3em;
+}
+
+label {
+    font-size: 1.05rem;
+}
+
+input {
+    padding: 0.5em 3em;
+    margin-right: 2em;
+    border: none;
+    border-radius: 0.3em;
+    background-color:#F0F8FF;
+}
+
+.event-name {
+    padding: 0.5em 16.8em;
+}
+
+.date-ff {
+    display: flex;
+    flex-direction: row;
+}
+
+input[type="file"] {
+    color: black;
+    padding: 0.5em 0.5em;
+    display: flex;
+    justify-content: center;
+}
+
+input[type="date"]{
+    padding: 0.3em 0.3em;
+}
+
+.column1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column; 
+}
+
+.image {
+    display: flex;
+    background-color: #f0f8ff;
+    background-image: url('add-me.png');
+    background-repeat: no-repeat;
+    background-size: 5em;
+    background-position: center;
+
+    padding: 6em 4.5em;
+    margin-right: 2em;
+    border-radius: 0.3em;
+}
+
+textarea {
+    resize: none;
+    padding: 1em;
+    width: 27.5em;
+    background-color: #f0f8ff;
+    border-radius: 0.3em;
+}
+
+button {
+    border: none;
+    border-radius: 5em;
+    padding: 0.4em 3em;
+    background-color: #F0F8FF;
+    color: black;
+    font-family: Roboto;
+    font-weight: 900;
+    font-size: 1em;
+
+    cursor: pointer;
+
+    margin-top: 1.2em;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.last-button {
+   display: flex;
+   justify-content: center;
+
+}
     
 `
     

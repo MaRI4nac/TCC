@@ -13,7 +13,6 @@ export default function Principal() {
 
     async function listar () {
         let r = await api.highlightedEvents();
-        console.log(r)
         setTest(r);
     }
     
@@ -54,10 +53,12 @@ export default function Principal() {
                     <div className = "Eventos"> 
                         <h1> EVENTOS EM DESTAQUE </h1>
                     </div>
-                    <div className="all-events"> 
-                        { test.map((item) => 
-                            <DirBox info={item} />
-                        )}
+                    <div className="event-top-scroll">
+                        <div className="all-events"> 
+                            { test.map((item) => 
+                                <DirBox info={item} />
+                            )}
+                        </div>
                     </div>
                 </div>
                 <div className="rodape"> 
