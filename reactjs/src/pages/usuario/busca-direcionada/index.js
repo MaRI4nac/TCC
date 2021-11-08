@@ -35,8 +35,8 @@ export default function BuscaDirecionada (props) {
             <Cabecalho />
             <div className="secondary-container"> 
                 <div className="background-sphere"> 
-                    <img src="peças.png" alt="" />
-                    <div> PEÇAS </div>
+                    <img src={props.location.state.img} alt="" />
+                    <div> {props.location.state.categoria} </div>
                 </div>
                 {console.log(events)}
                 { events.map((item) =>
