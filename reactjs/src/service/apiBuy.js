@@ -22,7 +22,7 @@ export default class Api {
                 paymentMethod
             },
 
-            SellingItems: dates
+            sellingItems: dates
             
         })
         return r.data
