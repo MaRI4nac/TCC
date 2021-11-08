@@ -11,8 +11,8 @@ export default class Api {
         return m.data; 
     }
 
-    async putConfirmTicket(id) { 
-        let m = await api.put(`/confirmTicket/${id}`)
+    async putConfirmTicket(id, number) { 
+        let m = await api.put(`/confirmTicket?id=${id}&&number=${number}`)
         return m.data;
     }
 
