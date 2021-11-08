@@ -5,78 +5,78 @@ import { Container } from './styled';
 export default function AddEvent () {
     return (
         <Container>
-            <div class="title">
-                <div class="the-polygon"> <img src="play-button.png" alt="" width="40em" hwight="40em" /> </div>
-                <div class="the-title"> NOME EVENTO </div>
+            <div className="title">
+                <div className="the-polygon"> <img src="play-button.png" alt="" width="40em" hwight="40em" /> </div>
+                <div className="the-title"> NOME EVENTO </div>
             </div>
-            <div class="principal-box">
-                <div class="boxes">
-                    <div class="row">
-                        <div class="mini-box">
+            <div className="principal-box">
+                <div className="boxes">
+                    <div className="row">
+                        <div className="mini-box">
                             <label for=""> Gênero: </label>
                             <input type="text" />
                         </div>
-                        <div class="mini-box">
+                        <div className="mini-box">
                             <label for=""> Nome do evento: </label>
-                            <input type="text" class="event-name"/>
+                            <input type="text" clasNames="event-name"/>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="column">
-                            <div class="row">
-                                    <div class="mini-box">
+                    <div className="row">
+                        <div className="column">
+                            <div className="row">
+                                    <div className="mini-box">
                                         <label for=""> Categoria: </label>
                                         <input type="text" />
                                     </div>
-                                    <div class="mini-box">
+                                    <div className="mini-box">
                                         <label for=""> Elenco: </label>
                                         <input type="text" />
                                     </div>      
                             </div>
-                            <div class="row">
-                                <div class="mini-box">
+                            <div className="row">
+                                <div className="mini-box">
                                     <label for=""> Classificação Etária: </label>
                                     <input type="text" />
                                 </div>
-                                <div class="mini-box">
+                                <div className="mini-box">
                                     <label for=""> Valor do Ingresso: </label>
                                     <input type="text" />
                                 </div>
                         </div>
                         </div>
-                        <div class="column">
-                            <div class="date-ff">
-                                <div class="mini-box">
+                        <div className="column">
+                            <div className="date-ff">
+                                <div className="mini-box">
                                     <label for=""> Data Início: </label>
                                     <input type="date" />
                                 </div>
-                                <div class="mini-box">
+                                <div className="mini-box">
                                     <label for=""> Data Final: </label>
                                     <input type="date" />
                                 </div>
                             </div>
-                            <div class="last-button"><button> Gerenciar Sessões </button></div>
+                            <div className="last-button"><Botao> Gerenciar Sessões </Botao></div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="column">
-                            <div class="mini-box">
+                    <div className="row">
+                        <div className="column">
+                            <div className="mini-box">
                                 <label for=""> Imagem Principal: </label>
-                                <div class="image"></div>
+                                <div className="image"></div>
                             </div>
                         </div>
-                        <div class="column1">
-                            <div class="mini-box">
+                        <div className="column1">
+                            <div className="mini-box">
                                 <label for=""> Imagem de Fundo: </label>
                                 <input type="file" />
                             </div>
-                            <div class="mini-box">
+                            <div className="mini-box">
                                 <label for=""> Imagem Secundária: </label>
                                 <input type="file" />
                             </div>
                         </div>
-                        <div class="column">
+                        <div className="column">
                             <label for=""> Descrição: </label>
                             <textarea name="" id="" cols="30" rows="10"></textarea>
                         </div>
@@ -84,7 +84,7 @@ export default function AddEvent () {
                 </div>
                 
             </div>
-            <div class="last-button"><button> Adicionar Evento </button></div>
+            <div className="last-button"><Botao> Adicionar Evento </Botao></div>
         </Container>
     )
 }  
