@@ -22,8 +22,8 @@ const Container = styled.div`
 
         background-color: rgba(103, 128, 128, 0.4);
 
-        width: 160vh; 
-        height: 80vh; 
+        width: 95%; 
+        height: 80%; 
 
         align-items: center; 
     }
@@ -65,14 +65,15 @@ const Container = styled.div`
     .Caption-top {
         font-size: 1.6em; 
         font-weight: bold; 
+
+        padding-bottom: 10px; 
     }
 
     .Text { 
-      align-self: start; 
-      margin-left: 35vh; 
-
-      width: 150vh; 
-
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
     }
     
     .Title-top {

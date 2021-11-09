@@ -6,20 +6,18 @@ import { useEffect, useState } from 'react';
 const api = new Api();  
 
 export default function GestaoUsuario() {
-    const [ usu, setUsu ] = useState([])
+    const [ user, setUser ] = useState([]); 
     
     async function List(order) { 
-       const resp = api.OrderManagement(order);
-       
+       const resp = await api.OrderManagement(order);
        console.log(resp); 
-       setUsu(resp); 
 
+       setUser(resp); 
     }
 
     useEffect(() => {
       List();
   }, [])
-
 
   return (
 
@@ -31,7 +29,7 @@ export default function GestaoUsuario() {
             </button>
             <table>
                 <Table_header titulo1 ="Usuário" titulo2="Email"/>
-                {usu.map(item => {
+                {user.map(item => {
                     return <Table_content campo1={item.usuario} campo2 ={item.email} usuario={true} />
                 })}
             </table>
