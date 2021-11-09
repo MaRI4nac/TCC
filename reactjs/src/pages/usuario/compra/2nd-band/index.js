@@ -3,6 +3,7 @@ import DateTimeBox from "./datetime-box";
 import { FaixaDois } from "./styled";
 import Api from "../../../../service/apiBuy";
 import { useEffect, useState } from "react";
+import { Botao } from "../../../../components/botoes/styled";
 const api = new Api();
 
 export default function BuySecondBand (props) {
@@ -83,7 +84,7 @@ export default function BuySecondBand (props) {
                    return <DateTimeBox key={item} datas={data} onDateChange={updateFieldDate} chave={i} onHourChange={getHours} hours={hours} updateHourField={updateFieldHour}/>
                 })}
             </div>
-            
+            <Botao onClick={props.updateScreen}> Prosseguir </Botao>
         </FaixaDois>
     )
 }

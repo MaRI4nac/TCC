@@ -17,7 +17,7 @@ export default function Calculator (props) {
 
     function subtrair () {
 
-        if(qtd <= 0 )
+        if(qtd <= 1 )
         return;
 
         props.onValueChange("sub")

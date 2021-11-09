@@ -11,6 +11,7 @@ export default function BuyFirstBand (props) {
     const onTicketUpdate = (op) => {
         props.onValueChange(op)
     }
+
     
     console.log(props.imagemfundo)
 
@@ -25,7 +26,7 @@ export default function BuyFirstBand (props) {
                 <BoxCalculator onChange={alterarQtd} value={props.value} onTicketUpdate={onTicketUpdate} ticketValue={props.ticketValue}/>
             </div>
             <div class="the-button">
-                <Botao> Prosseguir </Botao>
+                <Botao onClick={props.updateScreen}> Prosseguir </Botao>
             </div>
         </FaixaUm>
     )
