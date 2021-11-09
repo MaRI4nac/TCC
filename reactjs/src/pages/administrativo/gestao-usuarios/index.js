@@ -30,7 +30,7 @@ export default function GestaoUsuario() {
             <table>
                 <Table_header titulo1 ="Usuário" titulo2="Email"/>
                 {user.map(item => {
-                    return <Table_content campo1={item.usuario} campo2 ={item.email} usuario={true} />
+                    return <Table_content campo1={item.nm_usuario} campo2 ={item.ds_email} usuario={true} />
                 })}
             </table>
         </Container>
