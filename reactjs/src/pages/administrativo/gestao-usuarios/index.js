@@ -23,10 +23,16 @@ export default function GestaoUsuario() {
 
         <Container>
             <h1> Usuários </h1>
-            <button className="filter"> 
+            {/* <button className="filter"> 
                 <div> Listar em ordem alfabetica  </div>
                 <img src="/assets/images/userArrow.png" alt="" />
-            </button>
+            </button> */}
+                <select className="filter" name="cars" id="cars">
+                    <option value="volvo"> Listar em ordem alfabetica </option>
+                    <option value="saab"> Listagem </option>
+                    <option value="mercedes"> Listagem </option>
+                    <option value="audi"> Listagem </option>
+                </select>
             <table>
                 <Table_header titulo1 ="Usuário" titulo2="Email"/>
                 {user.map(item => {
