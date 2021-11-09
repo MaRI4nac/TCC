@@ -5,9 +5,9 @@ const FaixaTres = styled.div `
 
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 
     padding: 2em;
-
 
 .title {
     text-align: center;
@@ -121,7 +121,12 @@ input {
     outline: none;
 }
 
-
+.buttonwidht {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+    
 
 `
 

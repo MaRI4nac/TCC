@@ -10,6 +10,7 @@ const FaixaDois = styled.div `
     padding: 2em;
     margin-top: 2em;
 
+
  
  .title {
      text-align: center;
@@ -79,6 +80,11 @@ const FaixaDois = styled.div `
      margin-top: 2em;
  }
 
+.buttonwidht {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
 `
 
 const StyledDateTime = styled.div `
@@ -175,6 +181,7 @@ input {
 input:focus {
     color: #ff0000;
 }
+
 
 `
 

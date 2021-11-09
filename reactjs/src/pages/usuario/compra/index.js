@@ -14,7 +14,7 @@ const api = new Api();
 function lerUsuarioLogado (navigation) {
     let logado = Cookies.get('usuario-logado')
     if (logado == null) {
-        navigation.push('/inicial')
+        navigation.push('/logar')
         return null;
     }
     let usuarioLogado = JSON.parse(logado);
@@ -42,6 +42,7 @@ export default function AllBuy (props) {
     const [ticketValue, setTicketValue] = useState(event.preco)
 
     const [infoReadOnly, setInfoReadOnly] = useState();
+    const [infoPrevia, setInfoPrevia] = useState({});
 
     const [exibindo, setExibindo] = useState(0);
 
@@ -116,7 +117,6 @@ export default function AllBuy (props) {
         navig.push('/')
         return r;
     }
-
     
 
     return (
@@ -129,12 +129,9 @@ export default function AllBuy (props) {
             }
             {
                 exibindo == 2 && 
-                <BuyThirdBand  cardInformation={getCreditCard}/>
+                <BuyThirdBand  cardInformation={getCreditCard} updateScreen={createVendaItem}/>
             }
-            {
-                exibindo == 3 &&
-                <BuyFourthBand onFinish={createVendaItem}/>}
-            }
+    
         </Everything>
     )
     

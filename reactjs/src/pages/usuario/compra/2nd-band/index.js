@@ -84,7 +84,9 @@ export default function BuySecondBand (props) {
                    return <DateTimeBox key={item} datas={data} onDateChange={updateFieldDate} chave={i} onHourChange={getHours} hours={hours} updateHourField={updateFieldHour}/>
                 })}
             </div>
+            <div className="buttonwidht"> 
             <Botao onClick={props.updateScreen}> Prosseguir </Botao>
+        </div>
         </FaixaDois>
     )
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Botao } from "../../../../components/botoes/styled";
 import { FaixaTres } from "./styled";
 
 export default function BuyThirdBand (props) {
@@ -65,9 +66,11 @@ export default function BuyThirdBand (props) {
                 </div>
             </form>
             
-}
+}   
          
-
+        <div className="buttonwidht"> 
+            <Botao onClick={props.updateScreen}> Prosseguir </Botao>
+        </div>
         </FaixaTres>
     )
 }
