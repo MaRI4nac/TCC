@@ -6,33 +6,37 @@ import { useEffect, useState } from 'react';
 const api = new Api();  
 
 export default function GestaoUsuario() {
-    const [ usu, setUsu ] = useState([])
+    const [ user, setUser ] = useState([]); 
     
     async function List(order) { 
-       const resp = api.OrderManagement(order);
-       
+       const resp = await api.OrderManagement(order);
        console.log(resp); 
-       setUsu(resp); 
 
+       setUser(resp); 
     }
 
     useEffect(() => {
       List();
   }, [])
 
-
   return (
 
         <Container>
             <h1> Usuários </h1>
-            <button className="filter"> 
+            {/* <button className="filter"> 
                 <div> Listar em ordem alfabetica  </div>
                 <img src="/assets/images/userArrow.png" alt="" />
-            </button>
+            </button> */}
+                <select className="filter" name="cars" id="cars">
+                    <option value="volvo"> Listar em ordem alfabetica </option>
+                    <option value="saab"> Listagem </option>
+                    <option value="mercedes"> Listagem </option>
+                    <option value="audi"> Listagem </option>
+                </select>
             <table>
                 <Table_header titulo1 ="Usuário" titulo2="Email"/>
-                {usu.map(item => {
-                    return <Table_content campo1={item.usuario} campo2 ={item.email} usuario={true} />
+                {user.map(item => {
+                    return <Table_content campo1={item.nm_usuario} campo2 ={item.ds_email} usuario={true} />
                 })}
             </table>
         </Container>

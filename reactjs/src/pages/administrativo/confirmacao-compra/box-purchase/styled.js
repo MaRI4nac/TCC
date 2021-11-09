@@ -9,11 +9,10 @@ const Box = styled.div`
 
     border-radius: 35px; 
     border: 5px solid none; 
-    width: 145vh; 
-    height: 20vh; 
+    width: 90%; 
+    height: 10em; 
     align-items: center;
 
-    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxjf5N03FjlHnQUQAE8Aa0yoWCC3d2DL4cEw&usqp=CAU"); 
     background-size: 100%;
     background-repeat: no-repeat; 
 
