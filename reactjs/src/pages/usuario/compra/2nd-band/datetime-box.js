@@ -8,12 +8,6 @@ export default function DateTimeBox (props) {
     const [currentDate, setCurrentDate] = useState();
     const [currentHour, setCurrentHour] = useState();
 
-    // const getDates = async () => {
-    //     let r = await api.getDates(props.idEvent)
-    //     console.log(r);
-    //     setData(r);
-    // }
-
     useEffect(() => {
         props.onDateChange(currentDate, props.chave)
         props.onHourChange(currentDate)    
@@ -48,10 +42,11 @@ export default function DateTimeBox (props) {
                         <div class="st-box-title"> Datas disponíveis </div>
                     </div>
                     <div class="start-box-choose"> Selecione a data desejada </div>
-                        <select name="" id="0" onChange={(e) => setCurrentDate(props.datas[e.target.value])}>
+                        <select name="" id="0" onChange={(e) => setCurrentDate(props.datas(e.target.value))}>
                             <option defaultValue="selected"> Selecione uma data... </option>
+                            {console.log(props.datas)}
                             {props.datas.map((item, i) => {
-                                return <option key={i} value={i}> {dateFormat(item.dt_evento)} </option>
+                                return <option key={i} value={i.id_calendario}> {dateFormat(item.dt_evento)} </option>
                             })}
                         </select>
                 </div>
@@ -65,9 +60,9 @@ export default function DateTimeBox (props) {
                     <div class="start-box-choose"> Selecione o horário desejado </div>
                         <select name="" id="0" defaultValue="selected" onChange={(e) => setCurrentHour(props.hours[e.target.value])}>
                             <option selected="selected"> Selecione um horário... </option>
-                            {props.hours.map((item, i) => { 
+                            {/* {props.hours.map((item, i) => { 
                                 return <option key={i} value={i}> {item.hr_evento} </option>
-                            })}
+                            })} */}
                         
                         </select>
                 </div>

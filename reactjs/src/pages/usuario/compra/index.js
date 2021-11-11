@@ -88,7 +88,7 @@ export default function AllBuy (props) {
             return;
         }
         var r = [...hours]
-        r[i] = hour.id_calendario_item
+        r[i] = hour
         
 
         setHours(r)
