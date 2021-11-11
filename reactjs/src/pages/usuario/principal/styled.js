@@ -92,7 +92,7 @@ const Container = styled.div`
     }
 
     .principal h1 {
-        margin: 7rem 0px 4rem 0px;
+        margin: 4rem 0px 4rem 0px;
     }
 
     .event-top-scroll {
@@ -187,7 +187,7 @@ const Container = styled.div`
     }
 
     .Eventos {
-        background-image: url('https://i.pinimg.com/564x/fe/71/77/fe7177975e95d743d58ce9752a5e7dd7.jpg');
+        // background-image: url('https://i.pinimg.com/564x/fe/71/77/fe7177975e95d743d58ce9752a5e7dd7.jpg');
         display: flex;
         justify-content: center; 
         align-items: center;
@@ -195,8 +195,9 @@ const Container = styled.div`
         background-position: center;
         background-size: 100% auto;
         background-attachment: fixed; 
-        background-repeat: no-repeat; 
-        height: 28vh;
+        background-repeat: no-repeat;
+        background-color: rgb(47 79 79 / 70%); 
+        height: 25vh;
         width: 100%;
     }
 

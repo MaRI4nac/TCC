@@ -6,7 +6,7 @@ const api = axios.create ({
 
 export default class Api {
 
-    async finishBuy(cardNumber, cardOwner, cvc, validity, cpf, userId, paymentMethod, dates) {
+    async finishBuy(cardNumber, cardOwner, cvc, validity, cpf, userId, eventId, paymentMethod, dates) {
         let r = await api.post('/event', {
             
             creditCard: {
@@ -19,6 +19,7 @@ export default class Api {
         
             selling: {
                 userId,
+                eventId,
                 paymentMethod
             },
 
