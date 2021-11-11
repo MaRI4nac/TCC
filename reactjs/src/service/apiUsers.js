@@ -37,8 +37,8 @@ export default class Api {
         return m.data;
     }
 
-    async OrderManagement(order) { 
-        let m = await api.get(`/management?orderacao=${order}`)
+    async OrderManagement(ordenacao) { 
+        let m = await api.get(`/management?ordenacao=${ordenacao}`)
         return m.data; 
     }
 
