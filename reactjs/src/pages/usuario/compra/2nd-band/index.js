@@ -26,16 +26,12 @@ export default function BuySecondBand (props) {
 
     const getDates = async () => {
         let r = await api.getDates(props.idEvent)
+        console.log(r)
         setData(r);
     }
 
-    const getHours = async(date) => {
-        if (!date) {
-            return;
-        }
-
-        let r = await api.getHours(date.id_calendario)
-        setHours(r)
+    const updateHours = (value, where) => {
+        props.updateFieldHour(value, where)
     }
     
     useEffect(() => {
@@ -81,7 +77,7 @@ export default function BuySecondBand (props) {
             </div>
             <div class="second-box-scheme">
                 {gambiarraPraMapear.map((item, i) => {
-                   return <DateTimeBox key={item} datas={data} onDateChange={updateFieldDate} chave={i} onHourChange={getHours} hours={hours} updateHourField={updateFieldHour}/>
+                   return <DateTimeBox key={item} datas={data} updateHourField={updateHours} chave={i}/>
                 })}
             </div>
             <div className="buttonwidht"> 

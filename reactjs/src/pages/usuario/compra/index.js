@@ -37,7 +37,6 @@ export default function AllBuy (props) {
     const [validity, setValidity] = useState('');
     const [cpf, setCpf] = useState();
     const [paymentMethod, setPaymentMethod] = useState('');
-    const [dates, setDates] = useState([]);
     const [hours, setHours] = useState([]);
     const [ticketValue, setTicketValue] = useState(event.preco)
 
@@ -64,23 +63,13 @@ export default function AllBuy (props) {
         setExibindo(1);
         setInfoReadOnly({
             evento: event.nomevento,
-            valor: event.preco,
+            valor: ticketValue,
             categoria: event.ds_tema,
             comprador: user.nm_usuario,
             email: user.ds_email,
             cpf: user.ds_cpf,
             qtd: qtd
         })
-    }
- 
-    const updateFieldDate = (date, i) => {
-        if (!date) {
-            return;
-        }
-        var r = [...dates]
-        r[i] = date.dt_evento
-      
-        setDates(r)
     }
 
     const updateFieldHour = (hour, i) => {
@@ -90,6 +79,7 @@ export default function AllBuy (props) {
         var r = [...hours]
         r[i] = hour
         
+        console.log(r)
 
         setHours(r)
     }
@@ -109,13 +99,11 @@ export default function AllBuy (props) {
 
 
     const createVendaItem = async () => {
-        let r = await api.finishBuy(cardNumber, cardOwner, cvc, validity, cpf, user.id_usuario, paymentMethod, hours);
-        console.log(cardNumber, cardOwner, cvc, validity, cpf, user.id_usuario, paymentMethod, hours)
+        let r = await api.finishBuy(cardNumber, cardOwner, cvc, validity, cpf, user.id_usuario, event.id_evento, paymentMethod, hours);
         if(!Validador(r))
             return;
 
         navig.push('/')
-        return r;
     }
     
 
@@ -125,7 +113,7 @@ export default function AllBuy (props) {
              <BuyFirstBand onUpdate={alterarQtd} value={qtd} onValueChange={updateTicketValue} ticketValue={ticketValue} imagemcapa={event.imagemcapa} imagemfundo={event.imagemfundo} updateScreen={zeroToOne}/>
             }
             {exibindo == 1 && 
-             <BuySecondBand info={infoReadOnly} idEvent={event.id_evento} updateFieldDate={updateFieldDate} updateFieldHour={updateFieldHour} updateScreen={OnetoTwo}/>
+             <BuySecondBand info={infoReadOnly} idEvent={event.id_evento} updateFieldHour={updateFieldHour} updateScreen={OnetoTwo}/>
             }
             {
                 exibindo == 2 && 
