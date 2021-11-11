@@ -73,7 +73,7 @@ export default function Principal() {
                     </div>
                     <div className="event-top-scroll">
                         <div className="all-events"> 
-                            { !test ? <div> </div> : test.map((item) => 
+                            {test.map((item) => 
                                 <DirBox info={item} />
                             )}
                         </div>

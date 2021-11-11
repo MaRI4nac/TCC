@@ -28,8 +28,6 @@ export default function UserProfile () {
 
     const [usuario, setUsuario] = useState(usuarioLogado);
 
-    const [teste, setTeste123] = useState(JSON.parse(Cookies.get('usuario-logado')))
-
     const [nmUsu, setNmUsu] = useState('');
     const [cpf, setCpf] = useState('');
     const [email, setEmail] = useState('');
@@ -48,8 +46,9 @@ export default function UserProfile () {
         let r = await api.userLogin(usuario.ds_email, usuario.ds_senha) 
         if (!Validador(r))
             return;
-        
+
         Cookies.set('usuario-logado', JSON.parse(r));
+        setUsuario(JSON.parse(Cookies.get('usuario-logado')))
     }
 
     const updateUsu = async () => {
@@ -58,8 +57,8 @@ export default function UserProfile () {
             if (!Validador(r))
                 return;
 
-            limparCampos()
             updateCookie();
+            limparCampos()
         }
         else if (idAlterando == 0) {
             setNmUsu(usuario.nm_usuario)
