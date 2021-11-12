@@ -2,7 +2,12 @@ import { Botao } from "../../../../components/botoes/styled"
 import { CriarConta } from "./styled"
 import { useHistory } from "react-router-dom"
 import Api from '../../../../service/apiUsers'
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import LoadingBar from 'react-top-loading-bar'
+
 const api = new Api();
 
 export default function NWSCriarConta () {
@@ -20,6 +25,7 @@ export default function NWSCriarConta () {
     const navigation = useHistory();
 
     const createUser = async() => {
+        ref.current.continuousStart();
         if(senha1 == senha2) 
             setSenha(senha1);
         else {
@@ -30,6 +36,7 @@ export default function NWSCriarConta () {
         if (!validarResposta(r)) 
             return;
         
+        ref.current.complete();
         navigation.push('/logar');
     }
 
@@ -43,12 +50,14 @@ export default function NWSCriarConta () {
     const validarResposta = (resp) => {
         if (!resp.erro)
             return true
-        alert(resp.erro)
+        toast.dark(resp.erro)
         return false
     }
 
     return (
         <CriarConta>
+            <ToastContainer> </ToastContainer>
+            <LoadingBar color='#f11946' ref={ref} />
             <div class="cadast-logo">
                 
                 <div class="tela-cadastrese">

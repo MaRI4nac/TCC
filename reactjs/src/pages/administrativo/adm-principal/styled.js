@@ -24,7 +24,6 @@ const PrincipalPart = styled.div`
 
 .transparent-band {
     background-color: rgba(176, 196, 222, 0.3);
-
     width: 55em;
 }
 
@@ -39,7 +38,7 @@ const PrincipalPart = styled.div`
 .graphics {
     display: flex;
     justify-content: center;
-    margin-bottom: 1em;
+    align-items: center;
 }
 
 .buttons {

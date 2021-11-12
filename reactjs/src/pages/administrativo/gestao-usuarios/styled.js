@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
     background: #2F4F4F;
-    height: 100vh;
+    min-height: 100vh;
     color: white;
     padding: 5% 10% 5% 10%;
 

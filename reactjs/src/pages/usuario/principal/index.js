@@ -1,20 +1,28 @@
 import Cabecalho from '../../../components/cabecalho'
 import { Container } from './styled'
 import { Link } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import DirBox from '../busca-direcionada/dir-box'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import LoadingBar from 'react-top-loading-bar'
 
 import Api from '../../../service/apiEvent.js'
 const api = new Api();
 
 export default function Principal() {
+    const ref = useRef(null);
 
     const [test, setTest] = useState([]);
     const [itens, setItens] = useState([])
 
     async function listar () {
+        ref.current.continuousStart();
         let r = await api.highlightedEvents();
         setTest(r);
+        ref.current.complete();
     }
     
  
@@ -35,6 +43,9 @@ export default function Principal() {
 
     return (
         <Container>
+        <ToastContainer> </ToastContainer>
+        <LoadingBar color='#13A06F' ref={ref} />
+        
          <Cabecalho />
            <div className="header"> 
                 <div className="bg-white"> 
@@ -70,6 +81,7 @@ export default function Principal() {
                     <div className="box-theme"> 
                         <img src="/assets/images/museusEvento.svg" alt=""/> 
                         <p> A expressão da arte através da atuação. Clique aqui para ver mais sobre: </p>
+                        
                         <Link to={{
                             pathname: "/buscadirecionada",
                             search: "?categoria=5",
@@ -85,6 +97,7 @@ export default function Principal() {
                     </div>
                     <div className="event-top-scroll">
                         <div className="all-events"> 
+                            {console.log(test)}
                             { !test ? <div> </div> : test.map((item) => 
                                 <DirBox info={item} />
                             )}

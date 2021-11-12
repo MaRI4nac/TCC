@@ -11,6 +11,7 @@ const Container = styled.div`
 
 
     padding: 3em;
+    text-decoration: none;
 
 
 .title {
@@ -55,11 +56,12 @@ label {
 }
 
 input {
-    padding: 0.5em 3em;
+    padding: 0.5em 1em;
     margin-right: 2em;
     border: none;
     border-radius: 0.3em;
     background-color:#F0F8FF;
+    outline: none;
 }
 
 .event-name {
@@ -113,6 +115,18 @@ textarea {
     width: 27.5em;
     background-color: #f0f8ff;
     border-radius: 0.3em;
+}
+
+textarea, select {
+    outline: none;
+}
+
+select {
+    height: 100%;
+    width: 10rem;
+    background-color: #f0f8ff;
+    border-radius: 0.3em;
+    margin-right: 4.5em;
 }
 
 button {

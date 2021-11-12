@@ -68,7 +68,7 @@ export default function TelaEvento(props) {
     }
 
     return (
-        <EventTypeStyle>
+        <EventTypeStyle background={event.imagemsecundaria}>
             <div className="try-container">
             <div class="ct-color">
                 <div class="first-band">

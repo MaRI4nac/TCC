@@ -2,38 +2,58 @@ import { Log } from "./styled"
 import { Botao } from "../../../../components/botoes/styled"
 import { Link, useHistory } from "react-router-dom"
 import Api from '../../../../service/apiUsers'
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Cookies from 'js-cookie'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import LoadingBar from 'react-top-loading-bar'
 
 const api = new Api();
 
+
 export default function NWSLogar () {
+    const ref = useRef(null);
+    const customId = "custom-id-yes";
+
     const [mail, setMail] = useState();
     const [senha, setSenha] = useState();
     const navigation = useHistory();
 
     if(Cookies.get('usuario-logado') != null) {
-         navigation.push('/inicial')
+        
+        toast.dark('😅 Você já está logado', {
+            toastId: customId
+        });
+
+        navigation.push('/');
     }
 
     const logarUsuario = async() => {
+        ref.current.continuousStart();
         let r = await api.userLogin(mail, senha);
         if(!validarResposta(r))
             return;
 
         Cookies.set('usuario-logado', JSON.stringify(r));
-        navigation.push('/inicial')
+        toast.dark('😀 Logado com sucesso!');
+        ref.current.complete();;
+
+        navigation.push('/');
     }
 
     const validarResposta = (resp) => {
         if (!resp.erro)
             return true
-        alert(resp.erro)
+        toast.error(resp.erro)
         return false
     }
 
     return (
         <Log>
+            <ToastContainer> </ToastContainer>
+            <LoadingBar color='#f11946' ref={ref} />
            <div className="Logo"> 
              <div class="tela-login">
                 <div class="log-titulo"> Faça seu Login! </div>

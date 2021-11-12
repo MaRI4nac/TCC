@@ -10,8 +10,20 @@ export default class Api {
         return r.data;
     }
     
-    async crudCreateEvents(nmEvento, categoria, duracao, classificacao, valorIngresso, local, dtMin, dtMax, elenco, descEvento, imgCapa, imgFundo, imgSec) {
-        let r = await api.post(`/crud`, )
+    // async crudCreateEvents(nmEvento, categoria, duracao, classificacao, valorIngresso, local, dtMin, dtMax, elenco, descEvento, imgCapa, imgFundo, imgSec, genero) {
+    //     let r = await api.post(`/crud`, {
+    //         nmEvento, categoria, duracao, classificacao, valorIngresso, local, dtMin, dtMax, elenco, descEvento, imgCapa, imgFundo, imgSec, genero
+    //     })
+
+    //     return r.data;
+    // }
+
+    async crudCreateEvents(formdata) {
+        let r = await api.post('/crud', formdata, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+        }});
+        return r.data
     }
     
     async crudUpdateEvents() {
@@ -20,6 +32,11 @@ export default class Api {
     
     async crudDeleteEvents() {
     
+    }
+
+    async getImage(img) {
+        let r = await api.get(`/even/image/?image=${img}`)
+        return r.data;
     }
 
     async directedSearch(id) {

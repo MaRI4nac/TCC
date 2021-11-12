@@ -5,15 +5,20 @@ import Api from "../../../service/apiBuy";
 import BuyFirstBand from "./1st-band";
 import BuySecondBand from "./2nd-band";
 import BuyThirdBand from "./3rd-band";
-import BuyFourthBand from "./4th-band";
 import { Everything } from "./styled";
 import { Validador } from '../../../components/commum/index'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+ 
 const api = new Api();
 
-function lerUsuarioLogado (navigation) {
+function lerUsuarioLogado (navigation, toast) {
     let logado = Cookies.get('usuario-logado')
     if (logado == null) {
+        console.log(logado)
+        toast.dark('😢 Você deve estar logado para comprar');
         navigation.push('/logar')
         return null;
     }
@@ -25,7 +30,7 @@ function lerUsuarioLogado (navigation) {
 export default function AllBuy (props) {
     const navig = useHistory();
 
-    const usuarioLogado = lerUsuarioLogado(navig) || {};
+    const usuarioLogado = lerUsuarioLogado(navig, toast) || {};
 
     const [event, setEvent] = useState(props.location.state);
     const [user, setUser] = useState(usuarioLogado);
@@ -37,7 +42,6 @@ export default function AllBuy (props) {
     const [validity, setValidity] = useState('');
     const [cpf, setCpf] = useState();
     const [paymentMethod, setPaymentMethod] = useState('');
-    const [dates, setDates] = useState([]);
     const [hours, setHours] = useState([]);
     const [ticketValue, setTicketValue] = useState(event.preco)
 
@@ -64,7 +68,7 @@ export default function AllBuy (props) {
         setExibindo(1);
         setInfoReadOnly({
             evento: event.nomevento,
-            valor: event.preco,
+            valor: ticketValue,
             categoria: event.ds_tema,
             comprador: user.nm_usuario,
             email: user.ds_email,
@@ -72,24 +76,15 @@ export default function AllBuy (props) {
             qtd: qtd
         })
     }
- 
-    const updateFieldDate = (date, i) => {
-        if (!date) {
-            return;
-        }
-        var r = [...dates]
-        r[i] = date.dt_evento
-      
-        setDates(r)
-    }
 
     const updateFieldHour = (hour, i) => {
         if (!hour) {
             return;
         }
         var r = [...hours]
-        r[i] = hour.id_calendario_item
+        r[i] = hour
         
+        console.log(r)
 
         setHours(r)
     }
@@ -109,29 +104,26 @@ export default function AllBuy (props) {
 
 
     const createVendaItem = async () => {
-        let r = await api.finishBuy(cardNumber, cardOwner, cvc, validity, cpf, user.id_usuario, paymentMethod, hours);
-        console.log(cardNumber, cardOwner, cvc, validity, cpf, user.id_usuario, paymentMethod, hours)
+        let r = await api.finishBuy(cardNumber, cardOwner, cvc, validity, cpf, user.id_usuario, event.id_evento, paymentMethod, hours);
         if(!Validador(r))
             return;
 
         navig.push('/')
-        return r;
     }
-    
 
     return (
         <Everything>
-            {exibindo == 0 &&
-             <BuyFirstBand onUpdate={alterarQtd} value={qtd} onValueChange={updateTicketValue} ticketValue={ticketValue} imagemcapa={event.imagemcapa} imagemfundo={event.imagemfundo} updateScreen={zeroToOne}/>
-            }
-            {exibindo == 1 && 
-             <BuySecondBand info={infoReadOnly} idEvent={event.id_evento} updateFieldDate={updateFieldDate} updateFieldHour={updateFieldHour} updateScreen={OnetoTwo}/>
-            }
-            {
-                exibindo == 2 && 
-                <BuyThirdBand  cardInformation={getCreditCard} updateScreen={createVendaItem}/>
-            }
-    
+            <ToastContainer> </ToastContainer>
+                {exibindo == 0 &&
+                    <BuyFirstBand onUpdate={alterarQtd} value={qtd} onValueChange={updateTicketValue} ticketValue={ticketValue} imagemcapa={event.imagemcapa} imagemfundo={event.imagemfundo} updateScreen={zeroToOne}/>
+                }
+                {exibindo == 1 && 
+                    <BuySecondBand info={infoReadOnly} idEvent={event.id_evento} updateFieldHour={updateFieldHour} updateScreen={OnetoTwo}/>
+                }
+                {
+                    exibindo == 2 && 
+                    <BuyThirdBand  cardInformation={getCreditCard} updateScreen={createVendaItem}/>
+                }
         </Everything>
     )
     

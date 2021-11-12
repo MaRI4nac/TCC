@@ -12,6 +12,15 @@ export default function BuyThirdBand (props) {
     const [cpf, setCpf] = useState('');
     const [paymentMethod, setPaymentMethod] = useState('');
 
+    const cpfInput = (value) => {
+        const re = /^[0-9\b]+$/;
+        console.log(value)
+        if(re.test(value)) {
+            setCpf(value)
+            console.log(value)
+        }
+    }
+
     useEffect(() => {
         props.cardInformation(cardNumber, cardOwner, cvc, validity, cpf, paymentMethod)
     }, [cardNumber, cardOwner, cvc, validity, cpf])
@@ -60,7 +69,7 @@ export default function BuyThirdBand (props) {
                         </div>
                         <div class="payment-inf-cc-box">
                             <div class="payment-inf-cc-box-title4"> CPF: </div>
-                            <input type="text" class="payment-inf-cc-box-text" onChange={(e) => setCpf(e.target.value)}/>
+                            <input type="text" class="payment-inf-cc-box-text" value={cpf} onChange={(e) => cpfInput(e.target.value)}/>
                         </div>
                     </div>
                 </div>
