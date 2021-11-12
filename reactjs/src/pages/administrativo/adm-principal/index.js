@@ -3,8 +3,9 @@ import { PrincipalPart } from './styled'
 import { Link } from 'react-router-dom'
 import ADMiniBox from './mini-boxes'
 import { Pie } from 'react-chartjs-2'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Api from '../../../service/apiAdmGeneral';
+import Cookies from 'js-cookie'
 const api = new Api();
 
 export default function ADMPrincipal () {
@@ -17,7 +18,10 @@ export default function ADMPrincipal () {
         setReport(e);
     }
 
-    
+    useEffect(() => {
+      listar('semanal');
+    }, [])
+
     const pieGraphic = () => {
         const data = {
           labels: report.map(item => item.categoria), 
@@ -70,6 +74,7 @@ export default function ADMPrincipal () {
                 <div class="buttons">
                     <Botao onClick={() => listar('semanal')}> Carregar relatório </Botao>
                     <Botao class="but-bit"> <Link to="/relatorios" className="Elink"> Ver mais relatórios </Link> </Botao>
+                    <Link> <Botao> Voltar </Botao> </Link>
                 </div>
             </div>
         </div>

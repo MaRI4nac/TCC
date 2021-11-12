@@ -13,13 +13,15 @@ export default function ConfirmacaoCompra () {
 
     async function list() { 
         const resp = await api.getConfirmTicket(); 
+        console.log(resp)
         setTicket(resp);
     }
 
+    console.log(ticket);
      async function Confirm(id, number) { 
-         const resp = await api.putConfirmTicket(id, number);
+        const resp = await api.putConfirmTicket(id, number);
 
-         list(); 
+        list(); 
      }
 
     useEffect(() => {
