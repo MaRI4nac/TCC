@@ -53,7 +53,7 @@ export default function NWSLogar () {
     return (
         <Log>
             <ToastContainer> </ToastContainer>
-            <LoadingBar color='#f11946' ref={ref} />
+            <LoadingBar color='#13A06F' ref={ref} />
            <div className="Logo"> 
              <div class="tela-login">
                 <div class="log-titulo"> Faça seu Login! </div>

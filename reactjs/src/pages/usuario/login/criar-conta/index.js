@@ -20,7 +20,7 @@ export default function NWSCriarConta () {
     const [senha, setSenha] = useState('');
     const [nascimento, setNascimento] = useState();
     const [imagem, setImagem] = useState('');
-
+    const ref = useRef(null);
     const [senha1, setSenha1] = useState('');
     const [senha2, setSenha2] = useState('');
 
