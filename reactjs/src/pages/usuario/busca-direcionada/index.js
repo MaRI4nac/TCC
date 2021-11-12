@@ -24,10 +24,11 @@ export default function BuscaDirecionada (props) {
 
     async function listar() {
         let id = getQuery('categoria');
-        
+        ref.current.continuousStart();
         const resp = await api.directedSearch(id);
         console.log(resp)
         setEvents(resp);
+        ref.current.complete();
         
     }
 
