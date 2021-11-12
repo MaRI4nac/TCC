@@ -16,6 +16,7 @@ export default function ConfirmacaoCompra () {
         setTicket(resp);
     }
 
+    console.log(ticket);
      async function Confirm(id, number) { 
          const resp = await api.putConfirmTicket(id, number);
 
