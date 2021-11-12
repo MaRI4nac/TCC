@@ -9,7 +9,6 @@ export default function ADMiniBox (props) {
                 <img src={props.image} alt="" width="150px" height="150px" />
             </div>
             <div class="mini-title"> {props.title} </div>
-            <div class="mini-description"> {props.descript} </div>
         </Box>
     )
 }
