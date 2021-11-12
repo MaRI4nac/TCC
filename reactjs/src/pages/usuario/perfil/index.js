@@ -107,7 +107,7 @@ export default function UserProfile () {
     return (
         <ITsProfile>
             <ToastContainer> </ToastContainer>
-            <LoadingBar color='#f11946' ref={ref} />
+            <LoadingBar color='#13A06F' ref={ref} />
 
             <Cabecalho />
             <div class="header"></div>
