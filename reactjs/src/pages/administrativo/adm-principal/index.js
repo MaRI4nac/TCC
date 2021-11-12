@@ -25,12 +25,13 @@ export default function ADMPrincipal () {
             {
               data: report.map(item => item.qtd),
               backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
+                'rgba(21, 49, 49, 1)',
+                'rgba(36, 174, 174, 1)',
+                'rgba(41, 109, 109, 1)'
               ],
               borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
+                'rgba(41, 109, 109, 1)'
+
               ],
               borderWidth: 1,
               hoverOffset: 4,
@@ -38,6 +39,9 @@ export default function ADMPrincipal () {
           ],
         };
         const options = {
+          layout: {
+            padding: 20
+        },
           plugins: {
             legend: {
               labels: {
@@ -50,7 +54,7 @@ export default function ADMPrincipal () {
             
           },
         }
-        return  <Pie data={data} />
+        return  <Pie data={data} options={options} />
       }
 
     return (
