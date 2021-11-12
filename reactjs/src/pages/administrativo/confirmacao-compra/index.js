@@ -45,8 +45,8 @@ export default function ConfirmacaoCompra () {
                                </div> 
         
                                <div className = "Buttons-confirm"> 
-                                        <button onClick={() => Confirm(item.id, 1)}> <img src="https://o.remove.bg/downloads/b6224786-4112-4886-859d-87d8a064239c/image-removebg-preview.png" width = "60"  height = "60" />  </button>  
-                                        <button onClick={() => Confirm(item.id, 0)}> <img src="https://o.remove.bg/downloads/11e8d5f8-410a-434c-80a8-4faef9a5e255/image-removebg-preview.png" width = "60" height = "60" /> </button>   
+                                        <button onClick={() => Confirm(item.id, 1)}> <img src="/assets/images/certo.jpg" width = "60"  height = "60" />  </button>  
+                                        <button onClick={() => Confirm(item.id, 0)}> <img src="/assets/images/certo.png" width = "60" height = "60" /> </button>   
                                 </div> 
                            </Box> 
                         )} 
