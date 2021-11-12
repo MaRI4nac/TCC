@@ -116,6 +116,18 @@ textarea {
     border-radius: 0.3em;
 }
 
+textarea, select {
+    outline: none;
+}
+
+select {
+    height: 100%;
+    width: 10rem;
+    background-color: #f0f8ff;
+    border-radius: 0.3em;
+    margin-right: 4.5em;
+}
+
 button {
 
     cursor: pointer;

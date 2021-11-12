@@ -2,7 +2,7 @@ import { Botao } from '../../../components/botoes/styled'
 import { PrincipalPart } from './styled'
 import { Link } from 'react-router-dom'
 import ADMiniBox from './mini-boxes'
-import DonutChart from 'react-donut-chart';
+import { Pie } from 'react-chartjs-2'
 import { useState } from 'react';
 import Api from '../../../service/apiAdmGeneral';
 const api = new Api();
@@ -17,7 +17,41 @@ export default function ADMPrincipal () {
         setReport(e);
     }
 
-    console.log(report);
+    
+    const pieGraphic = () => {
+        const data = {
+          labels: report.map(item => item.categoria), 
+          datasets: [
+            {
+              data: report.map(item => item.qtd),
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+              ],
+              borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+              ],
+              borderWidth: 1,
+              hoverOffset: 4,
+            },
+          ],
+        };
+        const options = {
+          plugins: {
+            legend: {
+              labels: {
+                color: "black", 
+                font:{
+                  size: 15
+                }
+              }
+            },
+            
+          },
+        }
+        return  <Pie data={data} />
+      }
 
     return (
         <PrincipalPart>
@@ -25,19 +59,7 @@ export default function ADMPrincipal () {
             <div class="transparent-band">
                 <div class="title"> Relatório Semanal </div>
                 <div class="graphics">
-                <DonutChart
-                    height="300"
-                    width="450"
-                    colors={[
-                        "#153131",
-                        "#24AEAE",
-                        "#296D6D"
-                    ]}
-                    data={[{
-
-                    }]} />
-
-
+                   {pieGraphic()}
                 </div>
 
                 <div class="buttons">
