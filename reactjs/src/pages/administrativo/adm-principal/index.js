@@ -49,9 +49,9 @@ export default function ADMPrincipal () {
         <div class="second-band">
             <div class="title"> Gerenciamento Geral </div>
             <div class="events-users-tickets">
-                <Link to="/crud" className="Wlink"> <ADMiniBox image="/assets/images/events.svg" title="Eventos" descript="30 eventos registrados"/> </Link>
-                <Link to ="usuario" className="Wlink"> <ADMiniBox image="/assets/images/tickets.svg" title="Usuários" descript="30 usuários registrados" /> </Link>
-                <Link to="/compra" className="Wlink"> <ADMiniBox image="/assets/images/users.svg" title= "Ingressos" descript="20 ingressos aguardando confirmação" /> </Link>
+                <Link to="/crud" className="Wlink"> <ADMiniBox image="/assets/images/events.svg" title="Eventos" /> </Link>
+                <Link to ="usuario" className="Wlink"> <ADMiniBox image="/assets/images/tickets.svg" title="Usuários" /> </Link>
+                <Link to="/compra" className="Wlink"> <ADMiniBox image="/assets/images/users.svg" title= "Ingressos" /> </Link>
             </div>
         </div>
     </PrincipalPart>
