@@ -11,6 +11,7 @@ const Container = styled.div`
 
 
     padding: 3em;
+    text-decoration: none;
 
 
 .title {
