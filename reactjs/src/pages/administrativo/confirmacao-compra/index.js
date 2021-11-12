@@ -17,6 +17,7 @@ export default function ConfirmacaoCompra () {
         setTicket(resp);
     }
 
+    console.log(ticket);
      async function Confirm(id, number) { 
         const resp = await api.putConfirmTicket(id, number);
 
@@ -46,8 +47,8 @@ export default function ConfirmacaoCompra () {
                                </div> 
         
                                <div className = "Buttons-confirm"> 
-                                        <button onClick={() => Confirm(item.id, 1)}> <img src="" width = "60"  height = "60" alt=""/>  </button>  
-                                        <button onClick={() => Confirm(item.id, 0)}> <img src="https://o.remove.bg/downloads/11e8d5f8-410a-434c-80a8-4faef9a5e255/image-removebg-preview.png" width = "60" height = "60" /> </button>   
+                                        <button onClick={() => Confirm(item.id, 1)}> <img src="/assets/images/certo.jpg" width = "60"  height = "60" />  </button>  
+                                        <button onClick={() => Confirm(item.id, 0)}> <img src="/assets/images/errado.png" width = "60" height = "60" /> </button>   
                                 </div> 
                            </Box> 
                         )} 
