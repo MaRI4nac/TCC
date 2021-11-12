@@ -35,6 +35,7 @@ export default function ADMPrincipal () {
               ],
               borderWidth: 1,
               hoverOffset: 4,
+              
             },
           ],
         };
