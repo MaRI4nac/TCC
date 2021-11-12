@@ -47,5 +47,10 @@ export default class Api {
         return r.data;
     }
 
+    async getLogin() { 
+        let r = await api.get('/log')
+        return r.data; 
+    }
+
 
 }

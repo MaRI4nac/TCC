@@ -46,7 +46,7 @@ export default function BuscaDireta(props) {
     return (
         <Container>
             <ToastContainer> </ToastContainer>
-            <LoadingBar color='#f11946' ref={ref} />
+            <LoadingBar color='#13A06F' ref={ref} />
             <Cabecalho />
             <div className="secondary-container"> 
                 <div className="search">
