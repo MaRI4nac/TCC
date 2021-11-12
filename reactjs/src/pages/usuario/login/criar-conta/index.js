@@ -61,8 +61,8 @@ export default function NWSCriarConta () {
                         <input type="text" placeholder="CPF" onChange={e => setCpf(e.target.value)}/>
                         <input type="text" placeholder="E-mail" onChange={e => setEmail(e.target.value)} />
                         <input type="text" placeholder="Username" onChange={e => setUsername(e.target.value)}/>
-                        <input type="text" placeholder="Senha" onChange={e => setSenha1(e.target.value)} />
-                        <input type="text" placeholder="Senha (confirmação)" onChange={e => setSenha2(e.target.value)} />
+                        <input type="password" placeholder="Senha" onChange={e => setSenha1(e.target.value)} />
+                        <input type="password" placeholder="Senha (confirmação)" onChange={e => setSenha2(e.target.value)} />
                         <input type="date" name="" id="" onChange={e => setNascimento(e.target.value)}/>
                         <input type="text" placeholder="Imagem de perfil" onChange={e => setImagem(e.target.value)} />
                     </div>

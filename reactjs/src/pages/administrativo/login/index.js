@@ -44,7 +44,7 @@ export default function ADMLogin () {
                 <div class="log-digit">
                     <div class="log-inputs">
                         <input type="text" placeholder="Usuário" onChange={(e) => setUsername(e.target.value)}/>
-                        <input type="text" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} />
+                        <input type="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} />
                     </div>
                 </div>
                     <div class="log-bot-bot">
