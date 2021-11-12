@@ -1,5 +1,6 @@
 import { Table_header, Table_content } from '../crud/table'
 import { Container } from './styled'
+import Perfil from './perfil/index'
 
 import Api from '../../../service/apiUsers'
 import { useEffect, useState } from 'react';
@@ -7,13 +8,21 @@ const api = new Api();
 
 export default function GestaoUsuario() {
     const [ user, setUser ] = useState([]); 
-    
+    const [ perfil, setPerfil ] = useState(); 
+ 
     const [ ordenacao, setOrdenacao ] = useState('Listar em ordem crescente'); 
     
     async function List() { 
        const resp = await api.OrderManagement(ordenacao);
        setUser(resp); 
     }
+
+    // async function Perfil() { 
+    //     const resp = await api.userLogin()
+    //     console.log(resp); 
+    //     setPerfil(resp); 
+    // }
+
 
     useEffect(() => {
       List();
@@ -30,11 +39,11 @@ export default function GestaoUsuario() {
                 </select>
 
             <table>
-                <Table_header titulo1 ="Usuário" titulo2="Email"/>
+                <Table_header titulo1 ="Usuário" titulo2="Email" titulo3 ="CPF" titulo4="Nascimento"/>
                 {user.map(item => {
-                    return <Table_content campo1={item.nm_usuario} campo2 ={item.ds_email} usuario={true} />
+                    return <Table_content campo1={item.nm_usuario} campo2 ={item.ds_email} campo3={item.ds_cpf} campo4={item.dt_nascimento} usuario={true} />
                 })}
             </table>
-        </Container>
+        </Container>    
     )
 }

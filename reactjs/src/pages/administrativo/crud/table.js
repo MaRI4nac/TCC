@@ -8,6 +8,8 @@ export function Table_header(props) {
             <th> <h1> {props.titulo1} </h1> </th>
             <th> <h1> {props.titulo2} </h1> </th>
             <th> <h1> {props.titulo3} </h1> </th>
+            <th> <h1> {props.titulo4} </h1> </th>
+            <th> <h1> {props.titulo5} </h1> </th>
         </Container> 
     )
 }
@@ -17,6 +19,8 @@ export function Table_content(props) {
          <Container>
             <td> {props.campo1} </td>
             <td> {props.campo2} </td>
+            <td> {props.campo3} </td>
+            <td> {props.campo4} </td>
             {props.usuario == false ?         
                 <td className="flex-row"> 
                     <ButtonRightImage texto="Ver" imagem="assets/images/acao_ver.png" />
@@ -25,7 +29,7 @@ export function Table_content(props) {
                 </td>
                 :           
                 <td className="flex-row"> 
-                    <ButtonNoImage texto="ABRIR PERFIL COMPLETO"/>
+                    {/* <ButtonNoImage perfil={props.perfil} texto="ABRIR PERFIL COMPLETO"/> */}
                 </td>
             }
         </Container>
