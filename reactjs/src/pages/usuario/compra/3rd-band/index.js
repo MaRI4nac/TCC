@@ -14,10 +14,8 @@ export default function BuyThirdBand (props) {
 
     const cpfInput = (value) => {
         const re = /^[0-9\b]+$/;
-        console.log(value)
         if(re.test(value)) {
             setCpf(value)
-            console.log(value)
         }
     }
 

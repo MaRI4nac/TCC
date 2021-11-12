@@ -11,6 +11,8 @@ import LoadingBar from 'react-top-loading-bar'
 const api = new Api();
 
 export default function NWSCriarConta () {
+    const ref = useRef(null);
+
     const [nmUsu, setNmUsu] = useState('');
     const [cpf, setCpf] = useState('');
     const [email, setEmail] = useState('');
