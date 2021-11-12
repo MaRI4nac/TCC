@@ -10,11 +10,14 @@ const api = new Api();
 export default function ADMPrincipal () {
 
     const[report, setReport] = useState([]);
+    const[type, setType] = useState('');
 
     async function listar(type) {
         let e = await api.allReports(type);
         setReport(e);
     }
+
+    console.log(report);
 
     return (
         <PrincipalPart>
@@ -23,29 +26,22 @@ export default function ADMPrincipal () {
                 <div class="title"> Relatório Semanal </div>
                 <div class="graphics">
                 <DonutChart
-                    height="350"
-                    width="350"
-                    data={[{
-                        label: 'Give you up',
-                        value: 25
-                    },
-                    {
-                        label: 'cu',
-                        value: 75
-                    },
-                    {
-                        label: 'nada',
-                        value: 30
-                    }]}
+                    height="300"
+                    width="450"
                     colors={[
                         "#153131",
                         "#24AEAE",
                         "#296D6D"
                     ]}
-                     />
+                    data={[{
+
+                    }]} />
+
+
                 </div>
 
                 <div class="buttons">
+                    <Botao onClick={() => listar('semanal')}> Carregar relatório </Botao>
                     <Botao class="but-bit"> <Link to="/relatorios" className="Elink"> Ver mais relatórios </Link> </Botao>
                 </div>
             </div>
