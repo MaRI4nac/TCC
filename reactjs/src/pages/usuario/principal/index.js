@@ -25,12 +25,7 @@ export default function Principal() {
         ref.current.complete();
     }
     
- 
-    for (var y = 7; y < 108; y++) {
-        for (var w; w < (Math.random() * (5 - 3) + 3); w++) {
-            setItens([...itens, y])
-        }
-    }
+
 
     // const createCalendaryItem = () => {
         

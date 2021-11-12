@@ -11,6 +11,8 @@ import LoadingBar from 'react-top-loading-bar'
 const api = new Api();
 
 export default function NWSCriarConta () {
+    const ref = useRef(null);
+
     const [nmUsu, setNmUsu] = useState('');
     const [cpf, setCpf] = useState('');
     const [email, setEmail] = useState('');
@@ -63,7 +65,6 @@ export default function NWSCriarConta () {
                 <div class="tela-cadastrese">
                     <div class="cadast-titulo"> Cadastre-se </div>
                     <div class="cadast-form">
-<<<<<<< HEAD
                         <input type="text" placeholder="Nome Completo" onChange={e => setNmUsu(e.target.value)}/>
                         <input type="text" placeholder="CPF" onChange={e => setCpf(e.target.value)}/>
                         <input type="text" placeholder="E-mail" onChange={e => setEmail(e.target.value)} />
@@ -72,16 +73,6 @@ export default function NWSCriarConta () {
                         <input type="password" placeholder="Senha (confirmação)" onChange={e => setSenha2(e.target.value)} />
                         <input type="date" name="" id="" onChange={e => setNascimento(e.target.value)}/>
                         <input type="text" placeholder="Imagem de perfil" onChange={e => setImagem(e.target.value)} />
-=======
-                            <input type="text" placeholder="Nome Completo" onChange={e => setNmUsu(e.target.value)}/>
-                            <input type="text" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" placeholder="CPF" onChange={e => setCpf(e.target.value)}/>
-                            <input type="text" placeholder="E-mail" onChange={e => setEmail(e.target.value)} />
-                            <input type="text" placeholder="Username" onChange={e => setUsername(e.target.value)}/>
-                            <input type="text" placeholder="Senha" onChange={e => setSenha1(e.target.value)} />
-                            <input type="text" placeholder="Senha (confirmação)" onChange={e => setSenha2(e.target.value)} />
-                            <input type="date" name="" id="" onChange={e => setNascimento(e.target.value)}/>
-                            <input type="text" placeholder="Imagem de perfil" onChange={e => setImagem(e.target.value)} />
->>>>>>> 7dcfa1da7f82572591ada4372a5c5377b2222d43
                     </div>
                     <div class="cadast-bt">
                         <div className="Blink" onClick={() => createUser()} > <Botao> Criar conta </Botao> </div>
