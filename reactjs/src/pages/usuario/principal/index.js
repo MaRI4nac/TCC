@@ -10,11 +10,23 @@ const api = new Api();
 export default function Principal() {
 
     const [test, setTest] = useState([]);
+    const [itens, setItens] = useState([])
 
     async function listar () {
         let r = await api.highlightedEvents();
         setTest(r);
     }
+    
+ 
+    for (var y = 7; y < 108; y++) {
+        for (var w; w < (Math.random() * (5 - 3) + 3); w++) {
+            setItens([...itens, y])
+        }
+    }
+
+    // const createCalendaryItem = () => {
+        
+    // }
     
     useEffect(() => {
         listar();

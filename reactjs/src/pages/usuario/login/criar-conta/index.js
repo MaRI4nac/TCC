@@ -33,6 +33,13 @@ export default function NWSCriarConta () {
         navigation.push('/logar');
     }
 
+    function randomDate(start, end) {
+        return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+      }
+
+    let r = []
+
+
     const validarResposta = (resp) => {
         if (!resp.erro)
             return true
