@@ -13,14 +13,15 @@ export default function ConfirmacaoCompra () {
 
     async function list() { 
         const resp = await api.getConfirmTicket(); 
+        console.log(resp)
         setTicket(resp);
     }
 
     console.log(ticket);
      async function Confirm(id, number) { 
-         const resp = await api.putConfirmTicket(id, number);
+        const resp = await api.putConfirmTicket(id, number);
 
-         list(); 
+        list(); 
      }
 
     useEffect(() => {
@@ -46,7 +47,7 @@ export default function ConfirmacaoCompra () {
                                </div> 
         
                                <div className = "Buttons-confirm"> 
-                                        <button onClick={() => Confirm(item.id, 1)}> <img src="https://o.remove.bg/downloads/b6224786-4112-4886-859d-87d8a064239c/image-removebg-preview.png" width = "60"  height = "60" />  </button>  
+                                        <button onClick={() => Confirm(item.id, 1)}> <img src="" width = "60"  height = "60" alt=""/>  </button>  
                                         <button onClick={() => Confirm(item.id, 0)}> <img src="https://o.remove.bg/downloads/11e8d5f8-410a-434c-80a8-4faef9a5e255/image-removebg-preview.png" width = "60" height = "60" /> </button>   
                                 </div> 
                            </Box> 
