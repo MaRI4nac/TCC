@@ -5,11 +5,24 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import LoadingBar from 'react-top-loading-bar'
+import { Validador } from '../../../components/commum';
+import Api from '../../../service/apiEvent';
+const api = new Api();
 
 export default function DirBox (props) {
     const ref = useRef(null);
 
     const [event, setEvent] = useState(props.info);
+
+    const getImage = (img) => {
+        if(img.includes('uploads/images-')) {
+            let r = api.getImage(img)
+            return r;
+        }
+        else {
+            return img;
+        }
+    }
 
     function hourFormat(hour) {
         let c = hour.substr(0,2);

@@ -18,12 +18,11 @@ export default class Api {
     //     return r.data;
     // }
 
-    async crudCreateEvents() {
-        let r = await api.post('/events/crud', FormData, {
+    async crudCreateEvents(formdata) {
+        let r = await api.post('/crud', formdata, {
             headers: {
                 "Content-Type": "multipart/form-data"
-            }
-        })
+        }});
         return r.data
     }
     
@@ -33,6 +32,11 @@ export default class Api {
     
     async crudDeleteEvents() {
     
+    }
+
+    async getImage(img) {
+        let r = await api.get(`/even/image/?image=${img}`)
+        return r.data;
     }
 
     async directedSearch(id) {

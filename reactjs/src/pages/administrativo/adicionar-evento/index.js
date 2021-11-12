@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import { Botao } from '../../../components/botoes/styled'
 import { Container } from './styled';
+import Api from '../../../service/apiEvent';
+import { Link } from 'react-router-dom';
+import { Validador } from '../../../components/commum';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-export default function AddEvent () {
+const api = new Api();
+
+export default function AddEvent (props) {
     const [nmEvento, setNmEvento] = useState();
     const [categoria, setCategoria] = useState();
     const [duracao, setDuracao] = useState();
@@ -17,25 +24,41 @@ export default function AddEvent () {
     const [imgFundo, setImgFundo] = useState();
     const [imgSec, setImgSec] = useState();
     const [genero, setGenero] = useState();
+    
+    const [hours, setHours] = useState (props.location.state)
 
-    let formData = new FormData();
-    formData.append('nmEvento', nmEvento)
-    formData.append('genero', genero)
-    formData.append('duracao', duracao)
-    formData.append('classificacao', classificacao)
-    formData.append('valorIngresso', valorIngresso)
-    formData.append('local', local)
-    formData.append('dtMin', dtMin)
-    formData.append('dtMax', dtMax)
-    formData.append('elenco', elenco)
-    formData.append('descEvento', descEvento)
-    formData.append('imgCapa', imgCapa)
-    formData.append('imgFundo', imgFundo)
-    formData.append('imgSec', imgSec)
-    formData.append('genero', genero)
+    const createEvent = async () => {
+        let formData = new FormData();
+        formData.append('nmEvento', nmEvento)
+        formData.append('categoria', categoria)
+        formData.append('duracao', duracao)
+        formData.append('classificacao', classificacao)
+        formData.append('valorIngresso', valorIngresso)
+        formData.append('local', local)
+        formData.append('dtMin', dtMin)
+        formData.append('dtMax', dtMax)
+        formData.append('elenco', elenco)
+        formData.append('descEvento', descEvento)
+        formData.append('images', imgCapa) 
+        formData.append('images', imgFundo)
+        formData.append('images', imgSec)  
+
+        formData.append('genero', genero)
+        formData.append('datas', JSON.stringify(hours))
+        console.log(hours);
+
+        
+        let r = await api.crudCreateEvents(formData)
+        console.log(formData)
+        if (!Validador(r)){
+            return;
+        }
+        return r;
+    }
 
     return (
         <Container>
+            <ToastContainer> </ToastContainer>
             <div className="title">
                 <div className="the-polygon"> <img src="/assets/images/play-button.png" alt="" width="40em" hwight="40em" /> </div>
                 <div className="the-title"> NOME EVENTO </div>
@@ -65,7 +88,9 @@ export default function AddEvent () {
                             <div className="row">
                                     <div className="mini-box">
                                         <label for=""> Categoria: </label>
+                                        
                                         <select onChange={e => setCategoria(e.target.value)}>
+                                            <option value={0}> selecione uma categoria... </option>
                                             <option value= 'peças'> Peças </option>
                                             <option value= 'shows'> Shows </option>
                                             <option value= 'museus'> Museus </option>
@@ -79,11 +104,11 @@ export default function AddEvent () {
                             <div className="row">
                                 <div className="mini-box">
                                     <label for=""> Classificação Etária: </label>
-                                    <input type="text" value={classificacao} onChange={e => setClassificacao(e.target.value)}/>
+                                    <input type="number" value={classificacao} onChange={e => setClassificacao(e.target.value)}/>
                                 </div>
                                 <div className="mini-box">
                                     <label for=""> Valor do Ingresso: </label>
-                                    <input type="text" value={valorIngresso} onChange={e => setValorIngresso(e.target.value)}/>
+                                    <input type="number" value={valorIngresso} onChange={e => setValorIngresso(e.target.value)}/>
                                 </div>
                         </div>
                         </div>
@@ -98,7 +123,10 @@ export default function AddEvent () {
                                     <input type="date" value={dtMax} onChange={e => setDtMax(e.target.value)}/>
                                 </div>
                             </div>
-                            <div className="last-button"><Botao> Gerenciar Sessões </Botao></div>
+                            <Link to= {{
+                                pathname: '/addsession',
+                                state: {evento: nmEvento}
+                            }} > <div className="last-button"><Botao> Gerenciar Sessões </Botao></div> </Link>          
                         </div>
                     </div>
 
@@ -106,17 +134,17 @@ export default function AddEvent () {
                         <div className="column">
                             <div className="mini-box">
                                 <label for=""> Imagem Principal: </label>
-                                <div className="image" value={imgCapa} onChange={e => setImgCapa(e.target.value)}></div>
+                                <input className="image" type="file" onChange={e => setImgCapa(e.target.files[0])}/> 
                             </div>
                         </div>
                         <div className="column1">
-                            <div className="mini-box">
+                            <div className="mini-box">  
                                 <label for=""> Imagem de Fundo: </label>
-                                <input type="file"  value={imgFundo} onChange={e => setImgFundo(e.target.value)}/>
+                                <input type="file"  onChange={e => setImgFundo(e.target.files[0])}/>
                             </div>
                             <div className="mini-box">
                                 <label for=""> Imagem Secundária: </label>
-                                <input type="file"  value={imgSec} onChange={e => setImgSec(e.target.value)}/>
+                                <input type="file" onChange={e => setImgSec(e.target.files[0])}/>
                             </div>
                         </div>
                         <div className="column">
@@ -127,7 +155,7 @@ export default function AddEvent () {
                 </div>
                 
             </div>
-            <div className="last-button"><Botao> Adicionar Evento </Botao></div>
+            <Botao onClick={() => createEvent()}> Adicionar Evento </Botao>
         </Container>
     )
 }  
