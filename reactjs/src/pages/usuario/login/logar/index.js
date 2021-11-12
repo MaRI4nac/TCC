@@ -60,7 +60,7 @@ export default function NWSLogar () {
                 <div class="log-digit">
                     <div class="log-inputs">
                         <input type="text" placeholder="Email" onChange={e => setMail(e.target.value)}/>
-                        <input type="text" placeholder="Senha" onChange={e => setSenha(e.target.value)}/>
+                        <input type="password" placeholder="Senha" onChange={e => setSenha(e.target.value)}/>
                     </div>
                     <Link to="/esqueceusenha" className="Glink" > <div class="log-esqueci-senha"> Esqueci minha senha </div> </Link>
                 </div>
