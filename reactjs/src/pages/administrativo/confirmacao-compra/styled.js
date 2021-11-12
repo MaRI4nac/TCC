@@ -24,6 +24,7 @@ const Container = styled.div`
 
         width: 95%; 
         height: 80%; 
+        overflow-y: auto;
 
         align-items: center; 
     }
