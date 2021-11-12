@@ -16,6 +16,7 @@ export default function Principal() {
     const ref = useRef(null);
 
     const [test, setTest] = useState([]);
+    const [itens, setItens] = useState([])
 
     async function listar () {
         ref.current.continuousStart();
@@ -23,6 +24,17 @@ export default function Principal() {
         setTest(r);
         ref.current.complete();
     }
+    
+ 
+    for (var y = 7; y < 108; y++) {
+        for (var w; w < (Math.random() * (5 - 3) + 3); w++) {
+            setItens([...itens, y])
+        }
+    }
+
+    // const createCalendaryItem = () => {
+        
+    // }
     
     useEffect(() => {
         listar();

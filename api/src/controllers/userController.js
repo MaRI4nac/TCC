@@ -5,7 +5,7 @@ import express from "express";
 const app = express.Router();
 
 import Sequelize from 'sequelize';
-import { ValidateEmptyNullCamps } from "../components/validation/validation.js";
+import { validateEmptyValues } from "./validation.js";
 
 const { Op, col, fn } = Sequelize;
 
@@ -81,8 +81,17 @@ app.put('/update/:id', async (req, resp) => {
 app.post('/create', async(req, resp) => {
     try {
         let json = req.body;
+<<<<<<< HEAD
+        if(!validateEmptyValues(json)) {
+            return resp.send({erro: "Todos os campos são obrigatórios"})
+        }
+
+        if (json.nmUsu.length <= 3) 
+            return resp.send({erro: "O nome precisa ter mais de 3 caracteres"})
+=======
         if (ValidateEmptyNullCamps(json)) 
             return resp.send( {erro: "Todos os campos são obrigatórios "})
+>>>>>>> 8534052a284a7ddd67be3a391da36e29f2ae3450
 
         if(json.nmUsu.lenght <= 3)
             return resp.send({erro: "Nome precisa conter mais de 3 caracteres"})
@@ -91,7 +100,7 @@ app.post('/create', async(req, resp) => {
             return resp.send({erro: "email inválido"})
 
         let validacaoCpf = await db.infoc_nws_tb_usuario.findOne({where: {ds_cpf: json.cpf}})
-        if (validacaoCpf != null)
+        if (!validacaoCpf)
             return resp.send( {erro: "Cpf já cadastrado"})
 
         let validacaoEmail = await db.infoc_nws_tb_usuario.findOne({where: {ds_email: json.email}})
