@@ -21,4 +21,9 @@ export default class Api {
         return r.data
     }
 
+    async allReports(type) {
+        let r = await api.get(`/relatorios?type=${type}`)
+        return r.data;
+    }
+
 }

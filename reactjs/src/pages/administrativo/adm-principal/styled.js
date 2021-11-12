@@ -39,6 +39,7 @@ const PrincipalPart = styled.div`
 .graphics {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 1em;
 }
 

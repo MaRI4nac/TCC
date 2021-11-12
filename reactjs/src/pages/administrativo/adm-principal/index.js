@@ -2,19 +2,50 @@ import { Botao } from '../../../components/botoes/styled'
 import { PrincipalPart } from './styled'
 import { Link } from 'react-router-dom'
 import ADMiniBox from './mini-boxes'
+import DonutChart from 'react-donut-chart';
+import { useState } from 'react';
+import Api from '../../../service/apiAdmGeneral';
+const api = new Api();
 
 export default function ADMPrincipal () {
+
+    const[report, setReport] = useState([]);
+
+    async function listar(type) {
+        let e = await api.allReports(type);
+        setReport(e);
+    }
+
     return (
         <PrincipalPart>
         <div class="first-band">
             <div class="transparent-band">
                 <div class="title"> Relatório Semanal </div>
                 <div class="graphics">
-                    <img src="/assets/images/graphic.svg" alt="" width="300px" height="300px"/>
+                <DonutChart
+                    height="350"
+                    width="350"
+                    data={[{
+                        label: 'Give you up',
+                        value: 25
+                    },
+                    {
+                        label: 'cu',
+                        value: 75
+                    },
+                    {
+                        label: 'nada',
+                        value: 30
+                    }]}
+                    colors={[
+                        "#153131",
+                        "#24AEAE",
+                        "#296D6D"
+                    ]}
+                     />
                 </div>
 
                 <div class="buttons">
-                    <Botao class="but-bit"> Ver em detalhes </Botao>
                     <Botao class="but-bit"> <Link to="/relatorios" className="Elink"> Ver mais relatórios </Link> </Botao>
                 </div>
             </div>
