@@ -1,7 +1,13 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import LoadingBar from 'react-top-loading-bar'
+
 export default function DirBox (props) {
+    const ref = useRef(null);
 
     const [event, setEvent] = useState(props.info);
 
@@ -24,6 +30,8 @@ export default function DirBox (props) {
     return (
         
         <div className="box"> 
+            <ToastContainer> </ToastContainer>
+            <LoadingBar color='#f11946' ref={ref} />
             <img src={event.imagemcapa} alt="" width="250px" height="300px" />
                 <div className="box-text"> 
                     <h1> {event.nomevento} </h1>

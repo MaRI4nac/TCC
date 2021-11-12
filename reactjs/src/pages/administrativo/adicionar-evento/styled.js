@@ -55,11 +55,12 @@ label {
 }
 
 input {
-    padding: 0.5em 3em;
+    padding: 0.5em 1em;
     margin-right: 2em;
     border: none;
     border-radius: 0.3em;
     background-color:#F0F8FF;
+    outline: none;
 }
 
 .event-name {

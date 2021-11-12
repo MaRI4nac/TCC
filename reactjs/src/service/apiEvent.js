@@ -10,8 +10,12 @@ export default class Api {
         return r.data;
     }
     
-    async crudCreateEvents(nmEvento, categoria, duracao, classificacao, valorIngresso, local, dtMin, dtMax, elenco, descEvento, imgCapa, imgFundo, imgSec) {
-        let r = await api.post(`/crud`, )
+    async crudCreateEvents(nmEvento, categoria, duracao, classificacao, valorIngresso, local, dtMin, dtMax, elenco, descEvento, imgCapa, imgFundo, imgSec, genero) {
+        let r = await api.post(`/crud`, {
+            nmEvento, categoria, duracao, classificacao, valorIngresso, local, dtMin, dtMax, elenco, descEvento, imgCapa, imgFundo, imgSec, genero
+        })
+
+        return r.data;
     }
     
     async crudUpdateEvents() {

@@ -5,15 +5,20 @@ import Api from "../../../service/apiBuy";
 import BuyFirstBand from "./1st-band";
 import BuySecondBand from "./2nd-band";
 import BuyThirdBand from "./3rd-band";
-import BuyFourthBand from "./4th-band";
 import { Everything } from "./styled";
 import { Validador } from '../../../components/commum/index'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+ 
 const api = new Api();
 
-function lerUsuarioLogado (navigation) {
+function lerUsuarioLogado (navigation, toast) {
     let logado = Cookies.get('usuario-logado')
     if (logado == null) {
+        console.log(logado)
+        toast.dark('😢 Você deve estar logado para comprar');
         navigation.push('/logar')
         return null;
     }
@@ -25,7 +30,7 @@ function lerUsuarioLogado (navigation) {
 export default function AllBuy (props) {
     const navig = useHistory();
 
-    const usuarioLogado = lerUsuarioLogado(navig) || {};
+    const usuarioLogado = lerUsuarioLogado(navig, toast) || {};
 
     const [event, setEvent] = useState(props.location.state);
     const [user, setUser] = useState(usuarioLogado);
@@ -105,21 +110,20 @@ export default function AllBuy (props) {
 
         navig.push('/')
     }
-    
 
     return (
         <Everything>
-            {exibindo == 0 &&
-             <BuyFirstBand onUpdate={alterarQtd} value={qtd} onValueChange={updateTicketValue} ticketValue={ticketValue} imagemcapa={event.imagemcapa} imagemfundo={event.imagemfundo} updateScreen={zeroToOne}/>
-            }
-            {exibindo == 1 && 
-             <BuySecondBand info={infoReadOnly} idEvent={event.id_evento} updateFieldHour={updateFieldHour} updateScreen={OnetoTwo}/>
-            }
-            {
-                exibindo == 2 && 
-                <BuyThirdBand  cardInformation={getCreditCard} updateScreen={createVendaItem}/>
-            }
-    
+            <ToastContainer> </ToastContainer>
+                {exibindo == 0 &&
+                    <BuyFirstBand onUpdate={alterarQtd} value={qtd} onValueChange={updateTicketValue} ticketValue={ticketValue} imagemcapa={event.imagemcapa} imagemfundo={event.imagemfundo} updateScreen={zeroToOne}/>
+                }
+                {exibindo == 1 && 
+                    <BuySecondBand info={infoReadOnly} idEvent={event.id_evento} updateFieldHour={updateFieldHour} updateScreen={OnetoTwo}/>
+                }
+                {
+                    exibindo == 2 && 
+                    <BuyThirdBand  cardInformation={getCreditCard} updateScreen={createVendaItem}/>
+                }
         </Everything>
     )
     

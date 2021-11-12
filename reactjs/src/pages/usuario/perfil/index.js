@@ -2,12 +2,18 @@ import Cookies from "js-cookie";
 import { Botao } from "../../../components/botoes/styled";
 import { ITsProfile } from "./styled";
 import { useHistory } from "react-router-dom"
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import AgpInputs from "./components";
 import Api from "../../../service/apiUsers";
 import { Validador } from '../../../components/commum/index'
 import Cabecalho from "../../../components/cabecalho";
 import { Link } from "react-router-dom";
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import LoadingBar from 'react-top-loading-bar'
+
 
 const api = new Api()
 
@@ -22,6 +28,7 @@ function lerUsuarioLogado (navigation) {
 }
 
 export default function UserProfile () {
+    const ref = useRef(null);
     const nav = useHistory();
 
     const usuarioLogado = lerUsuarioLogado(nav) || {};
@@ -38,20 +45,25 @@ export default function UserProfile () {
     const [idAlterando, setIdAlterando] = useState(0);
 
     const deslogar = () => {
+        ref.current.continuousStart();
         Cookies.remove('usuario-logado');
         nav.push('/')
+        ref.current.complete();
     }
 
     const updateCookie = async () => {
+        ref.current.continuousStart();
         let r = await api.userLogin(usuario.ds_email, usuario.ds_senha) 
         if (!Validador(r))
             return;
 
         Cookies.set('usuario-logado', JSON.parse(r));
         setUsuario(JSON.parse(Cookies.get('usuario-logado')))
+        ref.current.complete();
     }
 
     const updateUsu = async () => {
+        ref.current.continuousStart();
         if (idAlterando != 0) { 
             let r = await api.userUpdate(nmUsu, cpf, email, username, senha, nascimentoup, imagem, usuario.id_usuario)
             if (!Validador(r))
@@ -70,6 +82,7 @@ export default function UserProfile () {
             setImagem(usuario.img_perfil)
             setIdAlterando(usuario.id_usuario)
         }
+        ref.current.complete();
     }
 
     const limparCampos = () => {    
@@ -93,6 +106,9 @@ export default function UserProfile () {
 
     return (
         <ITsProfile>
+            <ToastContainer> </ToastContainer>
+            <LoadingBar color='#f11946' ref={ref} />
+
             <Cabecalho />
             <div class="header"></div>
             <div class="the-band">
