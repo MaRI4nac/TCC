@@ -57,9 +57,11 @@ export default function UserProfile () {
         if (!Validador(r))
             return;
 
-        Cookies.set('usuario-logado', JSON.parse(r));
-        setUsuario(JSON.parse(Cookies.get('usuario-logado')))
+        Cookies.set('usuario-logado', JSON.stringify(r));
+        setUsuario(r);
         ref.current.complete();
+
+        console.log(usuario)
     }
 
     const updateUsu = async () => {

@@ -18,8 +18,10 @@ function lerUsuarioLogado (navigation) {
     return usuarioLogado; 
 }
 
+
 export default function Cabecalho(props) {
     const ref = useRef(null);
+
 
     const navig = useHistory();
     const usuarioLogado = lerUsuarioLogado(navig);

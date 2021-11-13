@@ -14,26 +14,19 @@ import 'react-toastify/dist/ReactToastify.css';
  
 const api = new Api();
 
-function lerUsuarioLogado (navigation, toast) {
-    let logado = Cookies.get('usuario-logado')
-    if (logado == null) {
-        console.log(logado)
-        toast.dark('😢 Você deve estar logado para comprar');
-        navigation.push('/logar')
-        return null;
-    }
-    let usuarioLogado = JSON.parse(logado);
-    return usuarioLogado; 
-}
-
 
 export default function AllBuy (props) {
-    const navig = useHistory();
+    const navig = useHistory(); 
 
-    const usuarioLogado = lerUsuarioLogado(navig, toast) || {};
+    if(!Cookies.get('usuario-logado')) {
+        toast.dark('😢 Você deve estar logado para comprar');
+        navig.push('/logar')
+    } else {
+        setUser(JSON.parse(Cookies.get('usuario-logado')))
+    }
 
     const [event, setEvent] = useState(props.location.state);
-    const [user, setUser] = useState(usuarioLogado);
+    const [user, setUser] = useState();
 
     const [qtd, setQtd] = useState(1)
     const [cardNumber, setCardNumber] = useState('');
@@ -57,10 +50,10 @@ export default function AllBuy (props) {
 
     const updateTicketValue = (op) => {
         if (op == "somar") {
-            setTicketValue(Number(ticketValue) + Number(event.preco));
+            setTicketValue(Math.round((Number(ticketValue) + Number(event.preco)) * 100) / 100);
         }
         else if (op == "sub") {
-            setTicketValue(Number(ticketValue) - Number(event.preco));
+            setTicketValue(Math.round((Number(ticketValue) - Number(event.preco)) * 100) / 100);
         }
     }
 
