@@ -201,6 +201,10 @@ const Container = styled.div`
         width: 100%;
     }
 
+    .socialmedia {
+        margin: 1em;
+    }
+
 
 
 `
