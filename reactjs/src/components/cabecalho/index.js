@@ -4,11 +4,6 @@ import { useHistory } from 'react-router'
 import { useEffect, useState, useRef } from 'react';
 import Cookies from 'js-cookie';
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-import LoadingBar from 'react-top-loading-bar'
-
 function lerUsuarioLogado (navigation) {
     let logado = Cookies.get('usuario-logado')
     if (!logado) {
@@ -50,8 +45,6 @@ export default function Cabecalho(props) {
     return (
 
         <Container>
-            <ToastContainer> </ToastContainer>
-            <LoadingBar color='#f11946' ref={ref} />
             <Link to="/"> <img className="logo-image" src="/assets/images/LOGO1 TCC.png" alt="" /> </Link>
             <input type="text" placeholder="Buscar eventos..." value={search} onChange={(e) => setSearch(e.target.value) } onKeyPress={keyPress} />
             {user == false
