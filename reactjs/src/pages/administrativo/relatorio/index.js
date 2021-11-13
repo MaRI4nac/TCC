@@ -82,7 +82,7 @@ export default function ADMRelatorios () {
                         <div class="the-subtitle"> Gerado no dia 00/00/0000, às 23h59 </div>
                     </div>
                     <div class="the-graphic">
-                        <div> <Pie></Pie> </div>
+                        <div> </div>
                     </div>
                     <div class="the-button">
                         <Botao onClick={() => listar('mensal')}> Gerar Relatório </Botao>
