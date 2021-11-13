@@ -36,9 +36,7 @@ export default function Cabecalho(props) {
     }
 
     const goToLogin = () => {
-        ref.current.continuousStart();
         navig.push('/logar')
-        ref.current.complete();
     }
 
 
