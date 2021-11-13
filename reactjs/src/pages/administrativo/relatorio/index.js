@@ -10,15 +10,18 @@ export default function ADMRelatorios () {
     const[report, setReport] = useState([]);
     console.log(report);
 
+    
+
     async function listar(type) {
         let e = await api.allReports(type);
         
         let r = report;
-        e.push({tipo: type})
-        r.push(e);
-        setReport(r)
+        r.push( { tipo: type, data: e } );
+        setReport(r);
 
     }
+
+
 
     useEffect(() => {
         listar('semanal');
@@ -27,21 +30,18 @@ export default function ADMRelatorios () {
         listar('anual');
     }, [])
 
-
-
     return (
         <Relator>
         <div class="title"> Relatórios </div>
         <div class="graphics-rel">
             <div class="column">
                 {report.map(item => {
-                    {console.log(item)}
                      return <div class="the-box">
                         <div> 
-                            <div class="the-title"> Relatório {item.tipo} </div>
+                            <div class="the-title"> {`Relatório ${item.tipo}`} </div>
                         </div>
                         <div class="the-graphic">
-                            <div> <PieGraphic info={item}> </PieGraphic> </div>
+                            <div> <PieGraphic info={item.data}> </PieGraphic> </div>
                         </div>
                         <div class="the-button">
                             <Botao> Gerar Relatório </Botao>
