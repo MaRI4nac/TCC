@@ -35,8 +35,8 @@ export default class Api {
     }
 
     async getImage(img) {
-        let r = await api.get(`/even/image/?image=${img}`)
-        return r.data;
+        let r = await api.get(`/event/image/?image=${img}`)
+        return r;
     }
 
     async directedSearch(id) {

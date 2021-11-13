@@ -1,9 +1,11 @@
 import { Pie } from 'react-chartjs-2'
 
     const PieGraphic = (props) => {
-      console.log(props);
+        console.log(props.info)
         const data = {
-          labels: props.info.map(i => i.categoria), 
+          labels: props.info.map(i => 
+            i.categoria
+          ), 
           datasets: [
             {
               data: props.info.map(i => i.qtd),

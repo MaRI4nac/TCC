@@ -12,9 +12,10 @@ export default function ADMRelatorios () {
 
     async function listar(type) {
         let e = await api.allReports(type);
-        
+
         let r = report;
         e.push({tipo: type})
+
         r.push(e);
         setReport(r)
 
@@ -35,12 +36,12 @@ export default function ADMRelatorios () {
         <div class="graphics-rel">
             <div class="column">
                 {report.map(item => {
-                    {console.log(item)}
-                     return <div class="the-box">
+                    return <div class="the-box">
                         <div> 
-                            <div class="the-title"> Relatório {item.tipo} </div>
+                            <div class="the-title"> Relatório {item[3].tipo} </div>
                         </div>
                         <div class="the-graphic">
+                            {item.splice(3, 1)}
                             <div> <PieGraphic info={item}> </PieGraphic> </div>
                         </div>
                         <div class="the-button">

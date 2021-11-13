@@ -5,7 +5,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import LoadingBar from 'react-top-loading-bar'
-import { Validador } from '../../../components/commum';
 import Api from '../../../service/apiEvent';
 const api = new Api();
 
@@ -14,13 +13,11 @@ export default function DirBox (props) {
 
     const [event, setEvent] = useState(props.info);
 
-    const getImage = (img) => {
-        if(img.includes('uploads/images-')) {
-            let r = api.getImage(img)
-            return r;
-        }
-        else {
-            return img;
+    const getImage = () => {
+        if(event.imagemcapa.startsWith('uploads')) {
+            return `http://localhost:3030/user/image?imagem=${event.imagemcapa}`;
+        } else {
+            return event.imagemcapa;
         }
     }
 
@@ -45,7 +42,7 @@ export default function DirBox (props) {
         <div className="box"> 
             <ToastContainer> </ToastContainer>
             <LoadingBar color='#f11946' ref={ref} />
-            <img src={event.imagemcapa} alt="" width="250px" height="300px" />
+            <img src={getImage()} alt="" width="250px" height="300px" />
                 <div className="box-text"> 
                     <h1> {event.nomevento} </h1>
                     <div> {`${event.gênero}, ${hourFormat(event.duracao)} minutos, ${yearFormat(event.classificacao)} anos.`} </div>

@@ -51,6 +51,14 @@ export default function UserProfile () {
         ref.current.complete();
     }
 
+    const getImage = () => {
+        if(usuario.img_perfil.startsWith('uploads')) {
+            return `http://localhost:3030/user/image?imagem=${usuario.img_perfil}`;
+        } else {
+            return usuario.img_perfil;
+        }
+    }
+
     const updateCookie = async () => {
         ref.current.continuousStart();
         let r = await api.userLogin(usuario.ds_email, usuario.ds_senha) 
@@ -106,7 +114,7 @@ export default function UserProfile () {
             <Cabecalho />
             <div class="header"></div>
             <div class="the-band">
-                <div class="user-image"> <img src={usuario.img_perfil} alt=""/> </div>
+                <div class="user-image"> <img src={getImage()} alt=""/> </div>
                 <div class="user-general-informations">
                     <div class="first-box">
                         <div class="profile-user"> {usuario.nm_usuario} </div>
