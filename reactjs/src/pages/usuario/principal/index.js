@@ -100,9 +100,15 @@ export default function Principal() {
                     </div>
                 </div>
                 <div className="rodape"> 
-                    <img src="/assets/images/redesSociais1.png" alt="" />
-                    <Link to='/admlogin'> <img src="/assets/images/LOGO TCC - de ladinho.svg" alt="" /> </Link> 
-                    <img src="/assets/images/redesSociais2.png" alt="" />
+                    <div>
+                       <a href="https://twitter.com/Newsideofc?t=KpBYUDFi5C9BBKhqVz4vgg&s=09"> <img src="/assets/images/@twiiter_media.png" alt="" className="socialmedia" /> </a>
+                        <a href="www.facebook.com/thenewsideofevents"> <img src="/assets/images/@facebook_media.png" alt="" className="socialmedia" /> </a> 
+                    </div>
+                    <Link to='/admlogin'> <img src="/assets/images/LOGO TCC - de ladinho.svg" alt="" className="socialmedia" /> </Link> 
+                    <div>
+                        <a href="https://www.linkedin.com/in/new-side-0066b6225"> <img src="/assets/images/@linkedin_media.png" alt="" className="socialmedia" /> </a> 
+                        <a href="https://www.instagram.com/newsideofc/"> <img src="/assets/images/@instagram_media.png" alt="" className="socialmedia" /> </a> 
+                    </div>
                 </div>
            </div>
         </Container>

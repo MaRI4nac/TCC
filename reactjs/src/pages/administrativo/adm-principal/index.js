@@ -18,49 +18,50 @@ export default function ADMPrincipal () {
         setReport(e);
     }
 
+
     useEffect(() => {
       listar('semanal');
     }, [])
 
     const pieGraphic = () => {
-        const data = {
-          labels: report.map(item => item.categoria), 
-          datasets: [
-            {
-              data: report.map(item => item.qtd),
-              backgroundColor: [
-                'rgba(21, 49, 49, 1)',
-                'rgba(36, 174, 174, 1)',
-                'rgba(41, 109, 109, 1)'
-              ],
-              borderColor: [
-                'rgba(41, 109, 109, 1)'
+      const data = {
+        labels: report.map(item => item.categoria), 
+        datasets: [
+          {
+            data: report.map(item => item.qtd),
+            backgroundColor: [
+              'rgba(21, 49, 49, 1)',
+              'rgba(36, 174, 174, 1)',
+              'rgba(41, 109, 109, 1)'
+            ],
+            borderColor: [
+              'rgba(41, 109, 109, 1)'
 
-              ],
-              borderWidth: 1,
-              hoverOffset: 4,
-              
-            },
-          ],
-        };
-        const options = {
-          layout: {
-            padding: 20
-        },
-          plugins: {
-            legend: {
-              labels: {
-                color: "black", 
-                font:{
-                  size: 15
-                }
-              }
-            },
+            ],
+            borderWidth: 1,
+            hoverOffset: 4,
             
           },
-        }
-        return  <Pie data={data} options={options} />
+        ],
+      };
+      const options = {
+        layout: {
+          padding: 10
+      },
+        plugins: {
+          legend: {
+            labels: {
+              color: "black", 
+              font:{
+                size: 15
+              }
+            }
+          },
+          
+        },
       }
+      return  <Pie data={data} options={options} />
+    }
 
     return (
         <PrincipalPart>
@@ -68,11 +69,10 @@ export default function ADMPrincipal () {
             <div class="transparent-band">
                 <div class="title"> Relatório Semanal </div>
                 <div class="graphics">
-                   {pieGraphic()}
+                   <div> {pieGraphic()}</div>
                 </div>
 
                 <div class="buttons">
-                    <Botao onClick={() => listar('semanal')}> Carregar relatório </Botao>
                     <Botao class="but-bit"> <Link to="/relatorios" className="Elink"> Ver mais relatórios </Link> </Botao>
                     <Link> <Botao> Voltar </Botao> </Link>
                 </div>

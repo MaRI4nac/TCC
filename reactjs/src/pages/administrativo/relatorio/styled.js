@@ -43,7 +43,7 @@ const Relator = styled.div `
     border: 2px solid white;
     margin: 2em;
 
-    padding: 2em;
+    padding: 2em 5em;
 
 }
 
