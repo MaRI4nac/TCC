@@ -18,7 +18,6 @@ export default function ADMRelatorios () {
         let r = report;
         r.push( { tipo: type, data: e } );
         setReport(r);
-
     }
 
 
@@ -28,7 +27,7 @@ export default function ADMRelatorios () {
         listar('mensal');
         listar('semestral');
         listar('anual');
-    }, [])
+    }, []);
 
     return (
         <Relator>
@@ -43,9 +42,7 @@ export default function ADMRelatorios () {
                         <div class="the-graphic">
                             <div> <PieGraphic info={item.data}> </PieGraphic> </div>
                         </div>
-                        <div class="the-button">
-                            <Botao> Gerar Relatório </Botao>
-                        </div>
+
                     </div>
                 })}
             </div>
