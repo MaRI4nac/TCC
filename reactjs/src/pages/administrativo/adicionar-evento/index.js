@@ -45,11 +45,9 @@ export default function AddEvent (props) {
 
         formData.append('genero', genero)
         formData.append('datas', JSON.stringify(hours))
-        console.log(hours);
 
         
         let r = await api.crudCreateEvents(formData)
-        console.log(formData)
         if (!Validador(r)){
             return;
         }

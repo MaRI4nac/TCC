@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom"
 import Api from '../../../../service/apiUsers'
 import { useState, useRef } from "react";
 import Cookies from 'js-cookie'
+import { Validador } from "../../../../components/commum";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -33,21 +34,15 @@ export default function NWSLogar () {
     const logarUsuario = async() => {
         ref.current.continuousStart();
         let r = await api.userLogin(mail, senha);
-        if(!validarResposta(r))
-            return;
+        if(!Validador(r)) {
+            return ref.current.complete();
+        }
 
         Cookies.set('usuario-logado', JSON.stringify(r));
         toast.dark('😀 Logado com sucesso!');
-        ref.current.complete();;
+        ref.current.complete();
 
         navigation.push('/');
-    }
-
-    const validarResposta = (resp) => {
-        if (!resp.erro)
-            return true
-        toast.error(resp.erro)
-        return false
     }
 
     return (

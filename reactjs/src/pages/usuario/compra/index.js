@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Api from "../../../service/apiBuy";
 import BuyFirstBand from "./1st-band";
@@ -11,20 +11,32 @@ import { Validador } from '../../../components/commum/index'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import LoadingBar from 'react-top-loading-bar'
+
  
 const api = new Api();
 
+// function lerUsuarioLogado (navigation, toast) {
+//     let logado = Cookies.get('usuario-logado')
+//     if (logado == null) {
+//         toast.dark('😢 Você deve estar logado para comprar');
+
+        
+//         navigation.push('/logar')
+//         return null;
+//     }
+//     let usuarioLogado = JSON.parse(logado);
+//     return usuarioLogado; 
+// }
+
 
 export default function AllBuy (props) {
-    const navig = useHistory(); 
+    const ref = useRef(null)
+    const customId = "custom-id-yes";
+    const navig = useHistory();
 
-    if(!Cookies.get('usuario-logado')) {
-        toast.dark('😢 Você deve estar logado para comprar');
-        navig.push('/logar')
-    } else {
-        setUser(JSON.parse(Cookies.get('usuario-logado')))
-    }
-
+    // const usuarioLogado = lerUsuarioLogado(navig, toast) || {};
+    
     const [event, setEvent] = useState(props.location.state);
     const [user, setUser] = useState();
 
@@ -107,6 +119,7 @@ export default function AllBuy (props) {
     return (
         <Everything>
             <ToastContainer> </ToastContainer>
+            <LoadingBar color='#13A06F' ref={ref} />
                 {exibindo == 0 &&
                     <BuyFirstBand onUpdate={alterarQtd} value={qtd} onValueChange={updateTicketValue} ticketValue={ticketValue} imagemcapa={event.imagemcapa} imagemfundo={event.imagemfundo} updateScreen={zeroToOne}/>
                 }

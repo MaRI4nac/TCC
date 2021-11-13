@@ -72,6 +72,14 @@ input[type="date"] {
     margin-top: 1em;
 }
 
+.img-perfil {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-transform: capitalize;
+    align-items: flex-start;
+}
+
 `
 
 export { CriarConta } ;

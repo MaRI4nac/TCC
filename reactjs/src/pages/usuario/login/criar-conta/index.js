@@ -12,6 +12,7 @@ const api = new Api();
 
 export default function NWSCriarConta () {
     const ref = useRef(null);
+    const navigation = useHistory();
 
     const [nmUsu, setNmUsu] = useState('');
     const [cpf, setCpf] = useState('');
@@ -23,30 +24,35 @@ export default function NWSCriarConta () {
     const [senha1, setSenha1] = useState('');
     const [senha2, setSenha2] = useState('');
 
-    const navigation = useHistory();
 
     const createUser = async() => {
         ref.current.continuousStart();
         if(senha1 == senha2) 
             setSenha(senha1);
         else {
-            alert();
+            toast.dark(' 😢 As senhas precisam ser iguais')
+            ref.current.complete();
             return;
         }
-        let r = await api.userCreate(nmUsu, cpf, email, username, senha, nascimento, imagem);
-        if (!validarResposta(r)) 
+        const formData = new FormData();
+        formData.append('nmUsu', nmUsu)
+        formData.append('cpf', cpf)
+        formData.append('email', email)
+        formData.append('username', username)
+        formData.append('senha', senha)
+        formData.append('nascimento', nascimento)
+        formData.append('imagem', imagem)
+
+        let r = await api.userCreate(formData);
+        if (!validarResposta(r)) {
+            ref.current.complete();
             return;
+        }
         
+        toast.dark( '😀 Conta criada com sucesso')
         ref.current.complete();
-        navigation.push('/logar');
+        setTimeout(() => {navigation.push('/logar')}, 3000);
     }
-
-    function randomDate(start, end) {
-        return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-      }
-
-    let r = []
-
 
     const validarResposta = (resp) => {
         if (!resp.erro)
@@ -71,7 +77,10 @@ export default function NWSCriarConta () {
                         <input type="password" placeholder="Senha" onChange={e => setSenha1(e.target.value)} />
                         <input type="password" placeholder="Senha (confirmação)" onChange={e => setSenha2(e.target.value)} />
                         <input type="date" name="" id="" onChange={e => setNascimento(e.target.value)}/>
-                        <input type="text" placeholder="Imagem de perfil" onChange={e => setImagem(e.target.value)} />
+                        <div className="img-perfil">
+                            <label> Imagem de perfil </label>
+                            <input type="file" placeholder="Imagem de perfil" onChange={e => setImagem(e.target.files[0])} />
+                        </div>
                     </div>
                     <div class="cadast-bt">
                         <div className="Blink" onClick={() => createUser()} > <Botao> Criar conta </Botao> </div>
