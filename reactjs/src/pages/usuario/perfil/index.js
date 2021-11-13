@@ -60,8 +60,6 @@ export default function UserProfile () {
         Cookies.set('usuario-logado', JSON.stringify(r));
         setUsuario(r);
         ref.current.complete();
-
-        console.log(usuario)
     }
 
     const updateUsu = async () => {
@@ -99,18 +97,12 @@ export default function UserProfile () {
         setIdAlterando(0)
     }
 
-    useEffect(() => {
-        console.log(usuario.dt_nascimento)
-    }, [usuario])
-
-
     let nascimento = usuario.dt_nascimento.split('-')
 
     return (
         <ITsProfile>
             <ToastContainer> </ToastContainer>
             <LoadingBar color='#13A06F' ref={ref} />
-
             <Cabecalho />
             <div class="header"></div>
             <div class="the-band">

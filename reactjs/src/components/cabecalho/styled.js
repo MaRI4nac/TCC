@@ -56,6 +56,7 @@ const Container = styled.div`
         text-transform: uppercase;
         color: white;
         font-weight: bolder;
+        cursor: pointer;
     }
 
 `

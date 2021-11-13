@@ -1,14 +1,31 @@
 import { EventTypeStyle } from './styled'
 import Cabecalho from '../../../components/cabecalho'
 import { Botao } from '../../../components/botoes/styled'
-import { Link } from 'react-router-dom'
-import React, { useEffect, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import React, { useEffect, useRef, useState } from 'react'
+import Cookies from 'js-cookie'
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import LoadingBar from 'react-top-loading-bar'
 
 export default function TelaEvento(props) {
-
+    const ref = useRef(null);
     const[event, setEvent] = useState(props.location.state)
-    console.log(event);
+    const customId = "custom-id-yes";
+    const navig = useHistory();
 
+    const teste = () => {
+        if(!Cookies.get('usuario-logado')) {
+            return toast.dark('😅 Você precisa estar logado para comprar', {
+                toastId: customId
+            });;
+        }
+        navig.push({
+            pathname: "/ingresso-compra",
+            state: event });
+    }
 
     function monthFormat(number) {
         let i = ""
@@ -69,6 +86,8 @@ export default function TelaEvento(props) {
 
     return (
         <EventTypeStyle background={event.imagemsecundaria}>
+            <ToastContainer> </ToastContainer>
+            <LoadingBar color='#13A06F' ref={ref} />
             <div className="try-container">
             <div class="ct-color">
                 <div class="first-band">
@@ -115,9 +134,7 @@ export default function TelaEvento(props) {
                 </div>
                 <div class="third-band">
                     <div class="button">
-                        <Link to={{
-                            pathname: "/ingresso-compra",
-                            state: event }}> <Botao> Adquirir Ingresso </Botao> </Link>
+                        <Botao onClick={teste}> Adquirir Ingresso </Botao>
                     </div>
                 </div>
             </div>

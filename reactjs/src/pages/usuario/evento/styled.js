@@ -18,7 +18,8 @@ const EventTypeStyle = styled.div`
 .first-band {
     background-image: url('${(props) => props.background}');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: 50% 25%;
     height: 21em;
     position: relative;
     display: flex;

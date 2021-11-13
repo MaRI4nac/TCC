@@ -12,8 +12,11 @@ export default class Api {
         return r.data;
     }
 
-    async userCreate(nmUsu, cpf, email, username, senha, nascimento, imagem) {
-        let r = await api.post(`/create`, {nmUsu, cpf, email, username, senha, nascimento, imagem })
+    async userCreate(formdata) {
+        let r = await api.post(`/create`, formdata, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+        }});
         return r.data;
     }
 
