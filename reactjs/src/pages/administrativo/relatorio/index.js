@@ -1,8 +1,7 @@
 import { Relator } from "./styled"
 import { Botao } from "../../../components/botoes/styled"
-import { useState } from "react";
-import { Pie } from 'react-chartjs-2'
-import graphic from './graphicType';
+import { useEffect, useState } from "react";
+import PieGraphic from './graphicType';
 import Api from "../../../service/apiAdmGeneral";
 const api = new Api();
 
@@ -12,50 +11,20 @@ export default function ADMRelatorios () {
 
     async function listar(type) {
         let e = await api.allReports(type);
-        setReport(e);
         
-        graphic(report)
+        let r = report;
+        e.push({tipo: type})
+        r.push(e);
+        setReport(r)
+
+        console.log(report)
     }
 
-    // const pieGraphic = () => {
-    //     const data = {
-    //       labels: report.map(item => item.categoria), 
-    //       datasets: [
-    //         {
-    //           data: report.map(item => item.qtd),
-    //           backgroundColor: [
-    //             'rgba(21, 49, 49, 1)',
-    //             'rgba(36, 174, 174, 1)',
-    //             'rgba(41, 109, 109, 1)'
-    //           ],
-    //           borderColor: [
-    //             'rgba(41, 109, 109, 1)'
-
-    //           ],
-    //           borderWidth: 1,
-    //           hoverOffset: 4,
-              
-    //         },
-    //       ],
-    //     };
-    //     const options = {
-    //       layout: {
-    //         padding: 20
-    //     },
-    //       plugins: {
-    //         legend: {
-    //           labels: {
-    //             color: "black", 
-    //             font:{
-    //               size: 15
-    //             }
-    //           }
-    //         },
-            
-    //       },
-    //     }
-    //     return  <Pie data={data} options={options} />
-    //   }
+    useEffect(() => {
+        listar('semanal');
+        listar('mensal');
+        listar('semestral');
+    }, [])
 
 
 
@@ -67,10 +36,9 @@ export default function ADMRelatorios () {
                 <div class="the-box">
                     <div> 
                         <div class="the-title"> Relatório Semanal </div>
-                        <div class="the-subtitle"> Gerado no dia 00/00/0000, às 23h59 </div>
                     </div>
                     <div class="the-graphic">
-                        <div>  </div>
+                        <div> <PieGraphic data={report}> </PieGraphic> </div>
                     </div>
                     <div class="the-button">
                         <Botao onClick={() => listar('semanal')} > Gerar Relatório </Botao>
@@ -120,3 +88,17 @@ export default function ADMRelatorios () {
     </Relator>
     )
 }
+
+
+// report.map(item => {
+//     <div class="the-box">
+//     <div> 
+//         <div class="the-title"> Relatório {item.tipo} </div>
+//     </div>
+//     <div class="the-graphic">
+//         <div> <PieGraphic data={item}> </PieGraphic> </div>
+//     </div>
+//     <div class="the-button">
+//     </div>
+// </div>
+// })

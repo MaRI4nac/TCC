@@ -14,7 +14,7 @@ const Relator = styled.div `
 
     background-color: #2F4F4F;
     width: 100% 100%;
-    height: 100% 100%;
+    min-height: 100vh;
 
 .title {
     text-align: center;

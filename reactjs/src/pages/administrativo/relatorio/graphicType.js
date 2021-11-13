@@ -1,13 +1,11 @@
 import { Pie } from 'react-chartjs-2'
 
-function graphic (type) {
-
-    const pieGraphic = () => {
+    const PieGraphic = (props) => {
         const data = {
-          labels: type.map(item => item.categoria), 
+          labels: props.data.map(i => i.categoria), 
           datasets: [
             {
-              data: type.map(item => item.qtd),
+              data: props.data.map(i => i.qtd),
               backgroundColor: [
                 'rgba(21, 49, 49, 1)',
                 'rgba(36, 174, 174, 1)',
@@ -40,10 +38,5 @@ function graphic (type) {
           },
         }
         return  <Pie data={data} options={options} />
-    }
-
-    return pieGraphic();
-    
-}
-
-export default graphic;
+  }
+export default PieGraphic;
