@@ -2,7 +2,7 @@ import { Container } from './styled'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router'
 import { useEffect, useState, useRef } from 'react';
-import Cookies from 'js-cookie';
+import Cookies, { get } from 'js-cookie';
 
 function lerUsuarioLogado (navigation) {
     let logado = Cookies.get('usuario-logado')
@@ -39,6 +39,13 @@ export default function Cabecalho(props) {
         navig.push('/logar')
     }
 
+    const getImage = () => {
+        if(user.img_perfil.startsWith('uploads')) {
+            return `http://localhost:3030/user/image?imagem=${user.img_perfil}`;
+        } else {
+            return user.img_perfil;
+        }
+    }
 
     return (
 
@@ -47,7 +54,7 @@ export default function Cabecalho(props) {
             <input type="text" placeholder="Buscar eventos..." value={search} onChange={(e) => setSearch(e.target.value) } onKeyPress={keyPress} />
             {user == false
                 ? <div className="no-decoration" onClick={goToLogin}> <div> Entrar </div> </div>
-                : <Link to="/profile"> <img className="perfil-image" src={user.img_perfil} alt="" /> </Link>
+                : <Link to="/profile"> <img className="perfil-image" src={getImage()} alt="" /> </Link>
             } 
         </Container>
     )
