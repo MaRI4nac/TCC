@@ -46,7 +46,7 @@ export default function ADMPrincipal () {
       };
       const options = {
         layout: {
-          padding: 20
+          padding: 10
       },
         plugins: {
           legend: {
