@@ -10,6 +10,8 @@ export default function ADMRelatorios () {
     const[report, setReport] = useState([]);
     console.log(report);
 
+    
+
     async function listar(type) {
         let e = await api.allReports(type);
 
@@ -21,14 +23,14 @@ export default function ADMRelatorios () {
 
     }
 
+
+
     useEffect(() => {
         listar('semanal');
         listar('mensal');
         listar('semestral');
         listar('anual');
     }, [])
-
-
 
     return (
         <Relator>

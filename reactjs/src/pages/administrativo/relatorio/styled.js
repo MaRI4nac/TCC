@@ -34,6 +34,9 @@ const Relator = styled.div `
 .column {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .the-box {
