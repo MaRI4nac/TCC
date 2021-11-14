@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
     background: #2F4F4F;
-    height: 100vh;
+    min-height: 100vh;
     color: white;
     padding: 5% 10% 5% 10%;
 
@@ -20,17 +20,24 @@ const Container = styled.div`
         height: 100%;
         border-radius: 5px;
         width: 35vh;
+        color: white;
+        padding-left: 15px;
 
         ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
             color: rgba(255, 255, 255, 0.5);
             opacity: 1; /* Firefox */
-            padding-left: 1rem;
+            
         }
 
 
         :first-child {
             margin-right: 3rem;
         }
+    }
+
+    a {
+        text-decoration: none;
+        text-transform: none;
     }
 
     .inputs {

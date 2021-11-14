@@ -26,6 +26,8 @@ export default function AddEvent (props) {
     const [genero, setGenero] = useState();
     
     const [hours, setHours] = useState (props.location.state)
+    console.log(hours)
+    const [idAlterando, setIdAlterando] = useState(0);
 
     const createEvent = async () => {
         let formData = new FormData();
@@ -123,7 +125,7 @@ export default function AddEvent (props) {
                             </div>
                             <Link to= {{
                                 pathname: '/addsession',
-                                state: {evento: nmEvento}
+                                state: idAlterando
                             }} > <div className="last-button"><Botao> Gerenciar Sessões </Botao></div> </Link>          
                         </div>
                     </div>
@@ -134,8 +136,6 @@ export default function AddEvent (props) {
                                 <label for=""> Imagem Principal: </label>
                                 <input className="image" type="file" onChange={e => setImgCapa(e.target.files[0])}/> 
                             </div>
-                        </div>
-                        <div className="column1">
                             <div className="mini-box">  
                                 <label for=""> Imagem de Fundo: </label>
                                 <input type="file"  onChange={e => setImgFundo(e.target.files[0])}/>
@@ -145,6 +145,30 @@ export default function AddEvent (props) {
                                 <input type="file" onChange={e => setImgSec(e.target.files[0])}/>
                             </div>
                         </div>
+        
+                        <div className="column1">
+                            <div><div> Datas e horários selecionados: </div> </div> 
+                            <div>
+                                <div> 23/10/10 </div>
+                                <div> 10:10</div>
+                                <div> 10:10</div>
+                                <div> 10:10</div>
+                                <div> 23/10/10 </div>
+                                <div> 10:10</div>
+                                <div> 10:10</div>
+                                <div> 10:10</div>
+                                <div> 23/10/10 </div>
+                                <div> 10:10</div>
+                                <div> 10:10</div>
+                                <div> 10:10</div>
+                                <div> 23/10/10 </div>
+                                <div> 10:10</div>
+                                <div> 10:10</div>
+                                <div> 10:10</div>
+                                   
+                            </div>
+                            
+                        </div>
                         <div className="column">
                             <label for=""> Descrição: </label>
                             <textarea name="" id="" cols="30" rows="10"  value={descEvento} onChange={e => setDescEvento(e.target.value)}></textarea>
@@ -153,7 +177,9 @@ export default function AddEvent (props) {
                 </div>
                 
             </div>
-            <Botao onClick={() => createEvent()}> Adicionar Evento </Botao>
+            <div className="last-button"> 
+                <Botao onClick={() => createEvent()}> Adicionar Evento </Botao>
+            </div>
         </Container>
     )
 }  

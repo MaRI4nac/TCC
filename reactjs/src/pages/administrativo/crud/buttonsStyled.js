@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
+    a {
+        text-decoration: none;
+        text-transform: none;
+    }
+
     background-color: #F0F8FF;
     display: flex;
     flex-direction: row;

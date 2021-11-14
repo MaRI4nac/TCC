@@ -182,7 +182,7 @@ const Container = styled.div`
     }
 
     .rodape img {
-        height: 7.5vh;
+        height: 5rem;
         width: auto;
     }
 

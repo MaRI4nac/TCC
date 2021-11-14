@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 export default function AddSession (props) {
     const [currentDate, setCurrentDate] = useState();
+    console.log(props.location.state);
 
     const [currentDate2, setCurrentDate2] = useState('');
 

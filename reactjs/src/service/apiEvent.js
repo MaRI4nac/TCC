@@ -9,14 +9,6 @@ export default class Api {
         let r = await api.get(`/crud?nome=${nome}&&categoria=${categoria}`)
         return r.data;
     }
-    
-    // async crudCreateEvents(nmEvento, categoria, duracao, classificacao, valorIngresso, local, dtMin, dtMax, elenco, descEvento, imgCapa, imgFundo, imgSec, genero) {
-    //     let r = await api.post(`/crud`, {
-    //         nmEvento, categoria, duracao, classificacao, valorIngresso, local, dtMin, dtMax, elenco, descEvento, imgCapa, imgFundo, imgSec, genero
-    //     })
-
-    //     return r.data;
-    // }
 
     async crudCreateEvents(formdata) {
         let r = await api.post('/crud', formdata, {
