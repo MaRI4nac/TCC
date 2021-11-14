@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const Container = styled.div`
 
-
     display: flex;
     flex-direction: column;
     background-color: #2F4F4F;
@@ -43,6 +42,7 @@ const Container = styled.div`
 .row {
     display: flex;
     flex-direction: row;
+    
 }
 
 .mini-box {
@@ -89,6 +89,7 @@ input[type="date"]{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-height: 20vh;
 }
 
 .column {
@@ -144,6 +145,11 @@ button {
    display: flex;
    justify-content: center;
 
+}
+
+.column1 {
+    overflow-y: auto;
+    margin-right: 2rem;
 }
     
 `

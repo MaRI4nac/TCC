@@ -25,12 +25,6 @@ export default function Principal() {
         ref.current.complete();
     }
     
-
-
-    // const createCalendaryItem = () => {
-        
-    // }
-    
     useEffect(() => {
         listar();
     }, [])
@@ -92,7 +86,6 @@ export default function Principal() {
                     </div>
                     <div className="event-top-scroll">
                         <div className="all-events"> 
-                            {console.log(test)}
                             { !test ? <div> </div> : test.map((item) => 
                                 <DirBox info={item} />
                             )}

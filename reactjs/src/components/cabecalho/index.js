@@ -40,6 +40,10 @@ export default function Cabecalho(props) {
     }
 
     const getImage = () => {
+        if (user.img_perfil == null) {
+            return;
+        }
+
         if(user.img_perfil.startsWith('uploads')) {
             return `http://localhost:3030/user/image?imagem=${user.img_perfil}`;
         } else {

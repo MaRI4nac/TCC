@@ -52,6 +52,10 @@ export default function UserProfile () {
     }
 
     const getImage = () => {
+        if (usuario.img_perfil == null) {
+            return;
+        }
+
         if(usuario.img_perfil.startsWith('uploads')) {
             return `http://localhost:3030/user/image?imagem=${usuario.img_perfil}`;
         } else {
