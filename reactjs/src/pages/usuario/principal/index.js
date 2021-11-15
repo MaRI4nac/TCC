@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react'
 import DirBox from '../busca-direcionada/dir-box'
 
+import { CarouselConfig } from './carousel';
+
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -85,11 +90,24 @@ export default function Principal() {
                         <h1> EVENTOS EM DESTAQUE </h1>
                     </div>
                     <div className="event-top-scroll">
+                    <Carousel 
+                        responsive={CarouselConfig}
+                        infinite={true}
+                        showDots={true}
+                        containerClass="carousel-container"
+                        >
+                        
                         <div className="all-events"> 
                             { !test ? <div> </div> : test.map((item) => 
-                                <DirBox info={item} />
+                                <DirBox 
+                                info={item}
+                                key={item.id} />
                             )}
                         </div>
+
+                    
+                    </Carousel>
+                        
                     </div>
                 </div>
                 <div className="rodape"> 
