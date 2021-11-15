@@ -1,5 +1,5 @@
 import { Container } from './styled'
-import { Table_header, Table_content2 } from './table'
+import { Table_header, Table_content } from './table'
 import { ButtonLeftImage } from './buttons'
 import { Link } from 'react-router-dom'
 import Api from '../../../service/apiEvent'
@@ -39,7 +39,7 @@ export default function Crud() {
             <table>
                 <Table_header titulo1="Evento" titulo2="Genêro" titulo3="Ações"/>
                 {!eventos ? <div> </div> : eventos.map(item => {
-                    return <Table_content2 key={item.id_evento} campo1={item.nm_evento} campo2={item.ds_genero} />
+                    return <Table_content key={item.id_evento} campo1={item.nm_evento} campo2={item.ds_genero} />
                 })}
             </table>
         </Container>        
