@@ -96,18 +96,14 @@ const Container = styled.div`
     }
 
     .event-top-scroll {
-        background-color: rgba(0, 0, 0, 0.1);
         padding: 1em;
         margin: 5em;
         height: 28em;
-        overflow-y: auto;
     }
 
     .all-event {
-        background-color: rgba( 0,0,0, 0.5 );
-        overflow-y: auto;
         padding: 2em;
-        height: 10vh;
+        height: 20em;
     }
 
 
@@ -203,6 +199,11 @@ const Container = styled.div`
 
     .socialmedia {
         margin: 1em;
+    }
+
+    .container-class {
+        width: 79em;
+        height: 30em;
     }
 
 

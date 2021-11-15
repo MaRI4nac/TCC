@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react'
 import DirBox from '../busca-direcionada/dir-box'
 
-import { CarouselConfig } from './carousel';
+import { responsive } from './carousel';
 
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -90,23 +90,19 @@ export default function Principal() {
                         <h1> EVENTOS EM DESTAQUE </h1>
                     </div>
                     <div className="event-top-scroll">
-                    <Carousel 
-                        responsive={CarouselConfig}
-                        infinite={true}
-                        showDots={true}
-                        containerClass="carousel-container"
-                        >
                         
                         <div className="all-events"> 
-                            { !test ? <div> </div> : test.map((item) => 
-                                <DirBox 
-                                info={item}
-                                key={item.id} />
-                            )}
-                        </div>
+                        <Carousel 
+                            responsive={responsive}
+                            infinite={true}
+                            showDots={true}
+                            containerClass="container-class"
+                        >
+                            { !test ? <div> </div> : test.map(item => <DirBox info={item} key={item.id} /> )}
 
-                    
-                    </Carousel>
+                        </Carousel>
+
+                        </div>
                         
                     </div>
                 </div>
