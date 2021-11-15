@@ -77,7 +77,16 @@ export default function UserProfile () {
     const updateUsu = async () => {
         ref.current.continuousStart();
         if (idAlterando != 0) { 
-            let r = await api.userUpdate(nmUsu, cpf, email, username, senha, nascimentoup, imagem, usuario.id_usuario)
+            const formData = new FormData();
+            formData.append('nmUsu', nmUsu)
+            formData.append('cpf', cpf)
+            formData.append('email', email)
+            formData.append('username', username)
+            formData.append('senha', senha)
+            formData.append('nascimento', nascimentoup)
+            formData.append('imagem', imagem)
+
+            let r = await api.userUpdate(formData, usuario.id_usuario)
             if (!Validador(r))
                 return;
 
@@ -144,7 +153,7 @@ export default function UserProfile () {
                             <AgpInputs label="Username" type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
                             <AgpInputs label="Senha:" type="text"value={senha} onChange={(e) => setSenha(e.target.value)}/>
                             <AgpInputs label="Nascimento:" type="date" value={nascimentoup} onChange={(e) => setNascimentoup(e.target.value)}/>
-                            <AgpInputs label="Imagem:" type="text" value={imagem} onChange={(e) => setImagem(e.target.value)}/>
+                            <AgpInputs label="Imagem:" type="file" onChange={(e) => setImagem(e.target.files[0])}/>
                         </div>
                        }
                        

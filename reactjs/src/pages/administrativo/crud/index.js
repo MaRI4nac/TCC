@@ -32,7 +32,7 @@ export default function Crud() {
                 <div className="agp-input">
                     <input placeholder="Filtrar por Nome" onChange={(e) => getEvents(e.target.value, '')}/>
                     
-                    <input placeholder="Filtro por categoria" />
+                    <input placeholder="Filtro por categoria" onChange={(e) => getEvents('', e.target.value)}/>
                 </div>
                 <Link to="/addevent"> <ButtonLeftImage texto="Novo Evento" imagem="assets/images/acao_novoEvento.png" /> </Link>
             </div>   

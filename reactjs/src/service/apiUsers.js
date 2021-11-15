@@ -20,8 +20,11 @@ export default class Api {
         return r.data;
     }
 
-    async userUpdate(nmUsu, cpf, email, username, senha, nascimento, imagem, id) {
-        let r = await api.put(`/update/${id}`, {nmUsu, cpf, email, username, senha, nascimento, imagem })
+    async userUpdate(formData, id) {
+        let r = await api.put(`/update/${id}`, formData, {
+            headers: {
+                "Content-Type": "multipart/form-data"
+        }});
         return r.data;
     }
 
